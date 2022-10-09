@@ -128,6 +128,6 @@
                 </div>
             </div>
         </div> -->
-        <h1>!!!!!!!!!!Welome Laravel!!!!!!!!!!!</h1>
+        <h1>!!!!!!!!!!Welome home!!!!!!!!!!!</h1>
     </body>
 </html>
