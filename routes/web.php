@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\backend\AdminController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\BookController;
 
 
 
@@ -15,12 +16,13 @@ use App\Http\Controllers\backend\AdminController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/',function(){
-    return view('backend.adminpanel');
+Route::get('/', function () {
+    return view('backend.master');
 });
 
-Route::get('/dashboard',[AdminController::class,'dashboard'])->name('dashboard');
-Route::get('/contact',[AdminController::class,'contact'])->name('contact');
+Route::get('/book',[BookController::class,'book']);
+Route::get('book/bookform',[BookController::class,'bookform']);
 
+Route::get('/dashboard',[HomeController::class,'dashboard'])->name('dashboard');
 
 
