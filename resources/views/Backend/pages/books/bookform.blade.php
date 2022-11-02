@@ -2,30 +2,30 @@
 @section('content')
 
 
-<h1>this is form</h1>
-<form>
+
+<form action="{{route('book.bookform.store')}}" method="post">    
         
+         @csrf
         <div class="form-group">
-            <label for="name">Enter Category Name</label>
-            <input name="category_name" type="text" class="form-control" id="name" placeholder="Enter Category Name">
+            <label for="name">Book Name</label>
+            <input name="Book_name" type="text" class="form-control" id="name" placeholder="Book Name">
         </div>
 
         <div class="form-group">
-            <label for="name">Description</label>
-            <textarea class="form-control" name="description" id=""></textarea>
+            <label for="name">Writter Name</label>
+            <input name="Writter_name"type="text" class="form-control" id="name"placeholder="Writter Name">
         </div>
 
         <div class="form-group">
-            <label for="">Select Status</label>
-            <select name="status" id="" class="form-control">
-                <option value="active">Active</option>
-                <option value="inactive">Inactive</option>
-            </select>
+            <label for="name">Catagory</label>
+            <input name="Catagory_name" type="text" class="form-control" id="name" placeholder="Catagory Name">
+
+            
         </div>
 
         <div class="form-group">
-            <label for="image">Upload Image</label>
-            <input name="image" type="file" class="form-control" id="image">
+            <label for="File">Upload file</label>
+            <input name="File" type="file" class="form-control" id="file">
         </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>

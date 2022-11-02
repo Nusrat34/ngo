@@ -23,6 +23,8 @@ Route::get('/', function () {
 Route::get('/book',[BookController::class,'book']);
 Route::get('book/bookform',[BookController::class,'bookform']);
 
+Route::post('book/bookform/store',[BookController::class,'store'])->name('book.bookform.store');
+
 Route::get('/dashboard',[HomeController::class,'dashboard'])->name('dashboard');
 
 
