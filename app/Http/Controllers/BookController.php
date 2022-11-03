@@ -7,7 +7,10 @@ use App\Models\book;
 class BookController extends Controller
 {
     public function book (){
-        return view ('backend.pages.books.book');
+
+        $boi=book::all();
+        //dd($boi);
+        return view ('backend.pages.books.book',compact('boi'));
     }
 
     public function bookform() {

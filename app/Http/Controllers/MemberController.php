@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 class MemberController extends Controller
 {
     public function member(){
+        
         return view ('backend.pages.members.member');
     }
 
