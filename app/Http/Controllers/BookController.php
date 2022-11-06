@@ -8,7 +8,8 @@ class BookController extends Controller
 {
     public function book (){
 
-        $boi=book::all();
+       // $boi=book::all();//
+        $boi=book::paginate(3);
         //dd($boi);
         return view ('backend.pages.books.book',compact('boi'));
     }
@@ -19,7 +20,12 @@ class BookController extends Controller
 
     public function store(Request $request){
     
-//        dd($request->all());
+        //dd($request->all()); //
+
+          $request->validate(['book_name'=>'required|unique:bookform,name',]);
+
+         
+           
         book::create([
             //database column name => input field name
                 'book_name'=>$request->Book_name,

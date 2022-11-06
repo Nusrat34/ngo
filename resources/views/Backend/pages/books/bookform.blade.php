@@ -3,12 +3,19 @@
 
 
 
-<form action="{{route('book.bookform.store')}}" method="post">    
+<form action="{{route('book.bookform.store')}}" method="post"> 
+     @if($errors->any())
+            @foreach($errors->all() as $message)
+                <p class="alert alert-danger">{{$message}}</p>
+            @endforeach
+        @endif
+
         
          @csrf
         <div class="form-group">
             <label for="name">Book Name</label>
-            <input name="Book_name" type="text" class="form-control" id="name" placeholder="Book Name">
+            <input required name="Book_name" type="text" class="form-control" id="name" placeholder="Book Name">
+            
         </div>
 
         <div class="form-group">

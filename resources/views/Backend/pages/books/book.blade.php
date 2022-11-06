@@ -42,6 +42,9 @@ Create New User
     </tbody>
 </table>
 
+  {{$boi->links()}}
+
+
 
 
 
