@@ -22,7 +22,7 @@ class BookController extends Controller
     
         //dd($request->all()); //
 
-          $request->validate(['book_name'=>'required|unique:bookform,name',]);
+          $request->validate(['Book_name'=>'required|unique:books,book_name',]);
 
          
            
