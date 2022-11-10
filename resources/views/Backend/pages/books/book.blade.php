@@ -27,7 +27,8 @@ Create New User
         <td>{{$data->writter_name}}</td>
         <td>{{$data->catagory}}</td>
         <td>
-                <img src="{{$data->image}}" alt="Image">
+                
+                <img width ="50px style="border- radius: 15px; src="{{url('/uploads/'.$data->image)}}" alt="book_image">
             </td>
 
             <td>

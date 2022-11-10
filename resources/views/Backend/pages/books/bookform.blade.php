@@ -3,7 +3,7 @@
 
 
 
-<form action="{{route('book.bookform.store')}}" method="post"> 
+<form action="{{route('book.bookform.store')}}" method="post" enctype="multipart/form-data"> 
      @if($errors->any())
             @foreach($errors->all() as $message)
                 <p class="alert alert-danger">{{$message}}</p>
@@ -31,8 +31,8 @@
         </div>
 
         <div class="form-group">
-            <label for="File">Upload file</label>
-            <input name="File" type="file" class="form-control" id="file">
+            <label for="image">Upload image</label>
+            <input  type="file" class="form-control"  name="image" id="file">
         </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>

@@ -23,6 +23,16 @@ class BookController extends Controller
         //dd($request->all()); //
 
           $request->validate(['Book_name'=>'required|unique:books,book_name',]);
+          $fileName=null;
+          if($request->hasFile('image'))
+          {
+              // generate name
+              $fileName=date('Ymdhmi').'.'.$request->file('image')->getClientOriginalExtension();
+              $request->file('image')->storeAs('/uploads',$fileName);
+          }
+  
+
+          
 
          
            
@@ -31,9 +41,15 @@ class BookController extends Controller
                 'book_name'=>$request->Book_name,
                 'writter_name'=>$request->Writter_name,
                 'catagory'=>$request->Catagory_name,
-                'image'=>$request->File,
+                'image'=>$fileName,
+                
+                
+
+
 
         ]);
+
+        
 
            
         return redirect()->back();
