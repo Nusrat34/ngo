@@ -23,8 +23,11 @@ Route::get('/', function () {
 Route::get('/book',[BookController::class,'book']);
 Route::get('book/bookform',[BookController::class,'bookform']);
 Route::post('book/bookform/store',[BookController::class,'store'])->name('book.bookform.store');
+
 Route::get('/member',[MemberController::class,'member']);
 Route::get('/member/memberform',[MemberController::class,'memberform']);
+Route::post('/member/memberform',[MemberController::class,'store'])->name('member.memberform.store');
+
 Route ::get('/notice',[NoticeController::class,'notice']);
 Route ::get('/notice/noticeform',[NoticeController::class,'noticeform']);
 Route ::post('/notice/noticeform/store',[NoticeController::class,'store'])->name('notice.noticeform.store');

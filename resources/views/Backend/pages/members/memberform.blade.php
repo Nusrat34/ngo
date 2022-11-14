@@ -2,7 +2,8 @@
 @section('content')
 
 
-  <form>    
+    <form action="{{route('member.memberform.store')}}" method="post">
+       @csrf  
         
          
         <div class="form-group">
@@ -24,7 +25,7 @@
 
         <div class="form-group">
             <label for="name">Phone Number</label>
-            <input name="Phone_number" type="text" class="form-control" id="name"placeholder="Phone Number">
+            <input name="Phone_number" type="number" class="form-control" id="name"placeholder="Phone Number">
         </div>
         <div class="form-group">
             <label for="name">Address</label>

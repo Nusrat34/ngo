@@ -8,7 +8,14 @@ use Illuminate\Http\Request;
 class NoticeController extends Controller
 {
     public function notice(){
-        return view ('backend.pages.notices.notice');
+        
+
+        $not=Notice::all();
+        //$not=Notice::paginate(3);//
+        //dd($not);
+
+        return view('backend.pages.notices.notice',compact('not'));
+
     }
 
     public function noticeform(){
@@ -21,10 +28,10 @@ class NoticeController extends Controller
         //        dd($request->all());
                 Notice::create([
                     //database column name => input field name
-                        'name'=>$request->Notice_name ,
-                        'status'=>$request->Status,
-                        'published_date'=>$request->Published_date,
-                        'description'=>$request->Description,
+                        'notice_name'=>$request->notice_name ,
+                        'status'=>$request->status,
+                        'published_date'=>$request->published_date,
+                        'description'=>$request->description,
         
                 ]);
         
