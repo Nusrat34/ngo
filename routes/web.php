@@ -24,6 +24,10 @@ Route::get('/', function () {
 
 
 Route::get('/login',[UserController::class,'login'])->name('login');
+Route::post('/do-login',[UserController::class,'doLogin'])->name('do.login');
+
+Route::group(['middleware'=>'auth'],function (){
+
 
 
 
@@ -40,4 +44,4 @@ Route ::get('/notice/noticeform',[NoticeController::class,'noticeform']);
 Route ::post('/notice/noticeform/store',[NoticeController::class,'store'])->name('notice.noticeform.store');
 Route::get('/dashboard',[HomeController::class,'dashboard'])->name('dashboard');
 
-
+});
