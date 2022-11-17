@@ -3,6 +3,14 @@
 
 
 <h1> book list</h1>
+@if(session()->has('message'))
+        <p class="alert alert-success">{{session()->get('message')}}</p>
+      @endif
+
+    @if(session()->has('error'))
+        <p class="alert alert-danger">{{session()->get('error')}}</p>
+    @endif
+
 <a href="{{url('/book/bookform')}}" class="btn btn-success">
     
 Create New User
@@ -33,8 +41,8 @@ Create New User
 
             <td>
                 <a href="" class="btn btn-primary">Update</a>
-                <a href="" class="btn btn-danger">Delete</a>
-                <a href="" class="btn btn-success">View</a>
+                <a href="{{route('admin.book.delete',$data->id)}}" class="btn btn-danger">Delete</a>
+                <a href="{{route('admin.book.view',$data->id)}}" class="btn btn-success">View</a>
             </td>
         
     </tr>

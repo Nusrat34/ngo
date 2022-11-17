@@ -55,5 +55,20 @@ class BookController extends Controller
         return redirect()->back();
 
     }
-    
+    public function deletebook($book_id) 
+    {
+        book::findOrFail($book_id)->delete();
+        return redirect()->back()->with('message','book deleted successfully');
+
+        
+  
+  
+  }
+
+     public function viewbook($book_id){
+        $book=book::find($book_id);
+     return view('backend.pages.books.view',compact('book'));
+     }
 }
+
+

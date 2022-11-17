@@ -6,6 +6,7 @@ use App\Http\Controllers\BookController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\NoticeController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\WebController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +36,10 @@ Route::get('/book',[BookController::class,'book']);
 Route::get('book/bookform',[BookController::class,'bookform']);
 Route::post('book/bookform/store',[BookController::class,'store'])->name('book.bookform.store');
 
+//delete//
+Route::get('/book/delete/{book_id}',[BookController::class,'deletebook'])->name('admin.book.delete');
+ Route::get('/book/view/{book_id}',[BookController::class,'viewbook'])->name('admin.book.view');
+
 Route::get('/member',[MemberController::class,'member']);
 Route::get('/member/memberform',[MemberController::class,'memberform']);
 Route::post('/member/memberform',[MemberController::class,'store'])->name('member.memberform.store');
@@ -45,3 +50,4 @@ Route ::post('/notice/noticeform/store',[NoticeController::class,'store'])->name
 Route::get('/dashboard',[HomeController::class,'dashboard'])->name('dashboard');
 
 });
+Route::get('/',[WebController::class,'home'])->name('webpage');
