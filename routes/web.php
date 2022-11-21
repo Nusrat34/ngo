@@ -32,13 +32,15 @@ Route::group(['middleware'=>'auth'],function (){
 
 
 
-Route::get('/book',[BookController::class,'book']);
+Route::get('/book',[BookController::class,'book'])->name('book');
 Route::get('book/bookform',[BookController::class,'bookform']);
 Route::post('book/bookform/store',[BookController::class,'store'])->name('book.bookform.store');
 
 //delete//
 Route::get('/book/delete/{book_id}',[BookController::class,'deletebook'])->name('admin.book.delete');
  Route::get('/book/view/{book_id}',[BookController::class,'viewbook'])->name('admin.book.view');
+ Route::get('/book/edit/{book_id}',[BookController::class,'editbook'])->name('admin.book.edit');
+ Route::put('/book/update/{book_id}',[BookController::class,'update'])->name('admin.book.update');
 
 Route::get('/member',[MemberController::class,'member']);
 Route::get('/member/memberform',[MemberController::class,'memberform']);

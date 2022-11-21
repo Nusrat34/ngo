@@ -69,6 +69,49 @@ class BookController extends Controller
         $book=book::find($book_id);
      return view('backend.pages.books.view',compact('book'));
      }
-}
+
+
+     public function editbook($book_id)
+     {
+         $book=book::find($book_id);
+         return view('backend.pages.books.edit',compact('book'));
+     }
+
+     public function update(Request $request,$book_id)
+     {
+
+        $book=book::find($book_id);
+        $fileName=$book->image;
+
+        if($request->hasFile('image'))
+        {
+            // generate name
+            $fileName=date('Ymdhmi').'.'.$request->file('image')->getClientOriginalExtension();
+            $request->file('image')->storeAs('/uploads',$fileName);
+      
+      
+        }
+
+        $book->update ([
+            //database column name => input field name
+                'book_name'=>$request->Book_name,
+                'writter_name'=>$request->Writter_name,
+                'catagory'=>$request->Catagory_name,
+                'image'=>$fileName,
+                
+                
+    
+        
+    
+           ]);
+           return redirect()->route('book')->with('message','Update success.');
+          
+
+     }
+     
+       
+    
+    }
+
 
 

@@ -40,7 +40,7 @@ Create New User
             </td>
 
             <td>
-                <a href="" class="btn btn-primary">Update</a>
+                <a href="{{route('admin.book.edit',$data->id)}}" class="btn btn-primary">Edit</a>
                 <a href="{{route('admin.book.delete',$data->id)}}" class="btn btn-danger">Delete</a>
                 <a href="{{route('admin.book.view',$data->id)}}" class="btn btn-success">View</a>
             </td>
