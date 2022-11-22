@@ -7,7 +7,7 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Dashboard
                 </a>
-                <a class="nav-link" href="{{ url('book')}}">
+                <a class="nav-link" href="{{route('book')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     book
                 </a>
@@ -29,13 +29,13 @@
                 
                 
                 </a>
-                <a class="nav-link" href="{{ url('member')}}">
+                <a class="nav-link" href="{{route('member')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     member
                 
                 </a>
                 </a>
-                <a class="nav-link" href="{{ url('notice')}}">
+                <a class="nav-link" href="{{route('notice')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     notice
                 

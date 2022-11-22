@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\book;
+use Illuminate\Support\Facades\File;
+
 class BookController extends Controller
 {
     public function book (){
@@ -27,6 +29,7 @@ class BookController extends Controller
           if($request->hasFile('image'))
           {
               // generate name
+               
               $fileName=date('Ymdhmi').'.'.$request->file('image')->getClientOriginalExtension();
               $request->file('image')->storeAs('/uploads',$fileName);
           }
@@ -85,6 +88,10 @@ class BookController extends Controller
 
         if($request->hasFile('image'))
         {
+            // unsave file
+            $removeFile=public_path().'/uploads/'.$fileName;
+              File::delete($removeFile);
+            
             // generate name
             $fileName=date('Ymdhmi').'.'.$request->file('image')->getClientOriginalExtension();
             $request->file('image')->storeAs('/uploads',$fileName);

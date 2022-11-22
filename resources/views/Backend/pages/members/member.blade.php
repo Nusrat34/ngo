@@ -2,7 +2,7 @@
 @section('content')
 
 <h1>member list</h1>
-<a href="{{url('member/memberform')}}" class="btn btn-success">
+<a href="{{route('member.memberform')}}" class="btn btn-success">
 create new user
 </a>
   <table class="table">

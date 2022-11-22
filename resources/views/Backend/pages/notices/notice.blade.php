@@ -2,7 +2,7 @@
 
 @section('content')
 <h1>Notice list</h1>
-<a href="{{url('notice/noticeform')}}" class="btn btn-success">
+<a href="{{route('notice.noticeform')}}" class="btn btn-success">
     create new user
     
 </a>

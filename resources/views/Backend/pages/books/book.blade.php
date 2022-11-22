@@ -11,7 +11,7 @@
         <p class="alert alert-danger">{{session()->get('error')}}</p>
     @endif
 
-<a href="{{url('/book/bookform')}}" class="btn btn-success">
+<a href="{{route('book.bookform')}}" class="btn btn-success">
     
 Create New User
 </a>

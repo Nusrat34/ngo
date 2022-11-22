@@ -27,13 +27,13 @@ Route::get('/', function () {
 Route::get('/login',[UserController::class,'login'])->name('login');
 Route::post('/do-login',[UserController::class,'doLogin'])->name('do.login');
 
-Route::group(['middleware'=>'auth'],function (){
+Route::group(['middleware'=>'auth','prefix'=>'admin'],function (){
 
 
 
 
 Route::get('/book',[BookController::class,'book'])->name('book');
-Route::get('book/bookform',[BookController::class,'bookform']);
+Route::get('book/bookform',[BookController::class,'bookform'])->name('book.bookform');
 Route::post('book/bookform/store',[BookController::class,'store'])->name('book.bookform.store');
 
 //delete//
@@ -42,12 +42,12 @@ Route::get('/book/delete/{book_id}',[BookController::class,'deletebook'])->name(
  Route::get('/book/edit/{book_id}',[BookController::class,'editbook'])->name('admin.book.edit');
  Route::put('/book/update/{book_id}',[BookController::class,'update'])->name('admin.book.update');
 
-Route::get('/member',[MemberController::class,'member']);
-Route::get('/member/memberform',[MemberController::class,'memberform']);
+Route::get('/member',[MemberController::class,'member'])->name('member');
+Route::get('/member/memberform',[MemberController::class,'memberform'])->name('member.memberform');
 Route::post('/member/memberform',[MemberController::class,'store'])->name('member.memberform.store');
 
-Route ::get('/notice',[NoticeController::class,'notice']);
-Route ::get('/notice/noticeform',[NoticeController::class,'noticeform']);
+Route ::get('/notice',[NoticeController::class,'notice']) ->name('notice');
+Route ::get('/notice/noticeform',[NoticeController::class,'noticeform']) ->name('notice.noticeform');
 Route ::post('/notice/noticeform/store',[NoticeController::class,'store'])->name('notice.noticeform.store');
 Route::get('/dashboard',[HomeController::class,'dashboard'])->name('dashboard');
 
