@@ -26,6 +26,7 @@ Route::get('/', function () {
 
 Route::get('/login',[UserController::class,'login'])->name('login');
 Route::post('/do-login',[UserController::class,'doLogin'])->name('do.login');
+Route::get('/logout',[UserController::class,'logout'])->name('logout');
 
 Route::group(['middleware'=>'auth','prefix'=>'admin'],function (){
 

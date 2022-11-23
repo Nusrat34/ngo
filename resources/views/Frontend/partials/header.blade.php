@@ -7,24 +7,24 @@
                         <div class="col-xl-6 col-md-12 col-lg-8">
                             <div class="short_contact_list">
                                 <ul>
-                                    <li><a href="#"> <i class="fa fa-phone"></i> +1 (454) 556-5656</a></li>
-                                    <li><a href="#"> <i class="fa fa-envelope"></i>Yourmail@gmail.com</a></li>
+                                    <li><a href="#"> <i class="fa fa-phone"></i>01771668854</a></li>
+                                    <li><a href="#"> <i class="fa fa-envelope"></i>ngo@gmail.com</a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="col-xl-6 col-md-6 col-lg-4">
                             <div class="social_media_links d-none d-lg-block">
                                 <a href="#">
-                                    <i class="fa fa-facebook"></i>
+                                    <i class=""></i>
                                 </a>
                                 <a href="#">
-                                    <i class="fa fa-pinterest-p"></i>
+                                    <i class=""></i>
                                 </a>
                                 <a href="#">
-                                    <i class="fa fa-linkedin"></i>
+                                    <i class=""></i>
                                 </a>
                                 <a href="#">
-                                    <i class="fa fa-twitter"></i>
+                                    <i class=""></i>
                                 </a>
                             </div>
                         </div>
@@ -45,8 +45,10 @@
                             <div class="main-menu">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a href="index.html">home</a></li>
+                                        <li><a href="index.html">Home</a></li>
                                         <li><a href="About.html">About</a></li>
+                                        <li><a href="About.html">Registration</a></li>
+                                        <li><a href="About.html">Login</a></li>
                                         <li><a href="#">blog <i class="ti-angle-down"></i></a>
                                             <ul class="submenu">
                                                 <li><a href="blog.html">blog</a></li>
