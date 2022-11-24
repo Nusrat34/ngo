@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class WebController extends Controller
 {
     public function home (){
-        return view('Frontend.master');
+        return view('Frontend.pages.home');
     }
 }

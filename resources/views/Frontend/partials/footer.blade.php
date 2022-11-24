@@ -1,4 +1,5 @@
-<footer class="footer">
+ <!-- footer_start  -->
+ <footer class="footer">
         <div class="footer_top">
             <div class="container">
                 <div class="row">
@@ -122,3 +123,4 @@
             </div>
         </div>
     </footer>
+    <!-- footer_end  -->
