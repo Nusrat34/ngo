@@ -54,3 +54,4 @@ Route::get('/dashboard',[HomeController::class,'dashboard'])->name('dashboard');
 
 });
 Route::get('/',[WebController::class,'home'])->name('webpage');
+Route::post('/registration',[WebController::class,'registration'])->name('registration');

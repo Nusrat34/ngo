@@ -39,7 +39,7 @@
                     <div class="single_reson">
                         <div class="thum">
                             <div class="thum_1">
-                                <img src="img/help/1.png" alt="">
+                                <img src="{{url('/Frontend/img/help/1.png')}}" alt="">
                             </div>
                         </div>
                         <div class="help_content">
@@ -511,17 +511,14 @@
             </div>
         </div>
     </div>
-    <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Registration">
-  Launch demo modal
-</button>
+   
 
 {{-- Modal --}}
 <div style="z-index: 10000000" class="modal fade" id="Registration" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Registration</h5>
+        <h5 class="modal-title" id="Registration">Registration</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -530,11 +527,12 @@
         
 
 
-      <form>
+      <form  action="{{('registration')}}" method="post"enctype="multipart/form-data">
+        @csrf
 
-      div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input name="student_name"type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+     <div class="form-group">
+    <label for="exampleInputEmail1">Name</label>
+    <input name="student_name"type="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your Name">
     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
   </div>
   <div class="form-group">
@@ -547,12 +545,8 @@
     <input name="student_password"type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
   </div>
    
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary">signup</button>
 </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>

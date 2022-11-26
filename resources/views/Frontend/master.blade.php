@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- <link rel="manifest" href="site.webmanifest"> -->
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="{{url('/Frontend/charity-doc/img/favicon.png')}}">
     <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->
@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="{{url('/Frontend/charity-doc/css/animate.css')}}">
     <link rel="stylesheet" href="{{url('/Frontend/charity-doc/css/slicknav.css')}}">
     <link rel="stylesheet" href="{{url('/Frontend/charity-doc/css/style.css')}}">
+    @notifyCss
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
 </head>
 
@@ -31,6 +32,7 @@
     <!--[if lte IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
+  @include('notify::components.notify')
 
 @include('Frontend.partials.header')
 @yield('content')
@@ -67,6 +69,7 @@
     <script src="{{url('/Frontend/js/mail-script.js')}}"></script>
 
     <script src="{{url('/Frontend/js/main.js')}}"></script>
+    @notifyJs
 </body>
 
 </html>
