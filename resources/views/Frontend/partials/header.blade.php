@@ -47,8 +47,12 @@
                                 <nav>
                                     <ul id="navigation">
                                         <li><a href="index.html">home</a></li>
+                                        @auth
+                                        <li><a href="{{route('user.logout')}}">logout</a></li>
+                                        @else
                                         <li><a href="About.html"data-toggle="modal" data-target="#Registration">Registration</a></li>
-                                        <li><a href="About.html">login</a></li>
+                                        <li><a href="About.html"data-toggle="modal" data-target="#login">login</a><li>
+                                            @endauth
                                         <li><a href="#">blog <i class="ti-angle-down"></i></a>
                                             <ul class="submenu">
                                                 <li><a href="blog.html">blog</a></li>

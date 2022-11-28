@@ -16,6 +16,7 @@ class Userstableseeder extends Seeder
     {
         User::create([
             'name'=> 'admin',
+            'role'=>'admin',
              'email'=>'admin@gmail.com',
              'password'=>bcrypt('262020'),
              

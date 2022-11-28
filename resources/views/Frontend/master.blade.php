@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="{{url('/Frontend/charity-doc/css/slicknav.css')}}">
     <link rel="stylesheet" href="{{url('/Frontend/charity-doc/css/style.css')}}">
     @notifyCss
+    <style type="text/css"> .notify{ z-index: 1000000; margin-top: 2%; } </style>
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
 </head>
 

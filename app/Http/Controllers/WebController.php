@@ -28,7 +28,36 @@ class WebController extends Controller
 
       return redirect()->back();
   }
-  
+  public function login(Request $request)
+  {
+       $request->validate([
+           'email'=>'required|email',
+           'password'=>'required',
+       ]);
+
+      $credentials=$request->except('_token');
+      // dd($credentials);
+      if(auth()->attempt($credentials))
+      {
+        notify()->success('Login success');
+          return redirect()->back();
+      }
+      else{
+        notify()->error('invalid password');
+      return redirect()->back();
+      }
+      // notify()->error('invalid password');
+      // return redirect()->back();
+  }
+
+  public function logout()
+  {
+      auth()->logout();
+      notify()->success('logout success');
+      return redirect()->back();
+  }
+     
+    
 }
 
 
