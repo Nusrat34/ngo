@@ -25,8 +25,10 @@
     <!-- slider_area_end -->
 
     <!-- reson_area_start  -->
+    
     <div class="reson_area section_padding">
-        <div class="container">
+        < class="container">
+        
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                     <div class="section_title text-center mb-55">
@@ -34,6 +36,10 @@
                     </div>
                 </div>
             </div>
+
+
+
+
             <div class="row justify-content-center">
                 <div class="col-lg-4 col-md-6">
                     <div class="single_reson">
@@ -528,7 +534,6 @@
       <form  action="{{route('user.login')}}" method="post"enctype="multipart/form-data">
         @csrf
 
-     
   <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
     <input name="email"type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">

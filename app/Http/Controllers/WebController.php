@@ -54,7 +54,7 @@ class WebController extends Controller
   {
       auth()->logout();
       notify()->success('logout success');
-      return redirect()->back();
+      return redirect()->route('webpage');
   }
      
     

@@ -55,5 +55,5 @@ Route::get('/dashboard',[HomeController::class,'dashboard'])->name('dashboard');
 });
 Route::get('/',[WebController::class,'home'])->name('webpage');
 Route::post('/registration',[WebController::class,'registration'])->name('registration');
-Route::post('/login',[WebController::class,'login'])->name('user.login');
-Route::get('/logout', [WebController::class, 'logout'])->name('user.logout');
+Route::post('/user/login',[WebController::class,'login'])->name('user.login');
+Route::get('/user/logout', [WebController::class, 'logout'])->name('user.logout');

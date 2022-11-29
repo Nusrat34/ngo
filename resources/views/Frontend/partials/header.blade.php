@@ -48,6 +48,12 @@
                                     <ul id="navigation">
                                         <li><a href="index.html">home</a></li>
                                         @auth
+                                        
+                           <li >
+                                    <a href="#" data-toggle="modal" data-target="#login">{{auth()->user()->name}}'s</a>
+                                 
+                            
+                                </li>
                                         <li><a href="{{route('user.logout')}}">logout</a></li>
                                         @else
                                         <li><a href="About.html"data-toggle="modal" data-target="#Registration">Registration</a></li>
