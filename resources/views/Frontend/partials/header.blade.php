@@ -59,24 +59,19 @@
                                         <li><a href="About.html"data-toggle="modal" data-target="#Registration">Registration</a></li>
                                         <li><a href="About.html"data-toggle="modal" data-target="#login">login</a><li>
                                             @endauth
-                                        <li><a href="#">blog <i class="ti-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="blog.html">blog</a></li>
-                                                <li><a href="single-blog.html">single-blog</a></li>
-                                            </ul>
+                                        <li><a href="{{route('member.list')}}">memberlist <i class="ti-angle-down"></i></a>
+                                            
                                         </li>
-                                        <li><a href="#">pages <i class="ti-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="elements.html">elements</a></li>
-                                                <li><a href="Cause.html">Cause</a></li>
-                                            </ul>
+
+                                        <li><a href="{{route('donation.list')}}">donationlist <i class="ti-angle-down"></i></a>
+                                            
                                         </li>
                                         <li><a href="contact.html">Contact</a></li>
                                     </ul>
                                 </nav>
                                 <div class="Appointment">
                                     <div class="book_btn d-none d-lg-block">
-                                        <a data-scroll-nav='1' href="#">Make a Donate</a>
+                                        <a data-scroll-nav='1' href="#">Donar</a>
                                     </div>
                                 </div>
                             </div>

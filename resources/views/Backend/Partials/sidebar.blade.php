@@ -15,11 +15,7 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     scholarship
                 </a>
-                <a class="nav-link" href="{{ url('donor')}}">
-                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                    donor
-                </a>
-                <a class="nav-link" href="{{ url('donation')}}">
+                <a class="nav-link" href="{{route('donation')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     donation
                 </a>
@@ -27,11 +23,20 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     loan
                 
+                </a>
+                <a class="nav-link" href="{{route('request.list')}}">
+                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                    student donation list
+                
                 
                 </a>
                 <a class="nav-link" href="{{route('member')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     member
+                </a>
+                <a class="nav-link" href="{{route('donor')}}">
+                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                    donor
                 
                 </a>
                 </a>

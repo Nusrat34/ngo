@@ -8,12 +8,13 @@ use Illuminate\Http\Request;
 class MemberController extends Controller
 {
     public function member(){
+        $mem=Member::all();
 
 
 
         
         
-        return view ('backend.pages.members.member');
+        return view ('backend.pages.members.member',compact('mem'));
     }
 
     public function memberform(){
@@ -25,10 +26,11 @@ class MemberController extends Controller
         //        dd($request->all());
                 Member::create([
                     //database column name => input field name
-                        'notice_name'=>$request->notice_name ,
-                        'status'=>$request->status,
-                        'published_date'=>$request->published_date,
-                        'description'=>$request->description,
+                        'member_name'=>$request->member_name ,
+                        'email_name'=>$request->email_name,
+                        'password'=>$request->password,
+                        'phone_number'=>$request->phone_number,
+                        'address'=>$request->address,
         
                 ]);
         
@@ -38,6 +40,13 @@ class MemberController extends Controller
             }
             
 
+
+            public function memberlist(){
+                $mem=Member::all();
+                
+                return view ('Frontend.pages.member.memberlist',compact('mem'));
+
+            }
 
 }
 

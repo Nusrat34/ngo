@@ -1,11 +1,7 @@
-@extends('backend.master')
+@extends('Frontend.master')
 @section('content')
-
-<h1>member list</h1>
-<a href="{{route('member.memberform')}}" class="btn btn-success">
-create new user
-</a>
-  <table class="table">
+<div style="margin:50px 50px 0px  50px ;">
+<table class="table">
     <thead class="thead-dark">
    
     <tr>
@@ -14,7 +10,8 @@ create new user
         <th scope="col">Email</th>
         <th scope="col">Phone_number</th>
         <th scope="col">Address</th>
-        <th scope="col">Action</th>
+        <th scope="col">Status</th>
+        
     </tr>
     </thead>
     <tbody>
@@ -25,12 +22,8 @@ create new user
         <td>{{$data->email_name}}</td>
         <td>{{$data->phone_number}}</td>
         <td>{{$data->address}}</td>
+        <td>{{$data->status}}</td>
 
-        <td>
-                <a href="" class="btn btn-primary">Update</a>
-                <a href="" class="btn btn-danger">Delete</a>
-                <a href="" class="btn btn-success">View</a>
-            </td>
         
 
         
@@ -39,4 +32,6 @@ create new user
     
     </tbody>
 </table>
-@endsection()
+</div>
+
+@endsection

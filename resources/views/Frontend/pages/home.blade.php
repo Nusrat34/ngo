@@ -27,34 +27,24 @@
     <!-- reson_area_start  -->
     
     <div class="reson_area section_padding">
-        < class="container">
         
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                     <div class="section_title text-center mb-55">
-                        <h3><span>Reason of Helping</span></h3>
+                
                     </div>
                 </div>
             </div>
-
-
-
 
             <div class="row justify-content-center">
                 <div class="col-lg-4 col-md-6">
                     <div class="single_reson">
                         <div class="thum">
                             <div class="thum_1">
-                                <img src="{{url('/Frontend/img/help/1.png')}}" alt="">
+                                <img src="img/help/1.png'" alt="">
                             </div>
                         </div>
-                        <div class="help_content">
-                            <h4>Collecting Fund</h4>
-                            <p>Lorem ipsum, or lipsum as it is 
-                                sometimes known, is dummy 
-                                text used in laying out print.</p>
-                            <a href="#" class="read_more">Read More</a>
-                        </div>
+                        
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
@@ -117,7 +107,7 @@
                             enim minim veniam, quis nostrud exercitation. tempor 
                             incididunt  ut labore dolore magna aliqua. enim minim 
                             veniam, quis nostrud exercitation.</p>
-                        <a href="#" data-scroll-nav='1' class="boxed-btn4">Donate Now</a>
+                        <a href="{{route('student.list')}}" class="boxed-btn4">student donation request</a>
                     </div>
                 </div>
             </div>
@@ -306,10 +296,73 @@
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                     <div class="section_title text-center mb-55">
-                        <h3><span>Our Volunteer</span></h3>
+                        <h3><span>Apply for donation</span></h3>
+                        <div class="d-flex justify-content-center">
+                        <button class="btn btn-primary"type="submit"data-toggle="modal" data-target="#Donation">Donation</button>
+                    </div>
+
                     </div>
                 </div>
             </div>
+            
+<!-- Donation now -->
+
+<!-- Modal -->
+
+<div style="z-index:10000000" class="modal fade" id="Donation" tabindex="-1" role="dialog" aria-labelledby="donation" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <form action="{{route('apply.donation')}}"method='post'>
+        @csrf
+       <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Apply for donation</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <div class="form-group">
+            <label for="name"> Name</label>
+            <input name="name" type="text" class="form-control" id="name" placeholder="Name">
+        </div>
+        <div class="form-group">
+            <label for="name">Email</label>
+            <input name="email"type="text" class="form-control" id="name"placeholder="Email Name">
+        </div>
+
+        <div class="form-group">
+            <label for="name">Phone Number</label>
+            <input name="phone_number" type="number" class="form-control" id="name"placeholder="Phone Number">
+        </div>
+        <div class="form-group">
+            <label for="name">Address</label>
+            <input name="address" type="text" class="form-control" id="name"placeholder="Address">
+        </div>
+        <div class="form-group">
+            <label for="name">Amount</label>
+            <input name="amount" type="number" class="form-control" id="name"placeholder="Amount">
+        </div>
+        <div class="form-group">
+            <label for="name">Cause for donation</label>
+            <input name="cause" type="text" class="form-control" id="name"placeholder="Cause">
+        </div>
+        <div class="form-group">
+            <label for="">Status</label>
+            <select name="status" id="name" class="form-control">
+                <option value="approve">approve</option>
+                <option value="pending">pending</option>
+                <option value="cancel">cancel</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+    </div>
+  </div>
+</div>
+
+
+
             <div class="row justify-content-center">
                 <div class="col-lg-4 col-md-6">
                     <div class="single_volenteer">
@@ -404,57 +457,7 @@
     <!-- our_volunteer_area_end  -->
 
     <!-- news__area_start  -->
-    <div class="news__area section_padding">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <div class="section_title text-center mb-55">
-                        <h3><span>News & Updates</span></h3>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="news_active owl-carousel">
-                        <div class="single__blog d-flex align-items-center">
-                            <div class="thum">
-                                <img src="img/news/1.png" alt="">
-                            </div>
-                            <div class="newsinfo">
-                                <span>July 18, 2019</span>
-                                <a href="single-blog.html">
-                                    <h3>Pure Water Is More 
-                                        Essential</h3>
-                                </a>
-                                <p>The passage experienced a 
-                                    surge in popularity during the 
-                                    1960s when used it on their  
-                                    sheets, and again.</p>
-                                <a class="read_more" href="single-blog.html">Read More</a>
-                            </div>
-                        </div>
-                        <div class="single__blog d-flex align-items-center">
-                            <div class="thum">
-                                <img src="img/news/2.png" alt="">
-                            </div>
-                            <div class="newsinfo">
-                                <span>July 18, 2019</span>
-                                <a href="single-blog.html">
-                                    <h3>Pure Water Is More 
-                                        Essential</h3>
-                                </a>
-                                <p>The passage experienced a 
-                                    surge in popularity during the 
-                                    1960s when used it on their  
-                                    sheets, and again.</p>
-                                <a class="read_more" href="single-blog.html">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    
     <!-- news__area_end  -->
 
     <div data-scroll-index='1' class="make_donation_area section_padding">
@@ -462,62 +465,20 @@
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                     <div class="section_title text-center mb-55">
-                        <h3><span>Make a Donation</span></h3>
+                        <h3><span>barishal</span></h3>
                     </div>
                 </div>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <form action="#" class="donation_form">
-                        <div class="row align-items-center">
-                            <div class="col-md-4">
-                                <div class="single_amount">
-                                    <div class="input_field">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                              <span class="input-group-text" id="basic-addon1">$</span>
-                                            </div>
-                                            <input type="text" class="form-control" placeholder="40,200" aria-label="Username" aria-describedby="basic-addon1">
-                                          </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-8">
-                                <div class="single_amount">
-                                   <div class="fixed_donat d-flex align-items-center justify-content-between">
-                                       <div class="select_prise">
-                                           <h4>Select Amount:</h4>
-                                       </div>
-                                        <div class="single_doonate"> 
-                                            <input type="radio" id="blns_1" name="radio-group" checked>
-                                            <label for="blns_1">10</label>
-                                        </div>
-                                        <div class="single_doonate"> 
-                                            <input type="radio" id="blns_2" name="radio-group" checked>
-                                            <label for="blns_2">30</label>
-                                        </div>
-                                        <div class="single_doonate"> 
-                                            <input type="radio" id="Other" name="radio-group" checked>
-                                            <label for="Other">Other</label>
-                                        </div>
-                                   </div>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="donate_now_btn text-center">
-                        <a href="#" class="boxed-btn4">Donate Now</a>
+                
+                    <div class="d-flex justify-content-center">
+                        <button class="btn btn-primary"type="submit"data-toggle="modal" data-target="#donatenow">Donate Now</button>
                     </div>
-                </div>
+                
 
             </div>
         </div>
     </div>
-    {{-- Modal --}}
+    {{-- Modallogin --}}
 <div style="z-index: 10000000" class="modal fade" id="login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -550,9 +511,67 @@
     </div>
   </div>
 </div>
+
+<!-- Donate now -->
+
+<!-- Modal -->
+
+<div style="z-index:10000000" class="modal fade" id="donatenow" tabindex="-1" role="dialog" aria-labelledby="donate" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <form action="{{route('user.store')}}" method='post'>
+        @csrf
+       <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">please Donate</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <div class="form-group">
+            <label for="name"> Name</label>
+            <input name="name" type="text" class="form-control" id="name" placeholder="Name">
+        </div>
+        <div class="form-group">
+            <label for="name">Email</label>
+            <input name="email"type="text" class="form-control" id="name"placeholder="Email Name">
+        </div>
+
+
+        <div class="form-group">
+            <label for="name">Phone Number</label>
+            <input name="phone_number" type="number" class="form-control" id="name"placeholder="Phone Number">
+        </div>
+        <div class="form-group">
+            <label for="name">Password</label>
+            <input name="password" type="text" class="form-control" id="name"placeholder="password">
+        </div>
+        <div>
+            <label for="">occupation</label>
+         <select class="form-select" aria-label="Default select example" name="occupation">
+           <option selected>seclect</option>
+            <option value="teacher">teacher</option>
+           <option value="businessman">businessman</option>
+            <option value="Housewife">Housewife</option>
+          </select>
+         </div>
+        <div class="form-group">
+            <label for="name">Address</label>
+            <input name="address" type="text" class="form-control" id="name"placeholder="Address">
+        </div>
+        <div class="form-group">
+            <label for="name">Amount</label>
+            <input name="amount" type="number" class="form-control" id="name"placeholder="amount">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+    </div>
+  </div>
+</div>
    
 
-{{-- Modal --}}
+{{-- Modal registration --}}
 <div style="z-index: 10000000" class="modal fade" id="Registration" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -563,12 +582,8 @@
         </button>
       </div>
       <div class="modal-body">
-        
-
-
       <form  action="{{('registration')}}" method="post"enctype="multipart/form-data">
         @csrf
-
      <div class="form-group">
     <label for="exampleInputEmail1">Name</label>
     <input name="student_name"type="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your Name">
@@ -583,7 +598,6 @@
     <label for="exampleInputPassword1">Password</label>
     <input name="student_password"type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
   </div>
-   
   <button type="submit" class="btn btn-primary">signup</button>
 </form>
       </div>
