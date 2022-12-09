@@ -22,16 +22,17 @@
     <th scope="row">{{$data->id}}</th>
         <td>{{$data->title}}</td>
         <td>{{$data->address}}</td>
+        <td>{{$data->amount}}</td>
         <td>{{$data->institute}}</td>
         <td>{{$data->cause}}</td>
-        <td>{{$data->amount}}</td>
         <td>{{$data->status}}</td>
+        
 
 
         <td>
-                <a href="" class="btn btn-primary">Update</a>
-                <a href="" class="btn btn-danger">Delete</a>
-                <a href="" class="btn btn-success">View</a>
+        @if($data->status != 'approved')
+                <a href="{{route('approve.studentd',$data->id)}}" class="btn btn-primary">approve</a>
+                @endif
             </td>
         
 

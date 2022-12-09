@@ -20,7 +20,11 @@ return new class extends Migration
             $table->string(column:'password',length:100);
             $table->string(column:'phone_number',length:100);
             $table->text(column:'address',);
-            $table->text(column:'occupation',);
+            $table->text(column:'occupation');
+            $table->text(column:'amount');
+            $table->text(column:'from_account');
+            $table->text(column:'to_account');
+            $table->text(column:'status')->default('pending');
             $table->timestamps();
         });
     }

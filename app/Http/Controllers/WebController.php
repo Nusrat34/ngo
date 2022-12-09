@@ -18,7 +18,7 @@ class WebController extends Controller
         'name'=>$request->student_name,
         'email'=>$request->student_email,
         'password'=>bcrypt($request->student_password),
-        'role'=>'student'
+        'role'=>$request->role,
   
 
 

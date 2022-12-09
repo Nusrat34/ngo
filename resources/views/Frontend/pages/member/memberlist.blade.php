@@ -1,6 +1,6 @@
 @extends('Frontend.master')
 @section('content')
-<div style="margin:50px 50px 0px  50px ;">
+<div style="margin:70px 50px 0px  50px ;">
 <table class="table">
     <thead class="thead-dark">
    

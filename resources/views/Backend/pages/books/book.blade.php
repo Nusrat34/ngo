@@ -21,7 +21,7 @@ Create New User
         <th scope="col">id</th>
         <th scope="col">book_name</th>
         <th scope="col">writter_name</th>
-        <th scope="col">catagory</th>
+        <th scope="col">category</th>
         <th scope="col">image</th>
         <th scope="col">action</th>
     </tr>
@@ -33,7 +33,7 @@ Create New User
     <th scope="row">{{$data->id}}
         <td>{{$data->book_name}}</td>
         <td>{{$data->writter_name}}</td>
-        <td>{{$data->catagory}}</td>
+        <td>{{$data->category}}</td>
         <td>
                 
                 <img width ="50px style="border- radius: 15px; src="{{url('/uploads/'.$data->image)}}" alt="book_image">

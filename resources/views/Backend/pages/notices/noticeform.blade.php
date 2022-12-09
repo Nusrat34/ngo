@@ -19,14 +19,12 @@
         
         <div class="form-group">
             <label for="name">published_Date</label>
-            <input name="published_date" type="text" class="form-control" id="name" placeholder="published_date">
-            
+            <input name="published_date" type="date" class="form-control" id="name" placeholder="published_date">
         </div>
         <div class="form-group">
             <label for="name">Description</label>
             <textarea class="form-control" name="description" id=""></textarea>
         </div>
-
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 

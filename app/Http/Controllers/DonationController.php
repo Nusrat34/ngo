@@ -26,7 +26,7 @@ class DonationController extends Controller
                     'address'=>$request->address,
                     'amount'=>$request->amount,
                     'cause'=>$request->cause,
-                    'status'=>$request->status,
+                    
             ]);
     
             return redirect()->route('webpage');

@@ -20,7 +20,6 @@ class StudentDonationController extends Controller
                     'amount'=>$request->amount,
                     'institute'=>$request->institute,
                     'address'=>$request->address,
-                    'status'=>$request->status,
                     'cause'=>$request->cause,
             ]);
     
@@ -31,4 +30,14 @@ class StudentDonationController extends Controller
             $stu=Student_donation::all();
             return view('backend.pages.students.studentlist',compact('stu'));
         }
+
+
+        public function studentdonation($student_id){
+            $student=Student_donation::find($student_id)->update ([
+                'status'=>'approved'
+            ]);
+
+            return back();
+        }
+        
 }

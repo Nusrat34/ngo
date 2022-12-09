@@ -13,16 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('donations', function (Blueprint $table) {
+        Schema::create('transcations', function (Blueprint $table) {
             $table->id();
-            $table->string(column:'name',length:100);
-            $table->string(column:'email',length:50);
-            $table->string(column:'phone_number',length:100);
-            $table->text(column:'address');
-            $table->text(column:'amount');
-            $table->text(column:'cause');
+            $table->string(column:'trax_head',length:100);
+            $table->string(column:'in',length:50);
+            $table->string(column:'out',length:100);
             
-
             $table->timestamps();
         });
     }
@@ -34,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('donations');
+        Schema::dropIfExists('transcations');
     }
 };

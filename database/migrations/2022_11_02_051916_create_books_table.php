@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string(column:'book_name',length:100);
             $table->string(column:'writter_name',length:100);
-            $table->string(column:'catagory',length:100);
+            $table->string(column:'category',length:100);
             $table->string('image')->nullable();
             $table->timestamps();
         });

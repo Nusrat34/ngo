@@ -11,6 +11,10 @@
         <th scope="col">phone_number</th>
         <th scope="col">Address</th>
         <th scope="col">occupation</th>
+        <th scope="col">Amount</th>
+        <th scope="col">From__account</th>
+        <th scope="col">To_account</th>
+        <th scope="col">Status</th>
         <th scope="col">Action</th>
     </tr>
     </thead>
@@ -23,12 +27,16 @@
         <td>{{$data->phone_number}}</td>
         <td>{{$data->address}}</td>
         <td>{{$data->occupation}}</td>
+        <td>{{$data->amount}}</td>
+        <td>{{$data->from_account}}</td>
+        <td>{{$data->to_account}}</td>
+        <td>{{$data->status}}</td>
 
 
         <td>
-                <a href="" class="btn btn-primary">Update</a>
-                <a href="" class="btn btn-danger">Delete</a>
-                <a href="" class="btn btn-success">View</a>
+        @if($data->status != 'approved')
+                <a href="{{route('donor.approve',$data->id)}}" class="btn btn-primary">approve</a>
+            @endif
             </td>
     </tr>
     @endforeach

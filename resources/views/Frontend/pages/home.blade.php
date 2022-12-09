@@ -87,7 +87,7 @@
     <!-- latest_activites_area_start  -->
     <div class="latest_activites_area">
         <div class=" video_bg_1 video_activite  d-flex align-items-center justify-content-center">
-            <a class="popup-video" href="https://www.youtube.com/watch?v=MG3jGHnBVQs">
+            <a class="">
                 <i class="flaticon-ui"></i>
             </a>
         </div>
@@ -96,8 +96,12 @@
                 <div class="col-lg-7">
                     <div class="activites_info">
                         <div class="section_title">
-                            <h3> <span>Watch Our Latest  </span><br>
-                                Activities</h3>
+                            <h3> apply for loan  </span><br>
+                                </h3>
+                                <a href="{{route('loan.form')}}" class="boxed-btn4">loan</a>
+                                <div class="d-flex justify-content-center">
+                        
+                        </div>
                         </div>
                         <p class="para_1">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do 
                             eiusmod tempor incididunt  ut labore dolore magna aliqua. 
@@ -107,7 +111,10 @@
                             enim minim veniam, quis nostrud exercitation. tempor 
                             incididunt  ut labore dolore magna aliqua. enim minim 
                             veniam, quis nostrud exercitation.</p>
+                            
                         <a href="{{route('student.list')}}" class="boxed-btn4">student donation request</a>
+                        
+                        
                     </div>
                 </div>
             </div>
@@ -115,179 +122,34 @@
     </div>
     <!-- latest_activites_area_end  -->
 
+                       
+
     <!-- popular_causes_area_start  -->
     <div class="popular_causes_area section_padding">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                     <div class="section_title text-center mb-55">
-                        <h3><span>Popular Causes</span></h3>
+                        <h3><span>Scholarship area</span></h3>
+                        <a href="{{route('s.apply')}}" class="boxed-btn4">applyscholarship</a>
+                        
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="causes_active owl-carousel">
-                        <div class="single_cause">
-                            <div class="thumb">
-                                <img src="img/causes/1.png" alt="">
-                            </div>
-                            <div class="causes_content">
-                                <div class="custom_progress_bar">
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" style="width: 30%;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
-                                            <span class="progres_count">
-                                                30%
-                                            </span>
-                                        </div>
-                                      </div>
-                                </div>
-                                <div class="balance d-flex justify-content-between align-items-center">
-                                    <span>Raised: $5000.00 </span>
-                                    <span>Goal: $9000.00 </span>
-                                </div>
-                                <h4>Help us to Send Food</h4>
-                                <p>The passage is attributed to an 
-                                    unknown typesetter in the century 
-                                    who is thought</p>
-                                <a class="read_more" href="cause_details.html">Read More</a>
-                            </div>
-                        </div>
-                        <div class="single_cause">
-                            <div class="thumb">
-                                <img src="img/causes/2.png" alt="">
-                            </div>
-                            <div class="causes_content">
-                                <div class="custom_progress_bar">
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" style="width: 30%;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
-                                            <span class="progres_count">
-                                                30%
-                                            </span>
-                                        </div>
-                                      </div>
-                                </div>
-                                <div class="balance d-flex justify-content-between align-items-center">
-                                    <span>Raised: $5000.00 </span>
-                                    <span>Goal: $9000.00 </span>
-                                </div>
-                                <h4>Clothes For Everyone</h4>
-                                <p>The passage is attributed to an 
-                                    unknown typesetter in the century 
-                                    who is thought</p>
-                                <a class="read_more" href="cause_details.html">Read More</a>
-                            </div>
-                        </div>
-                        <div class="single_cause">
-                            <div class="thumb">
-                                <img src="img/causes/3.png" alt="">
-                            </div>
-                            <div class="causes_content">
-                                <div class="custom_progress_bar">
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" style="width: 30%;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
-                                            <span class="progres_count">
-                                                30%
-                                            </span>
-                                        </div>
-                                      </div>
-                                </div>
-                                <div class="balance d-flex justify-content-between align-items-center">
-                                    <span>Raised: $5000.00 </span>
-                                    <span>Goal: $9000.00 </span>
-                                </div>
-                                <h4>Water For All Children</h4>
-                                <p>The passage is attributed to an 
-                                    unknown typesetter in the century 
-                                    who is thought</p>
-                                <a class="read_more" href="cause_details.html">Read More</a>
-                            </div>
-                        </div>
-                        <div class="single_cause">
-                            <div class="thumb">
-                                <img src="img/causes/1.png" alt="">
-                            </div>
-                            <div class="causes_content">
-                                <div class="custom_progress_bar">
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" style="width: 30%;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
-                                            <span class="progres_count">
-                                                30%
-                                            </span>
-                                        </div>
-                                      </div>
-                                </div>
-                                <div class="balance d-flex justify-content-between align-items-center">
-                                    <span>Raised: $5000.00 </span>
-                                    <span>Goal: $9000.00 </span>
-                                </div>
-                                <h4>Help us to Send Food</h4>
-                                <p>The passage is attributed to an 
-                                    unknown typesetter in the century 
-                                    who is thought</p>
-                                <a class="read_more" href="cause_details.html">Read More</a>
-                            </div>
+                    
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+  
     <!-- popular_causes_area_end  -->
 
     <!-- counter_area_start  -->
-    <div class="counter_area">
-        <div class="container">
-            <div class="counter_bg overlay">
-                <div class="row">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="single_counter d-flex align-items-center justify-content-center">
-                            <div class="icon">
-                                <i class="flaticon-calendar"></i>
-                            </div>
-                            <div class="events">
-                                <h3 class="counter">120</h3>
-                                <p>Finished Event</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="single_counter d-flex align-items-center justify-content-center">
-                            <div class="icon">
-                                <i class="flaticon-heart-beat"></i>
-                            </div>
-                            <div class="events">
-                                <h3 class="counter">120</h3>
-                                <p>Finished Event</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="single_counter d-flex align-items-center justify-content-center">
-                            <div class="icon">
-                                <i class="flaticon-in-love"></i>
-                            </div>
-                            <div class="events">
-                                <h3 class="counter">120</h3>
-                                <p>Finished Event</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="single_counter d-flex align-items-center justify-content-center">
-                            <div class="icon">
-                                <i class="flaticon-hug"></i>
-                            </div>
-                            <div class="events">
-                                <h3 class="counter">120</h3>
-                                <p>Finished Event</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    
     <!-- counter_area_end  -->
 
     <!-- our_volunteer_area_start  -->
@@ -346,14 +208,6 @@
             <label for="name">Cause for donation</label>
             <input name="cause" type="text" class="form-control" id="name"placeholder="Cause">
         </div>
-        <div class="form-group">
-            <label for="">Status</label>
-            <select name="status" id="name" class="form-control">
-                <option value="approve">approve</option>
-                <option value="pending">pending</option>
-                <option value="cancel">cancel</option>
-            </select>
-        </div>
         <button type="submit" class="btn btn-primary">Submit</button>
         </div>
     </form>
@@ -361,8 +215,9 @@
   </div>
 </div>
 
-
-
+<div>
+    <div>
+        <div>
             <div class="row justify-content-center">
                 <div class="col-lg-4 col-md-6">
                     <div class="single_volenteer">
@@ -492,7 +347,7 @@
         
 
 
-      <form  action="{{route('user.login')}}" method="post"enctype="multipart/form-data">
+      <form  action="{{route('user.login')}}"method="post"enctype="multipart/form-data">
         @csrf
 
   <div class="form-group">
@@ -536,25 +391,21 @@
             <label for="name">Email</label>
             <input name="email"type="text" class="form-control" id="name"placeholder="Email Name">
         </div>
-
+        <div class="form-group">
+            <label for="name">Password</label>
+            <input name="password" type="text" class="form-control" id="name"placeholder="password">
+        </div>
 
         <div class="form-group">
             <label for="name">Phone Number</label>
             <input name="phone_number" type="number" class="form-control" id="name"placeholder="Phone Number">
         </div>
+        
         <div class="form-group">
-            <label for="name">Password</label>
-            <input name="password" type="text" class="form-control" id="name"placeholder="password">
+            <label for="name">Occupation</label>
+            <input name="occupation" type="text" class="form-control" id="occupation"placeholder="occupation">
         </div>
-        <div>
-            <label for="">occupation</label>
-         <select class="form-select" aria-label="Default select example" name="occupation">
-           <option selected>seclect</option>
-            <option value="teacher">teacher</option>
-           <option value="businessman">businessman</option>
-            <option value="Housewife">Housewife</option>
-          </select>
-         </div>
+        
         <div class="form-group">
             <label for="name">Address</label>
             <input name="address" type="text" class="form-control" id="name"placeholder="Address">
@@ -562,6 +413,25 @@
         <div class="form-group">
             <label for="name">Amount</label>
             <input name="amount" type="number" class="form-control" id="name"placeholder="amount">
+        </div>
+        <div class="form-group">
+            <label for="name">Transaction_ID</label>
+            <input name="transaction" type="number" class="form-control" id="transaction"placeholder="transaction">
+        </div>
+        
+        <div class="form-group">
+            <label for="name">From__account</label>
+            <input name="from_account" type="number" class="form-control" id="from_account"placeholder="from_account">
+        </div>
+        
+        <div class="form-group">
+            <label for="">To_account</label>
+            <select name="to_account" id="to_account" class="form-control">
+                <option value="bkash">bkash</option>
+                <option value="rocket">rocket</option>
+                <option value="m_cash">m_cash</option>
+                <option value="sure_cash">sure_cash</option>
+            </select>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
         </div>
@@ -582,7 +452,7 @@
         </button>
       </div>
       <div class="modal-body">
-      <form  action="{{('registration')}}" method="post"enctype="multipart/form-data">
+      <form  action="{{('registration')}}"method="post"enctype="multipart/form-data">
         @csrf
      <div class="form-group">
     <label for="exampleInputEmail1">Name</label>
@@ -594,6 +464,13 @@
     <input name="student_email"type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
   </div>
+  <div class="form-group">
+            <label for="">Role</label>
+            <select name="role" id="Role" class="form-control">
+                <option value="donor">donor</option>
+                <option value="student">student</option>
+            </select>
+        </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Password</label>
     <input name="student_password"type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">

@@ -43,7 +43,7 @@ class BookController extends Controller
             //database column name => input field name
                 'book_name'=>$request->Book_name,
                 'writter_name'=>$request->Writter_name,
-                'catagory'=>$request->Catagory_name,
+                'category'=>$request->category,
                 'image'=>$fileName,
                 
                 
@@ -116,7 +116,7 @@ class BookController extends Controller
 
      }
      
-       
+         
     
     }
 

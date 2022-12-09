@@ -25,6 +25,9 @@ class DonourController extends Controller
                 'phone_number'=>$request->phone_number,
                 'address'=>$request->address,
                 'occupation'=>$request->occupation,
+                'amount'=>$request->amount,
+                'from_account'=>$request->from_account,
+                'to_account'=>$request->to_account,
         ]);
 
         return redirect()->route('webpage');

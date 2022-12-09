@@ -1,12 +1,8 @@
-@extends('backend.master')
-
+@extends('Frontend.master')
 @section('content')
+<div style="margin:70px ;">
 <h1>Notice list</h1>
-<a href="{{route('notice.noticeform')}}" class="btn btn-success">
-    create new notice
-    
-</a>
- 
+
 <table class="table">
     <thead class="thead-dark">
     <tr>
@@ -14,7 +10,7 @@
         <th scope="col">Notice_name</th>
         <th scope="col">Status</th>
         <th scope="col">published_Date</th>
-        <th scope="col">Action</th>
+        
         
 
 
@@ -42,8 +38,8 @@
     
     </tbody>
 </table>
+</div>
 
 
 
-
-@endsection()
+@endsection

@@ -10,7 +10,11 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\WebController;
 use App\Http\Controllers\DonorController;
 use App\Http\Controllers\Frontend\DonourController;
+use App\Http\Controllers\LoanController;
+use App\Http\Controllers\ScholarshipController;
 use App\Http\Controllers\StudentDonationController;
+use App\Http\Controllers\TranscationController;
+use App\Http\Controllers\Frontend\BController;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,10 +59,24 @@ Route::post('/member/memberform',[MemberController::class,'store'])->name('membe
 Route::get('/donor',[DonorController::class,'donor'])->name('donor');
 Route::get('/donor/donorform',[DonorController::class,'donorform'])->name('donor.donorform');
 Route::post('/donor/donorform',[DonorController::class,'store'])->name('donor.donorform.store');
+// donor approve//
+Route::get('/donor/approve/{donor_id}',[DonorController::class,'donorapprove'])->name('donor.approve');
 
 Route::get('/donation',[DonationController::class,'list'])->name('donation');
+//student donationapply//
 Route::get('/student_request',[StudentDonationController::class,'requestlist'])->name('request.list');
+//student donation approve//
+Route::get('/student/approve/{student_id}',[StudentDonationController::class,'studentdonation'])->name('approve.studentd');
+//scholarship//
+Route::get('/scholarship',[ScholarshipController::class,'scholarshiplist'])->name('scholarship.list');
+//scholarship aprove//
+Route::get('/scholarship/update/{id}',[ScholarshipController::class,'scholarupdate'])->name('scholarship.update');
+Route::get('/transaction',[TranscationController::class,'transaction'])->name('transaction.list');
+Route::get('/transaction/show',[TranscationController::class,'transaction_show'])->name('transaction.show');
+Route::post('/transaction/store',[TranscationController::class,'t_store'])->name('transaction.store');
 
+
+Route::get('/loan',[LoanController::class,'loanlist'])->name('loan.list');
 
 Route ::get('/notice',[NoticeController::class,'notice']) ->name('notice');
 Route ::get('/notice/noticeform',[NoticeController::class,'noticeform']) ->name('notice.noticeform');
@@ -82,3 +100,12 @@ Route::get('/memberlist/form',[MemberController::class,'memberlist'])->name('mem
 
 Route::get('/studentdonation/form',[StudentDonationController::class,'studentlist'])->name('student.list');
 Route::post('/applydonation/form',[StudentDonationController::class,'sdonation'])->name('sdonation.list');
+
+Route::get('/sapply/form',[ScholarshipController::class,'s_apply'])->name('s.apply');
+Route::post('/applyscholarship/form',[ScholarshipController::class,'scholarship'])->name('scholarship.form');
+Route::get('/scholarship/show',[ScholarshipController::class,'scholarshipshow'])->name('scholarship.show');
+Route::get('/notice/show',[NoticeController::class,'noticeshow'])->name('notice.list');
+//loan apply
+Route::get('/loanform',[LoanController::class,'loan_form'])->name('loan.form');
+Route::post('/loan/apply',[LoanController::class,'loan_store'])->name('loan.store');
+Route::get('/book/form',[BController::class,'book_form'])->name('book.apply');

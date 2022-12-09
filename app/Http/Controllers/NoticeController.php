@@ -39,12 +39,17 @@ class NoticeController extends Controller
                 return redirect()->back();
         
             }
+
+
             
+           public function noticeshow (){
+             
+            $not=Notice::all();
+
+           return view('Frontend.pages.notice.noticelist',compact('not'));
 
 
-
-
-
+           }
 
 
 

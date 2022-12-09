@@ -1,7 +1,7 @@
 @extends('Frontend.master')
 @section('content')
 <div style="margin:50px">
-<h1>student request</h1>
+<h1>student donation request</h1>
 <form action="{{route('sdonation.list')}}"method="post">
     @csrf
          
@@ -26,14 +26,6 @@
         <div class="form-group">
             <label for="name">Cause for donation</label>
             <input name="cause" type="text" class="form-control" id="cause"placeholder="cause">
-        </div>
-        <div class="form-group">
-            <label for="">Status</label>
-            <select name="status" id="name" class="form-control">
-                <option value="approve">approve</option>
-                <option value="pending">pending</option>
-                <option value="cancel">cancel</option>
-            </select>
         </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>

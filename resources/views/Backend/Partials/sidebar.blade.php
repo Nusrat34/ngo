@@ -11,17 +11,22 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     book
                 </a>
-                <a class="nav-link" href="{{ url('scholarship')}}">
+                <a class="nav-link" href="{{route('scholarship.list')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                    scholarship
+                    scholarshiplist
                 </a>
                 <a class="nav-link" href="{{route('donation')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     donation
                 </a>
-                <a class="nav-link" href="{{ url('loan')}}">
+                <a class="nav-link" href="{{route('transaction.list')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                    loan
+                    transaction
+                
+                </a>
+                <a class="nav-link" href="{{route('loan.list')}}">
+                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                loan
                 
                 </a>
                 <a class="nav-link" href="{{route('request.list')}}">

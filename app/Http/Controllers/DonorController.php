@@ -16,7 +16,14 @@ class DonorController extends Controller
 
 
     
-    
+    public function donorapprove($donor_id){
+
+        $donor=Donor::find($donor_id)->update([
+            'status'=>'approved'
+        ]);
+        
+        return back();
+    }
         
 
         

@@ -50,7 +50,7 @@
                                         @auth
                                         
                            <li >
-                                    <a href="#" data-toggle="modal" data-target="#login">{{auth()->user()->name}}'s</a>
+                                    <a href="#" data-toggle="modal" data-target="#login">{{auth()->user()->name}}</a>
                                  
                             
                                 </li>
@@ -59,11 +59,21 @@
                                         <li><a href="About.html"data-toggle="modal" data-target="#Registration">Registration</a></li>
                                         <li><a href="About.html"data-toggle="modal" data-target="#login">login</a><li>
                                             @endauth
-                                        <li><a href="{{route('member.list')}}">memberlist <i class="ti-angle-down"></i></a>
+                                        <li><a href="{{route('member.list')}}">memberlist</a>
                                             
                                         </li>
 
-                                        <li><a href="{{route('donation.list')}}">donationlist <i class="ti-angle-down"></i></a>
+                                        <li><a href="{{route('donation.list')}}">donationlist</a>
+                                            
+                                        </li>
+                                        <li><a href="{{route('notice.list')}}">noticelist</a>
+                                            
+                                        </li>
+                                        <li><a href="{{route('scholarship.show')}}">scholarshiplist</a>
+                                            
+                                        </li>
+                                        </li>
+                                        <li><a href="{{route('book.apply')}}">applybook</a>
                                             
                                         </li>
                                         <li><a href="contact.html">Contact</a></li>
