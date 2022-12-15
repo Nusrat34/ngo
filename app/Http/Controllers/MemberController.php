@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class MemberController extends Controller
 {
     public function member(){
-        $mem=Member::all();
+        $mem=Member::paginate(3);
 
 
 
@@ -42,7 +42,7 @@ class MemberController extends Controller
 
 
             public function memberlist(){
-                $mem=Member::all();
+                $mem=Member::paginate(3);
                 
                 return view ('Frontend.pages.member.memberlist',compact('mem'));
 

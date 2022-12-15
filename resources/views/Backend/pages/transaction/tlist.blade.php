@@ -39,4 +39,5 @@ create new transaction
     
     </tbody>
 </table>
-@endsection()
+{{$tran->links()}}
+@endsection

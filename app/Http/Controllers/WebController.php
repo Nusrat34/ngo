@@ -56,6 +56,11 @@ class WebController extends Controller
       notify()->success('logout success');
       return redirect()->route('webpage');
   }
+
+  public function profile(){
+    return view('Frontend.pages.profile');
+
+  }
      
     
 }

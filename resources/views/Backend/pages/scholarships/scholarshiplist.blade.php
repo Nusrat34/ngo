@@ -16,6 +16,7 @@
         <th scope="col">cause</th>
         <th scope="col">From_date</th>
         <th scope="col">To_date</th>
+        <th scope="col">Account_number</th>
         <th scope="col">Status</th>
         <th scope="col">Action</th>
     </tr>
@@ -34,6 +35,7 @@
         <td>{{$data->cause}}</td>
         <td>{{$data->from_date}}</td>
         <td>{{$data->to_date}}</td>
+        <td>{{$data->account_number}}</td>
         <td>{{$data->status}}</td>
 
 
@@ -48,5 +50,6 @@
     @endforeach
     </tbody>
 </table>
+{{$scholar->links()}}
 
 @endsection

@@ -57,7 +57,7 @@
                                         <li><a href="{{route('user.logout')}}">logout</a></li>
                                         @else
                                         <li><a href="About.html"data-toggle="modal" data-target="#Registration">Registration</a></li>
-                                        <li><a href="About.html"data-toggle="modal" data-target="#login">login</a><li>
+                                        <li><a href="About.html"data-toggle="modal" data-target="#login">login</a>
                                             @endauth
                                         <li><a href="{{route('member.list')}}">memberlist</a>
                                             
@@ -69,14 +69,13 @@
                                         <li><a href="{{route('notice.list')}}">noticelist</a>
                                             
                                         </li>
-                                        <li><a href="{{route('scholarship.show')}}">scholarshiplist</a>
-                                            
+                                        <li><a href="{{route('scholarship.show')}}">scholarshiplist</a> 
                                         </li>
+                                        <li><a href="{{route('s.donation')}}">studentdonationlist</a> 
                                         </li>
-                                        <li><a href="{{route('book.apply')}}">applybook</a>
-                                            
-                                        </li>
-                                        <li><a href="contact.html">Contact</a></li>
+                                        
+                                        <li><a href="{{route('contact.us')}}">Contact</a></li>
+                                        <li><a href="{{route('profile.us')}}">profile</a></li>
                                     </ul>
                                 </nav>
                                 <div class="Appointment">

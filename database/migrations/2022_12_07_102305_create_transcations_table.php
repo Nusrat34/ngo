@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('transcations', function (Blueprint $table) {
             $table->id();
-            $table->string(column:'trax_head',length:100);
-            $table->string(column:'in',length:50);
-            $table->string(column:'out',length:100);
-            
+            $table->string('trax_head');
+            $table->string('in')->nullable();
+            $table->string('recievers_account_no');
+            $table->string('out')->nullable();
             $table->timestamps();
         });
     }

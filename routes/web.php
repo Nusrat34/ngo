@@ -1,8 +1,11 @@
 <?php
 
+use App\Http\Controllers\AppliedBookController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\ReportController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DonationController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\NoticeController;
@@ -15,6 +18,7 @@ use App\Http\Controllers\ScholarshipController;
 use App\Http\Controllers\StudentDonationController;
 use App\Http\Controllers\TranscationController;
 use App\Http\Controllers\Frontend\BController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -40,17 +44,21 @@ Route::get('/logout',[UserController::class,'logout'])->name('logout');
 Route::group(['middleware'=>'auth','prefix'=>'admin'],function (){
 
 
-
-
 Route::get('/book',[BookController::class,'book'])->name('book');
 Route::get('book/bookform',[BookController::class,'bookform'])->name('book.bookform');
 Route::post('book/bookform/store',[BookController::class,'store'])->name('book.bookform.store');
-
+//contact//
+Route::get('/contact/list',[ContactController::class,'message'])->name('contact.message');
+Route::get('/contact/delete{contact_id}',[ContactController::class,'delete'])->name('contact.delete');
 //delete//
 Route::get('/book/delete/{book_id}',[BookController::class,'deletebook'])->name('admin.book.delete');
- Route::get('/book/view/{book_id}',[BookController::class,'viewbook'])->name('admin.book.view');
- Route::get('/book/edit/{book_id}',[BookController::class,'editbook'])->name('admin.book.edit');
- Route::put('/book/update/{book_id}',[BookController::class,'update'])->name('admin.book.update');
+Route::get('/book/view/{book_id}',[BookController::class,'viewbook'])->name('admin.book.view');
+Route::get('/book/edit/{book_id}',[BookController::class,'editbook'])->name('admin.book.edit');
+Route::put('/book/update/{book_id}',[BookController::class,'update'])->name('admin.book.update');
+
+// Applied Books
+Route::get('/book/sapply',[BookController::class,'bapply'])->name('b.apply');
+Route::get('/book/approve/{id}',[BookController::class,'bookapprove'])->name('bookapply.approve');
 
 Route::get('/member',[MemberController::class,'member'])->name('member');
 Route::get('/member/memberform',[MemberController::class,'memberform'])->name('member.memberform');
@@ -61,8 +69,6 @@ Route::get('/donor/donorform',[DonorController::class,'donorform'])->name('donor
 Route::post('/donor/donorform',[DonorController::class,'store'])->name('donor.donorform.store');
 // donor approve//
 Route::get('/donor/approve/{donor_id}',[DonorController::class,'donorapprove'])->name('donor.approve');
-
-Route::get('/donation',[DonationController::class,'list'])->name('donation');
 //student donationapply//
 Route::get('/student_request',[StudentDonationController::class,'requestlist'])->name('request.list');
 //student donation approve//
@@ -71,6 +77,9 @@ Route::get('/student/approve/{student_id}',[StudentDonationController::class,'st
 Route::get('/scholarship',[ScholarshipController::class,'scholarshiplist'])->name('scholarship.list');
 //scholarship aprove//
 Route::get('/scholarship/update/{id}',[ScholarshipController::class,'scholarupdate'])->name('scholarship.update');
+//scholarship aprove//
+
+//book apply approve//
 Route::get('/transaction',[TranscationController::class,'transaction'])->name('transaction.list');
 Route::get('/transaction/show',[TranscationController::class,'transaction_show'])->name('transaction.show');
 Route::post('/transaction/store',[TranscationController::class,'t_store'])->name('transaction.store');
@@ -81,7 +90,13 @@ Route::get('/loan',[LoanController::class,'loanlist'])->name('loan.list');
 Route ::get('/notice',[NoticeController::class,'notice']) ->name('notice');
 Route ::get('/notice/noticeform',[NoticeController::class,'noticeform']) ->name('notice.noticeform');
 Route ::post('/notice/noticeform/store',[NoticeController::class,'store'])->name('notice.noticeform.store');
+//notice update//
+Route::get('/notice/edit/{notice_id}',[NoticeController::class,'notice_edit'])->name('notice.edit');
+Route::put('/notice/update/{notice_id}',[NoticeController::class,'notice_update'])->name('notice.update');
+Route::get('/notice/delete/{notice_id}',[NoticeController::class,'notice_delete'])->name('notice.delete');
 Route::get('/dashboard',[HomeController::class,'dashboard'])->name('dashboard');
+Route::get('/report',[ReportController::class,'report'])->name('report.list');
+Route::get('/report/search',[ReportController::class,'reportSearch'])->name('tran.report.search');
 
 });
 //frontend routes
@@ -90,22 +105,31 @@ Route::get('/',[WebController::class,'home'])->name('webpage');
 Route::post('/registration',[WebController::class,'registration'])->name('registration');
 Route::post('/user/login',[WebController::class,'login'])->name('user.login');
 Route::get('/user/logout', [WebController::class, 'logout'])->name('user.logout');
-
+Route::get('/profile',[WebController::class,'profile'])->name('profile.us');
 Route::get('/donor/form',[DonourController::class,'donateform'])->name('user.donor.form');
 Route::post('/donor/form/store',[DonourController::class,'store'])->name('user.store');
-Route::post('/donation/form',[DonationController::class,'applydonation'])->name('apply.donation');
-Route::get('/donationlist/form',[DonationController::class,'donationlist'])->name('donation.list');
+//approvedonorlist
+Route::get('/donationlist/form',[DonorController::class,'donorlist'])->name('donation.list');
 Route::get('/memberlist/form',[MemberController::class,'memberlist'])->name('member.list');
 
 
 Route::get('/studentdonation/form',[StudentDonationController::class,'studentlist'])->name('student.list');
 Route::post('/applydonation/form',[StudentDonationController::class,'sdonation'])->name('sdonation.list');
+Route::get('/sdonation/show',[StudentDonationController::class,'studentshow'])->name('s.donation');
 
 Route::get('/sapply/form',[ScholarshipController::class,'s_apply'])->name('s.apply');
 Route::post('/applyscholarship/form',[ScholarshipController::class,'scholarship'])->name('scholarship.form');
 Route::get('/scholarship/show',[ScholarshipController::class,'scholarshipshow'])->name('scholarship.show');
 Route::get('/notice/show',[NoticeController::class,'noticeshow'])->name('notice.list');
-//loan apply
-Route::get('/loanform',[LoanController::class,'loan_form'])->name('loan.form');
-Route::post('/loan/apply',[LoanController::class,'loan_store'])->name('loan.store');
-Route::get('/book/form',[BController::class,'book_form'])->name('book.apply');
+Route::get('/books',[BController::class,'book_list'])->name('books');
+Route::post('/book/show',[BController::class,'bookshow'])->name('book.show');
+//contact
+Route::get('/contact/us',[ContactController::class,'contactus'])->name('contact.us');
+Route::post('/contact',[ContactController::class,'contact'])->name('contact.store');
+
+
+Route::get('/book/apply/{id}',[AppliedBookController::class,'apply_for_book'])->name('apply_for_book');
+
+Route::get('/book/list',[BookController::class,'book_list'])->name('apply.booklist');
+Route::get('/book/download/{id}',[BookController::class,'bookDownloadFromServer'])->name('apply.booklist.bookDownloadFromServer');
+

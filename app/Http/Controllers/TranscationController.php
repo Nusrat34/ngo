@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class TranscationController extends Controller
 {
     public function transaction(){
-        $tran=Transcation::all();
+        $tran=Transcation::paginate(4);
         return view('backend.pages.transaction.tlist',compact('tran'));
     }
 

@@ -32,6 +32,7 @@
     
     </tbody>
 </table>
+{{$mem->links()}}
 </div>
 
 @endsection

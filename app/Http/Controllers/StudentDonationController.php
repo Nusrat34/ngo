@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Student_donation;
+use App\Models\Transcation;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 class StudentDonationController extends Controller
 {
     public function studentlist(){
+        
         return view('Frontend.pages.sdonation.rdonationform');
     }
 
@@ -17,9 +20,13 @@ class StudentDonationController extends Controller
            Student_donation ::create([
                 //database column name => input field name
                     'title'=>$request->title ,
+                    'name'=>$request->name ,
+                    'email'=>$request->email,
+                    'phone_number'=>$request->phone_number,
                     'amount'=>$request->amount,
                     'institute'=>$request->institute,
                     'address'=>$request->address,
+                    'account_number'=>$request->account_number,
                     'cause'=>$request->cause,
             ]);
     
@@ -27,17 +34,27 @@ class StudentDonationController extends Controller
         }
 
         public function requestlist(){
-            $stu=Student_donation::all();
+            $stu=Student_donation::paginate(4);
             return view('backend.pages.students.studentlist',compact('stu'));
         }
 
 
         public function studentdonation($student_id){
-            $student=Student_donation::find($student_id)->update ([
+            $student=Student_donation::find($student_id);
+            Transcation::create([
+                'trax_head'=>Str::random(12),
+                'out'=>true,
+                'recievers_account_no'=>$student->account_number
+            ]);
+            $student->update ([
                 'status'=>'approved'
             ]);
 
             return back();
         }
         
+        public function studentshow(){
+            $stu=Student_donation::paginate(4);
+            return view('Frontend.pages.sdonation.slist',compact('stu'));
+        }
 }

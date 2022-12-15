@@ -43,5 +43,6 @@
     
     </tbody>
 </table>
+{{$dot->links()}}
 
 @endsection

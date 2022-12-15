@@ -15,23 +15,28 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     scholarshiplist
                 </a>
-                <a class="nav-link" href="{{route('donation')}}">
-                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                    donation
-                </a>
+                
                 <a class="nav-link" href="{{route('transaction.list')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     transaction
                 
                 </a>
-                <a class="nav-link" href="{{route('loan.list')}}">
-                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                loan
                 
-                </a>
                 <a class="nav-link" href="{{route('request.list')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     student donation list
+                
+                
+                </a>
+                <a class="nav-link" href="{{route('b.apply')}}">
+                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                    apply_book_list
+                
+                
+                </a>
+                <a class="nav-link" href="{{route('contact.message')}}">
+                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                    Contact
                 
                 
                 </a>
@@ -50,7 +55,7 @@
                     notice
                 
                 </a>
-                <a class="nav-link" href="{{ url('report')}}">
+                <a class="nav-link" href="{{route('report.list')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     report
                 

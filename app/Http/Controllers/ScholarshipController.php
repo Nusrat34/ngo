@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Scholarship;
+use App\Models\Transcation;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 class ScholarshipController extends Controller
 {
     public function scholarshiplist(){
-        $scholar=Scholarship::all();
+        $scholar=Scholarship::paginate(4);
 
         return view('backend.pages.scholarships.scholarshiplist',compact('scholar'));
     
@@ -34,14 +36,21 @@ class ScholarshipController extends Controller
                     'phone_number'=>$request->phone_number,
                     'from_date'=>$request->from_date,
                     'to_date'=>$request->to_date,
+                    'account_number'=>$request->account_number,
             ]);
     
             return redirect()->route('webpage');
         }
 
     public function scholarupdate($id){
-       $scholarship= Scholarship::find($id)->update([
+       $scholarship= Scholarship::find($id);
+       $scholarship->update([
             'status'=>'approved'
+        ]);
+        Transcation::create([
+            'trax_head'=>Str::random(12),
+            'out'=>true,
+            'recievers_account_no'=>$scholarship->account_number
         ]);
 
         return back();
@@ -49,7 +58,7 @@ class ScholarshipController extends Controller
 
 
     public function scholarshipshow(){
-        $scholar=Scholarship::all();
+        $scholar=Scholarship::paginate(4);
         return view('Frontend.pages.scholarship.slist',compact('scholar'));
     }
 }

@@ -29,7 +29,7 @@ create new user
         <td>
                 <a href="" class="btn btn-primary">Update</a>
                 <a href="" class="btn btn-danger">Delete</a>
-                <a href="" class="btn btn-success">View</a>
+                
             </td>
         
 
@@ -39,4 +39,5 @@ create new user
     
     </tbody>
 </table>
-@endsection()
+{{$mem->links()}}
+@endsection

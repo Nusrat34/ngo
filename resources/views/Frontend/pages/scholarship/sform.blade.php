@@ -38,6 +38,10 @@
             <input name="cause" type="text" class="form-control" id="cause"placeholder="Cause">
         </div>
         <div class="form-group">
+            <label for="name">Account_number</label>
+            <input name="account_number" type="number" class="form-control" id="account_number"placeholder="account_number">
+        </div>
+        <div class="form-group">
             <label for="name">From date</label>
             <input name="from_date" type="date" class="form-control" id="from_date"placeholder="from_date">
         </div>

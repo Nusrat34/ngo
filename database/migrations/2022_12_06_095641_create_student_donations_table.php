@@ -15,8 +15,12 @@ return new class extends Migration
     {
         Schema::create('student_donations', function (Blueprint $table) {
             $table->id();
-            $table->string(column:'title',length:100);
-            $table->string(column:'amount',length:50);
+            $table->string(column:'title');
+            $table->string(column:'name');
+            $table->string(column:'email');
+            $table->string(column:'phone_number');
+            $table->string(column:'account_number');
+            $table->string(column:'amount');
             $table->string(column:'institute',length:100);
             $table->text(column:'address');
             $table->text(column:'cause');

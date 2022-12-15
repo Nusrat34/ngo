@@ -25,6 +25,7 @@ return new class extends Migration
             $table->text(column:'cause');
             $table->text(column:'from_date');
             $table->text(column:'to_date');
+            $table->text(column:'account_number');
             $table->text(column:'status')->default('pending');
 
             $table->timestamps();

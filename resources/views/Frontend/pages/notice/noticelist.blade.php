@@ -10,6 +10,7 @@
         <th scope="col">Notice_name</th>
         <th scope="col">Status</th>
         <th scope="col">published_Date</th>
+        <th scope="col">Description</th>
         
         
 
@@ -17,19 +18,15 @@
     </tr>
     </thead>
     <tbody>
-    @foreach($not as $data)
+    @foreach($not as $key=> $data)
     <tr>
-        <th scope="row">{{$data->id}}</th>
+    <td>{{$key+1}}</td>
+        <td>{{$data->id}}</td>
         <td>{{$data->notice_name}}</td>
         <td>{{$data->status}}</td>
         <td>{{$data->published_date}}</td>
         <td>{{$data->Description}}</td>
 
-        <td>
-                <a href="" class="btn btn-primary">Update</a>
-                <a href="" class="btn btn-danger">Delete</a>
-                <a href="" class="btn btn-success">View</a>
-            </td>
         
 
         
@@ -40,6 +37,6 @@
 </table>
 </div>
 
-
+{{$not->links()}}
 
 @endsection
