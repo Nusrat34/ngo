@@ -29,6 +29,7 @@ class StudentDonationController extends Controller
                     'account_number'=>$request->account_number,
                     'cause'=>$request->cause,
             ]);
+            notify()->success('apply success');
     
             return redirect()->route('webpage');
         }

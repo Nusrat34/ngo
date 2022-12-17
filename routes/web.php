@@ -18,7 +18,7 @@ use App\Http\Controllers\ScholarshipController;
 use App\Http\Controllers\StudentDonationController;
 use App\Http\Controllers\TranscationController;
 use App\Http\Controllers\Frontend\BController;
-
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,10 +38,10 @@ Route::get('/', function () {
 
 Route::get('/login',[UserController::class,'login'])->name('login');
 Route::post('/do-login',[UserController::class,'doLogin'])->name('do.login');
-Route::get('/logout',[UserController::class,'logout'])->name('logout');
 
 
 Route::group(['middleware'=>'auth','prefix'=>'admin'],function (){
+    Route::get('/logout',[UserController::class,'logout'])->name('logout');
 
 
 Route::get('/book',[BookController::class,'book'])->name('book');
@@ -105,31 +105,37 @@ Route::get('/',[WebController::class,'home'])->name('webpage');
 Route::post('/registration',[WebController::class,'registration'])->name('registration');
 Route::post('/user/login',[WebController::class,'login'])->name('user.login');
 Route::get('/user/logout', [WebController::class, 'logout'])->name('user.logout');
-Route::get('/profile',[WebController::class,'profile'])->name('profile.us');
-Route::get('/donor/form',[DonourController::class,'donateform'])->name('user.donor.form');
-Route::post('/donor/form/store',[DonourController::class,'store'])->name('user.store');
-//approvedonorlist
-Route::get('/donationlist/form',[DonorController::class,'donorlist'])->name('donation.list');
-Route::get('/memberlist/form',[MemberController::class,'memberlist'])->name('member.list');
+Route::group(['middleware'=>'auth'],function(){
+    Route::get('/profile',[ProfileController::class,'profile'])->name('profile.us');
+    Route::put('/profile/update',[ProfileController::class,'updateprofile'])->name('profile.update');
 
-
-Route::get('/studentdonation/form',[StudentDonationController::class,'studentlist'])->name('student.list');
-Route::post('/applydonation/form',[StudentDonationController::class,'sdonation'])->name('sdonation.list');
-Route::get('/sdonation/show',[StudentDonationController::class,'studentshow'])->name('s.donation');
-
-Route::get('/sapply/form',[ScholarshipController::class,'s_apply'])->name('s.apply');
-Route::post('/applyscholarship/form',[ScholarshipController::class,'scholarship'])->name('scholarship.form');
-Route::get('/scholarship/show',[ScholarshipController::class,'scholarshipshow'])->name('scholarship.show');
-Route::get('/notice/show',[NoticeController::class,'noticeshow'])->name('notice.list');
-Route::get('/books',[BController::class,'book_list'])->name('books');
-Route::post('/book/show',[BController::class,'bookshow'])->name('book.show');
-//contact
-Route::get('/contact/us',[ContactController::class,'contactus'])->name('contact.us');
-Route::post('/contact',[ContactController::class,'contact'])->name('contact.store');
-
-
-Route::get('/book/apply/{id}',[AppliedBookController::class,'apply_for_book'])->name('apply_for_book');
-
-Route::get('/book/list',[BookController::class,'book_list'])->name('apply.booklist');
-Route::get('/book/download/{id}',[BookController::class,'bookDownloadFromServer'])->name('apply.booklist.bookDownloadFromServer');
+    Route::get('/donor/form',[DonourController::class,'donateform'])->name('user.donor.form');
+    
+    Route::post('/donor/form/store',[DonourController::class,'store'])->name('user.store');
+    //approvedonorlist
+    Route::get('/donationlist/form',[DonorController::class,'donorlist'])->name('donation.list');
+    Route::get('/memberlist/form',[MemberController::class,'memberlist'])->name('member.list');
+    
+    
+    Route::get('/studentdonation/form',[StudentDonationController::class,'studentlist'])->name('student.list');
+    Route::post('/applydonation/form',[StudentDonationController::class,'sdonation'])->name('sdonation.list');
+    Route::get('/sdonation/show',[StudentDonationController::class,'studentshow'])->name('s.donation');
+    
+    Route::get('/sapply/form',[ScholarshipController::class,'s_apply'])->name('s.apply');
+    Route::post('/applyscholarship/form',[ScholarshipController::class,'scholarship'])->name('scholarship.form');
+    Route::get('/scholarship/show',[ScholarshipController::class,'scholarshipshow'])->name('scholarship.show');
+    Route::get('/notice/show',[NoticeController::class,'noticeshow'])->name('notice.list');
+    Route::get('/books',[BController::class,'book_list'])->name('books');
+    Route::post('/book/show',[BController::class,'bookshow'])->name('book.show');
+    //contact
+    Route::get('/contact/us',[ContactController::class,'contactus'])->name('contact.us');
+    Route::post('/contact',[ContactController::class,'contact'])->name('contact.store');
+    
+    
+    Route::get('/book/apply/{id}',[AppliedBookController::class,'apply_for_book'])->name('apply_for_book');
+    
+    Route::get('/book/list',[BookController::class,'book_list'])->name('apply.booklist');
+    Route::get('/book/download/{id}',[BookController::class,'bookDownloadFromServer'])->name('apply.booklist.bookDownloadFromServer');
+    Route::get('/preview/book/{id}',[BookController::class,'bookPreview'])->name('book.preview.frontend');
+});
 

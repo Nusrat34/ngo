@@ -57,11 +57,7 @@ class WebController extends Controller
       return redirect()->route('webpage');
   }
 
-  public function profile(){
-    return view('Frontend.pages.profile');
-
-  }
-     
+  
     
 }
 

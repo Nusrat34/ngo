@@ -1,38 +1,44 @@
 @extends('Frontend.master')
 @section('content')
 <div style="margin: 70px;">
-<section class="bg-light">
-    <div class="container">
+<div class="container rounded bg-white mt-5 mb-5">
         <div class="row">
-            <div class="col-lg-12 mb-4 mb-sm-5">
-                <div class="card card-style1 border-0">
-                    <div class="card-body p-1-9 p-sm-2-3 p-md-6 p-lg-7">
-                        <div class="row align-items-center">
-                            <div class="col-lg-6 mb-4 mb-lg-0">
-                                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="...">
-                            </div>
-                            <div class="col-lg-6 px-xl-10">
-                                <div class="bg-secondary d-lg-inline-block py-1-9 px-1-9 px-sm-6 mb-1-9 rounded">
-                                    <h3 class="h2 text-white mb-0">John mark Doe Kyzer</h3>
-                                    <span class="text-primary">Coach</span>
-                                </div>
-                                <ul class="list-unstyled mb-1-9">
-                                    <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Position:</span> Coach</li>
-                                    <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Experience:</span> 10 Years</li>
-                                    <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Email:</span> edith@mail.com</li>
-                                    <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Website:</span> www.example.com</li>
-                                    <li class="display-28"><span class="display-26 text-secondary me-2 font-weight-600">Phone:</span> 507 - 541 - 4567</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-12 mb-4 mb-sm-5">
+            <div class="col-md-4 border-right">
+                <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="200px" src="{{url('/Frontend/profile.png')}}"><span class="font-weight-bold">{{auth()->user()->name}}</span><span class="text-black-50">{{auth()->user()->email}}</span><span>Role: {{auth()->user()->role}} </span></div>
                 
             </div>
+            <div class="col-md-8 border-right">
+                <div class="p-3 py-5">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h1 class="text-right">Profile</h1>
+                    </div>
+                    <form action="{{route('profile.update')}}" method="post">
+
+                        @method('put')
+                        @csrf
+                    <div class="row mt-2">
+                        <div class="col-md-12"><label class="labels">Name</label>
+                            <input name="name" type="text" class="form-control" placeholder="Name" value="{{auth()->user()->name}}"></div>
+
+                    </div>
+                    <div class="row mt-3">
+                        
+                        <div class="col-md-12"><label class="labels">Email</label><input readonly type="text"name="email" class="form-control" placeholder="enter your email " value="{{auth()->user()->email}}"></div>
+                       </div>
+                    <div class="row mt-3">
+
+
+                    <div class="mt-5 text-center">
+                        <button class="btn btn-primary profile-button" type="submit">Update Profile</button>
+                    </div>
+                    </form>
+
+
+                </div>
+            </div>
+
         </div>
     </div>
-</section>
+
 </divstyle:>
 @endsection

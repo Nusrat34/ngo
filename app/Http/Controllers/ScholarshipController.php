@@ -38,7 +38,8 @@ class ScholarshipController extends Controller
                     'to_date'=>$request->to_date,
                     'account_number'=>$request->account_number,
             ]);
-    
+            notify()->success('apply success');
+            
             return redirect()->route('webpage');
         }
 

@@ -12,12 +12,12 @@
         </div>
         <div class="form-group">
             <label for="name"> Name</label>
-            <input name="name" type="text" class="form-control" id="name" placeholder="name">
+            <input name="name" type="text" class="form-control" id="name" placeholder="name" value="{{auth()->user()->name}}">
         </div>
             
         <div class="form-group">
             <label for="name">Email</label>
-            <input name="email" type="text" class="form-control" id="email" placeholder="email">
+            <input name="email" type="text" class="form-control" id="email" placeholder="email" value="{{auth()->user()->email}}">
         </div>
         <div class="form-group">
             <label for="name">Phone number</label>

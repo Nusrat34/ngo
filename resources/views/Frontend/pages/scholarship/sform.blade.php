@@ -1,5 +1,7 @@
 @extends('Frontend.master')
 @section('content')
+<div style="margin:50px">
+<div style="padding: 35px;">
 <h1>scholarship form</h1>
 <form action="{{route('scholarship.form')}}"method="post">
     @csrf
@@ -10,11 +12,11 @@
         </div>
       <div class="form-group">
             <label for="name">Name</label>
-            <input name="name" type="text" class="form-control" id="name" placeholder="name">
+            <input name="name" type="text" class="form-control" id="name" placeholder="name" value="{{auth()->user()->name}}">
         </div>
       <div class="form-group">
             <label for="name">email</label>
-            <input name="email" type="text" class="form-control" id="email" placeholder="email">
+            <input name="email" type="text" class="form-control" id="email" placeholder="email" value="{{auth()->user()->email}}">
         </div>
       <div class="form-group">
             <label for="name">Phone Number</label>
@@ -52,4 +54,6 @@
         <button type="submit" class="btn btn-primary">Submit</button>
         </div>
     </form>
+    </div>
+    </div>
 @endsection

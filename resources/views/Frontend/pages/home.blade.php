@@ -23,7 +23,7 @@
                             When They Need</h3>
                         <p>With so much to consume and such little time, coming up <br>
                             with relevant title ideas is essential</p>
-                            <a href="{{route('apply.booklist')}}" class="boxed-btn4">applied book list</a>
+                            <a href="{{route('apply.booklist')}}" class="btn btn-primary">applied book list</a>
                             <br>
                     </div>
                 </div>
@@ -91,7 +91,7 @@
                         </div>
                     </div>
 
-                    <a href="{{route('student.list')}}" class="boxed-btn4">student donation request</a>
+                    <a href="{{route('student.list')}}" class="btn btn-primary">student donation request</a>
 
 
                 </div>
@@ -110,7 +110,7 @@
             <div class="col-lg-6">
                 <div class="section_title text-center mb-55">
                     <h3><span>Scholarship area</span></h3>
-                    <a href="{{route('s.apply')}}" class="boxed-btn4">applyscholarship</a>
+                    <a href="{{route('s.apply')}}" class="btn btn-primary">applyscholarship</a>
 
                 </div>
             </div>
@@ -138,11 +138,10 @@
             <div class="col-lg-6">
                 <div class="section_title text-center mb-55">
                     <h3><span>Apply for book</span></h3>
-                    <li><a href="{{route('books')}}">applybook</a></li>
+                    <li><a href="{{route('books')}}" class= "btn btn-primary">applybook</a></li>
                 </div>
             </div>
         </div>
-
         <div>
             <div>
                 <div>
@@ -250,11 +249,11 @@
                         <div class="modal-body">
                             <div class="form-group">
                                 <label for="name"> Name</label>
-                                <input name="name" type="text" class="form-control" id="name" placeholder="Name">
+                                <input name="name" type="text" class="form-control" id="name" placeholder="Name" value="{{auth()->user()->name}}">
                             </div>
                             <div class="form-group">
                                 <label for="name">Email</label>
-                                <input name="email" type="text" class="form-control" id="name" placeholder="Email Name">
+                                <input name="email" type="text" class="form-control" id="name" placeholder="Email Name" value="{{auth()->user()->email}}">
                             </div>
                             <div class="form-group">
                                 <label for="name">Password</label>

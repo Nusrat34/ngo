@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\AppliedBook;
-use App\Models\Apply;
-use Illuminate\Http\Request;
 use App\Models\book;
+use App\Models\Apply;
+use App\Models\AppliedBook;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+
+use Illuminate\Support\Facades\Response;
 
 class BookController extends Controller
 {
@@ -35,31 +37,21 @@ class BookController extends Controller
               $fileName=date('Ymdhmi').'.'.$request->file('file')->getClientOriginalExtension();
               $request->file('file')->storeAs('/uploads',$fileName);
           }
-  
-
-          
-
-         
-           
+   
         book::create([
             //database column name => input field name
                 'book_name'=>$request->book_name,
                 'writter_name'=>$request->writter_name,
                 'category'=>$request->category,
-                'file'=>$fileName,
-                
-                
-
-
+                'file'=>$fileName
 
         ]);
-
-        
-
            
         return redirect()->back();
 
     }
+
+
     public function deletebook($book_id) 
     {
         book::findOrFail($book_id)->delete();
@@ -123,10 +115,7 @@ class BookController extends Controller
         return view('Frontend.pages.book.applied_book_list',compact('applied_books'));
       }
 
-    //   public function apply_for_book(){
-    //     return view('Frontend.pages.book.apply_for_book_from');
-
-    //   }
+   
        
   public function bookapprove($id){
     $applied_book = AppliedBook::find($id);
@@ -138,10 +127,29 @@ class BookController extends Controller
 
   }
 
-         public function bookDownloadFromServer($id){
-            
+         public function bookDownloadFromServer($id)
+         {
+            $book_id = AppliedBook::find($id)->pluck('book_id');
+            // dd($book_id[0]);
+            $book = Book::find($book_id[0]);
+            // dd($book);
+            // $file = public_path()."\uploads\".$book->file;
+          	$path = public_path('/uploads/'.$book->file);
+    	$fileName = $book->file;
+
+    	return Response::download($path, $fileName, ['Content-Type: application/file']);
+   
+          
+          
+         
          }
-      
+         public function bookPreview($id){
+          $book_id = AppliedBook::find($id)->pluck('book_id');
+            $book = Book::find($book_id[0]);
+            
+
+    	return view('Frontend.pages.book.singleview',compact('book'));
+         }
       }
        
     
