@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class StudentDonationController extends Controller
 {
     public function studentlist(){
-        
+        $stu=Student_donation::paginate(4);
         return view('Frontend.pages.sdonation.rdonationform');
     }
 
@@ -41,13 +41,13 @@ class StudentDonationController extends Controller
 
 
         public function studentdonation($student_id){
-            $student=Student_donation::find($student_id);
+            $stu=Student_donation::find($student_id);
             Transcation::create([
                 'trax_head'=>Str::random(12),
                 'out'=>true,
-                'recievers_account_no'=>$student->account_number
+                'recievers_account_no'=>$stu->account_number
             ]);
-            $student->update ([
+            $stu->update ([
                 'status'=>'approved'
             ]);
 

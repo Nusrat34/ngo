@@ -102,6 +102,7 @@ Route::get('/report/search',[ReportController::class,'reportSearch'])->name('tra
 //frontend routes
 
 Route::get('/',[WebController::class,'home'])->name('webpage');
+Route::get('/homepage',[WebController::class,'home_page'])->name('home.page');
 Route::post('/registration',[WebController::class,'registration'])->name('registration');
 Route::post('/user/login',[WebController::class,'login'])->name('user.login');
 Route::get('/user/logout', [WebController::class, 'logout'])->name('user.logout');
@@ -109,11 +110,13 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('/profile',[ProfileController::class,'profile'])->name('profile.us');
     Route::put('/profile/update',[ProfileController::class,'updateprofile'])->name('profile.update');
 
+    
     Route::get('/donor/form',[DonourController::class,'donateform'])->name('user.donor.form');
     
     Route::post('/donor/form/store',[DonourController::class,'store'])->name('user.store');
     //approvedonorlist
     Route::get('/donationlist/form',[DonorController::class,'donorlist'])->name('donation.list');
+
     Route::get('/memberlist/form',[MemberController::class,'memberlist'])->name('member.list');
     
     
@@ -137,5 +140,6 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('/book/list',[BookController::class,'book_list'])->name('apply.booklist');
     Route::get('/book/download/{id}',[BookController::class,'bookDownloadFromServer'])->name('apply.booklist.bookDownloadFromServer');
     Route::get('/preview/book/{id}',[BookController::class,'bookPreview'])->name('book.preview.frontend');
+    
 });
 

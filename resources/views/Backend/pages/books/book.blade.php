@@ -1,8 +1,5 @@
 @extends('backend.master')
 @section('content')
-
-
-<h1> book list</h1>
 @if(session()->has('message'))
 <p class="alert alert-success">{{session()->get('message')}}</p>
 @endif
@@ -27,10 +24,10 @@
         </tr>
     </thead>
     <tbody>
-        @foreach($boi as $data)
+        @foreach($boi as $key=> $data)
 
         <tr>
-            <th scope="row">{{$data->id}}
+            <td>{{$key+1}}</td>
             <td>{{$data->book_name}}</td>
             <td>{{$data->writter_name}}</td>
             <td>{{$data->category}}</td>
@@ -38,7 +35,7 @@
             <td>
                 <a href="{{route('admin.book.edit',$data->id)}}" class="btn btn-primary">Edit</a>
                 <a href="{{route('admin.book.delete',$data->id)}}" class="btn btn-danger">Delete</a>
-                <a href="{{route('admin.book.view',$data->id)}}" class="btn btn-success">View</a>
+
             </td>
 
         </tr>

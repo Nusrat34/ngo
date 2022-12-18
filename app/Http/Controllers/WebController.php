@@ -57,7 +57,9 @@ class WebController extends Controller
       return redirect()->route('webpage');
   }
 
-  
+  public function home_page(){
+    return redirect()->route('webpage');
+  }
     
 }
 

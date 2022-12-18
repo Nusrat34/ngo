@@ -4,17 +4,17 @@
 
 <!-- slider_area_start -->
 <div class="slider_area">
-<style>
-                .slider_area{
-                background-image:url(Frontend/user.jpg);
-                background-size: 1000px 1000px;
-                }
-                </style>
+    <style>
+        .slider_area {
+            background-image: url(Frontend/user.jpg);
+            background-size: 1000px 1000px;
+        }
+    </style>
     <div class="single_slider  d-flex align-items-center slider_bg_1 overlay2">
-        <div class="container" >
+        <div class="container">
 
-            
-            
+
+
             <div class="row">
                 <div class="col-lg-9">
                     <div class="slider_text ">
@@ -23,8 +23,8 @@
                             When They Need</h3>
                         <p>With so much to consume and such little time, coming up <br>
                             with relevant title ideas is essential</p>
-                            <a href="{{route('apply.booklist')}}" class="btn btn-primary">applied book list</a>
-                            <br>
+                        <a href="{{route('apply.booklist')}}" class="btn btn-primary">applied book list</a>
+                        <br>
                     </div>
                 </div>
             </div>
@@ -138,7 +138,7 @@
             <div class="col-lg-6">
                 <div class="section_title text-center mb-55">
                     <h3><span>Apply for book</span></h3>
-                    <li><a href="{{route('books')}}" class= "btn btn-primary">applybook</a></li>
+                    <li><a href="{{route('books')}}" class="btn btn-primary">applybook</a></li>
                 </div>
             </div>
         </div>
@@ -151,7 +151,7 @@
                                 <div class="volenteer_thumb">
                                     <img src="img/volenteer/1.png" alt="">
                                 </div>
-                                
+
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-6">
@@ -246,6 +246,7 @@
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
+                        @auth
                         <div class="modal-body">
                             <div class="form-group">
                                 <label for="name"> Name</label>
@@ -262,43 +263,44 @@
 
                             <div class="form-group">
                                 <label for="name">Phone Number</label>
-                                <input name="phone_number" type="number" class="form-control" id="name" placeholder="Phone Number">
+                                <input required name="phone_number" type="number" class="form-control" id="name" placeholder="Phone Number">
                             </div>
 
                             <div class="form-group">
                                 <label for="name">Occupation</label>
-                                <input name="occupation" type="text" class="form-control" id="occupation" placeholder="occupation">
+                                <input required name="occupation" type="text" class="form-control" id="occupation" placeholder="occupation">
                             </div>
 
                             <div class="form-group">
                                 <label for="name">Address</label>
-                                <input name="address" type="text" class="form-control" id="name" placeholder="Address">
+                                <input required name="address" type="text" class="form-control" id="name" placeholder="Address">
                             </div>
                             <div class="form-group">
                                 <label for="name">Amount</label>
-                                <input name="amount" type="number" class="form-control" id="name" placeholder="amount">
-                            </div>
-                            <div class="form-group">
-                                <label for="name">Transaction_ID</label>
-                                <input name="transaction" type="number" class="form-control" id="transaction" placeholder="transaction">
+                                <input required name="amount" type="number" class="form-control" id="name" placeholder="amount">
                             </div>
 
                             <div class="form-group">
                                 <label for="name">From__account</label>
-                                <input name="from_account" type="number" class="form-control" id="from_account" placeholder="from_account">
+                                <input required name="from_account" type="number" class="form-control" id="from_account" placeholder="from_account">
                             </div>
 
                             <div class="form-group">
                                 <label for="">To_account</label>
                                 <select name="to_account" id="to_account" class="form-control">
-                                    <option value="bkash">bkash</option>
-                                    <option value="rocket">rocket</option>
+                                    <option value="bkash">bkash(01898989898)</option>
+                                    <option value="rocket">rocket(0771665564)</option>
                                     <option value="m_cash">m_cash</option>
                                     <option value="sure_cash">sure_cash</option>
                                 </select>
                             </div>
+                            <div class="form-group">
+                                <label for="name">Transaction_ID</label>
+                                <input required name="transaction" type="number" class="form-control" id="transaction" placeholder="transaction">
+                            </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
+                        @endauth
                 </form>
             </div>
         </div>

@@ -1,6 +1,7 @@
 @extends('Frontend.master')
 @section('content')
-<div style="margin:70px ;">
+<div style="margin:50px">
+<div style="padding: 35px;">
 <h1>Notice list</h1>
 
 <table class="table">
@@ -35,6 +36,7 @@
     
     </tbody>
 </table>
+</div>
 </div>
 
 {{$not->links()}}

@@ -45,7 +45,7 @@
                         <div class="main-menu">
                             <nav>
                                 <ul id="navigation">
-                                    <li><a href="index.html">home</a></li>
+                                    <li><a href="{{route('home.page')}}">home</a></li>
                                     @auth
 
                                     <li>
@@ -62,7 +62,11 @@
 
                                     </li>
 
+                                    @auth
+                                    @if(auth()->user()->role == 'donor')
                                     <li><a href="{{route('donation.list')}}">donationlist</a>
+                                    @endif
+                                    @endauth
 
                                     </li>
                                     <li><a href="{{route('notice.list')}}">noticelist</a>
@@ -78,7 +82,7 @@
                                 </ul>
                             </nav>
                             <div class="Appointment">
-                                <div class="book_btn d-none d-lg-block">
+                                <div class="btn btn-primary">
                                     <a data-scroll-nav='1' href="#">Donar</a>
                                 </div>
                             </div>

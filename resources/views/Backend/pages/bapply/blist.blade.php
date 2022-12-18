@@ -36,6 +36,6 @@
     
     </tbody>
 </table>
-
+{{$applied_books->links()}}
 
 @endsection

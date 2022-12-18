@@ -29,6 +29,7 @@ class DonourController extends Controller
                 'from_account'=>$request->from_account,
                 'to_account'=>$request->to_account,
         ]);
+        notify()->success('thanks for your donation');
 
         return redirect()->route('webpage');
     }

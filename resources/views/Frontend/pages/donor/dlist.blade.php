@@ -1,8 +1,8 @@
 @extends('Frontend.master')
 @section('content')
+<div style="margin:50px">
+<div style="padding: 35px;">
 <h1>Donationlist</h1>
-<div style="margin:70px 50px 0px  50px ;">
-
 <table class="table">
     <thead class="thead-dark">
     <tr>
@@ -19,9 +19,9 @@
     </tr>
     </thead>
     <tbody>
-    @foreach($dot as $data)
+    @foreach($dot as $key=> $data)
     <tr>
-        <th scope="row">{{$data->id}}</th>
+        <td>{{$key+1}}</td>
         <td>{{$data->name}}</td>
         <td>{{$data->email}}</td>
         <td>{{$data->phone_number}}</td>
@@ -39,5 +39,7 @@
     </tbody>
 </table>
 {{$dot->links()}}
+</div>
+</div>
 
 @endsection()

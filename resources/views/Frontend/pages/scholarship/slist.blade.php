@@ -24,9 +24,9 @@
     </tr>
     </thead>
     <tbody>
-    @foreach( $scholar as $data )
+    @foreach( $scholar as $key=>$data )
     <tr>
-        <th scope="row">{{$data->id}}</th>
+        <td>{{$key+1}}</td>
         <td>{{$data->title}}</td>
         <td>{{$data->name}}</td>
         <td>{{$data->email}}</td>
