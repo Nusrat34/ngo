@@ -12,22 +12,6 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-xl-6 col-md-6 col-lg-4">
-                        <div class="social_media_links d-none d-lg-block">
-                            <a href="#">
-                                <i class="fa fa-facebook"></i>
-                            </a>
-                            <a href="#">
-                                <i class="fa fa-pinterest-p"></i>
-                            </a>
-                            <a href="#">
-                                <i class="fa fa-linkedin"></i>
-                            </a>
-                            <a href="#">
-                                <i class="fa fa-twitter"></i>
-                            </a>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -72,9 +56,13 @@
                                     <li><a href="{{route('notice.list')}}">noticelist</a>
 
                                     </li>
+                                    @auth
+                                    @if(auth()->user()->role =='student')
                                     <li><a href="{{route('scholarship.show')}}">scholarshiplist</a>
                                     </li>
                                     <li><a href="{{route('s.donation')}}">studentdonationlist</a>
+                                    @endif
+                                    @endauth
                                     </li>
 
                                     <li><a href="{{route('contact.us')}}">Contact</a></li>

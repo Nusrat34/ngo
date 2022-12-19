@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class StudentDonationController extends Controller
 {
     public function studentlist(){
-        $stu=Student_donation::paginate(4);
+        $stu=Student_donation::paginate(10);
         return view('Frontend.pages.sdonation.rdonationform');
     }
 
@@ -55,7 +55,7 @@ class StudentDonationController extends Controller
         }
         
         public function studentshow(){
-            $stu=Student_donation::paginate(4);
+            $stu=Student_donation::paginate(10);
             return view('Frontend.pages.sdonation.slist',compact('stu'));
         }
 }

@@ -23,8 +23,12 @@
                             When They Need</h3>
                         <p>With so much to consume and such little time, coming up <br>
                             with relevant title ideas is essential</p>
+                        @auth
+                        @if(auth()->user()->role =='student')
                         <a href="{{route('apply.booklist')}}" class="btn btn-primary">applied book list</a>
                         <br>
+                        @endif
+                        @endauth
                     </div>
                 </div>
             </div>
@@ -90,9 +94,11 @@
 
                         </div>
                     </div>
-
+                    @auth
+                    @if(auth()->user()->role =='student')
                     <a href="{{route('student.list')}}" class="btn btn-primary">student donation request</a>
-
+                    @endif
+                    @endauth
 
                 </div>
             </div>
@@ -109,9 +115,12 @@
         <div class="row justify-content-center">
             <div class="col-lg-6">
                 <div class="section_title text-center mb-55">
+                    @auth
+                    @if(auth()->user()->role =='student')
                     <h3><span>Scholarship area</span></h3>
                     <a href="{{route('s.apply')}}" class="btn btn-primary">applyscholarship</a>
-
+                    @endif
+                    @endauth
                 </div>
             </div>
         </div>
@@ -137,8 +146,12 @@
         <div class="row justify-content-center">
             <div class="col-lg-6">
                 <div class="section_title text-center mb-55">
+                    @auth
+                    @if(auth()->user()->role =='student')
                     <h3><span>Apply for book</span></h3>
                     <li><a href="{{route('books')}}" class="btn btn-primary">applybook</a></li>
+                    @endif
+                    @endauth
                 </div>
             </div>
         </div>
@@ -186,13 +199,17 @@
                     <div class="row justify-content-center">
                         <div class="col-lg-6">
                             <div class="section_title text-center mb-55">
+                                @auth
+                                @if(auth()->user()->role =='donor')
                                 <h3><span>Make a donation</span></h3>
+                                <div class="d-flex justify-content-center">
+
+                                    <button class="btn btn-primary" type="submit" data-toggle="modal" data-target="#donatenow">Donate Now</button>
+                                </div>
+                                 @endif
+                                 @endauth
                             </div>
                         </div>
-                    </div>
-
-                    <div class="d-flex justify-content-center">
-                        <button class="btn btn-primary" type="submit" data-toggle="modal" data-target="#donatenow">Donate Now</button>
                     </div>
 
 

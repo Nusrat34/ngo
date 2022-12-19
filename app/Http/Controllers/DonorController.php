@@ -10,7 +10,7 @@ use Illuminate\Support\Str;
 class DonorController extends Controller
 {
     public function donor(){
-        $dot=Donor::paginate(4);
+        $dot=Donor::paginate(10);
 
 
         return view('backend.pages.donors.donor',compact('dot'));
@@ -34,7 +34,7 @@ class DonorController extends Controller
     }
         
     public function donorlist(){
-        $dot=Donor::paginate(4);
+        $dot=Donor::paginate(10);
 
         return view('Frontend.pages.donor.dlist',compact('dot'));
     }

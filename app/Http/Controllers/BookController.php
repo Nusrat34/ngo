@@ -15,7 +15,7 @@ class BookController extends Controller
     public function book (){
 
        // $boi=book::all();//
-        $boi=book::paginate(3);
+        $boi=book::paginate(8);
         //dd($boi);
         return view ('backend.pages.books.book',compact('boi'));
     }
@@ -106,7 +106,7 @@ class BookController extends Controller
      
       public function bapply(){
         
-        $applied_books = AppliedBook::orderBy('id','desc')->paginate(3);
+        $applied_books = AppliedBook::orderBy('id','desc')->paginate(8);
         return view ('backend.pages.bapply.blist', compact('applied_books') );
       }
 
