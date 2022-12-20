@@ -3,7 +3,7 @@
 
 <h1>member list</h1>
 <a href="{{route('member.memberform')}}" class="btn btn-success">
-    create new user
+    create new member
 </a>
 <table class="table">
     <thead class="thead-dark">
@@ -27,7 +27,7 @@
             <td>{{$data->address}}</td>
 
             <td>
-                <a href="" class="btn btn-primary">Update</a>
+                <a href="{{route('member.edit',$data->id)}}" class="btn btn-primary">Update</a>
                 <a href="" class="btn btn-danger">Delete</a>
 
             </td>

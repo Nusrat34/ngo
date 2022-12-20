@@ -35,6 +35,7 @@
             <td>
                 <a href="{{route('admin.book.edit',$data->id)}}" class="btn btn-primary">Edit</a>
                 <a href="{{route('admin.book.delete',$data->id)}}" class="btn btn-danger">Delete</a>
+                
 
             </td>
 

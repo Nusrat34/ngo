@@ -15,7 +15,7 @@ class BookController extends Controller
     public function book (){
 
        // $boi=book::all();//
-        $boi=book::paginate(8);
+        $boi=book::paginate(5);
         //dd($boi);
         return view ('backend.pages.books.book',compact('boi'));
     }
@@ -54,8 +54,11 @@ class BookController extends Controller
 
     public function deletebook($book_id) 
     {
-        book::findOrFail($book_id)->delete();
-        return redirect()->back()->with('message','book deleted successfully');
+      $book = book::findOrFail($book_id);
+      $book->appliedBooks()->delete();
+
+      book::findOrFail($book_id)->delete();
+      return redirect()->back()->with('message','book deleted successfully');
 
         
   

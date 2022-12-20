@@ -12,9 +12,8 @@
         <th scope="col">phone_number</th>
         <th scope="col">Address</th>
         <th scope="col">occupation</th>
+        <th scope="col">Account_number</th>
         <th scope="col">Amount</th>
-        <th scope="col">From__account</th>
-        <th scope="col">To_account</th>
         <th scope="col">Status</th>
     </tr>
     </thead>
@@ -27,9 +26,8 @@
         <td>{{$data->phone_number}}</td>
         <td>{{$data->address}}</td>
         <td>{{$data->occupation}}</td>
+        <td>{{$data->account_number}}</td>
         <td>{{$data->amount}}</td>
-        <td>{{$data->from_account}}</td>
-        <td>{{$data->to_account}}</td>
         <td>{{$data->status}}</td>
 
 

@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Book extends Model
 {
     protected $guarded=[];
+    
+    public function appliedBooks()
+    {
+        return $this->hasMany(AppliedBook::class);
+    }
 }

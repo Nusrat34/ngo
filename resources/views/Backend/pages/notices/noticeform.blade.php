@@ -6,7 +6,7 @@
          
    <div class="form-group">
     <label for="name"> Notice Name</label>
-   <input name="notice_name" type="text" class="form-control" id="name" placeholder="Enter Notice Name">
+   <input required name="notice_name" type="text" class="form-control" id="name" placeholder="Enter Notice Name">
 </div>
 
         <div class="form-group">
@@ -19,11 +19,11 @@
         
         <div class="form-group">
             <label for="name">published_Date</label>
-            <input name="published_date" type="date" class="form-control" id="name" placeholder="published_date">
+            <input required name="published_date" type="date" class="form-control" id="name" placeholder="published_date">
         </div>
         <div class="form-group">
             <label for="name">Description</label>
-            <textarea class="form-control" name="description" id=""></textarea>
+            <textarea class="form-control" name="description" id="desription"></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

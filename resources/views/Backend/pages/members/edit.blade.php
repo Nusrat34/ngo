@@ -1,8 +1,7 @@
 @extends('backend.master')
 @section('content')
 
-
-    <form action="{{route('member.memberform.store')}}" method="post">
+<form action="{{route('member.update')}}" method="post">
        @csrf  
         
          
@@ -32,10 +31,9 @@
             <input required name="address" type="text" class="form-control" id="name"placeholder="Address">
         </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">update</button>
     </form>
 
 
 
-
-@endsection()
+@endsection

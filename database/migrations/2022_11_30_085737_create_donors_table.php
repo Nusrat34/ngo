@@ -15,15 +15,13 @@ return new class extends Migration
     {
         Schema::create('donors', function (Blueprint $table) {
             $table->id();
-            $table->string(column:'name',length:100);
-            $table->string(column:'email',length:50);
-            $table->string(column:'password',length:100);
-            $table->string(column:'phone_number',length:100);
-            $table->text(column:'address',);
+            $table->string(column:'name',);
+            $table->string(column:'email');
+            $table->string(column:'phone_number');
+            $table->text(column:'address');
             $table->text(column:'occupation');
             $table->text(column:'amount');
-            $table->text(column:'from_account');
-            $table->text(column:'to_account');
+            $table->text(column:'account_number');
             $table->text(column:'status')->default('pending');
             $table->timestamps();
         });

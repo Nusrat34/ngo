@@ -18,7 +18,7 @@
 
         <div class="form-group">
             <label for="name">Writter Name</label>
-            <input name="writter_name"type="text" class="form-control" id="writter_name"placeholder="Writter Name">
+            <input required name="writter_name"type="text" class="form-control" id="writter_name"placeholder="Writter Name">
         </div>
 
         <div class="form-group">
@@ -34,7 +34,7 @@
 
         <div class="form-group">
             <label for="file">Upload file</label>
-            <input  type="file" class="form-control"  name="file" id="file">
+            <input required type="file" class="form-control"  name="file" id="file">
         </div>
 
         <button type="submit" class="btn btn-primary">add</button>

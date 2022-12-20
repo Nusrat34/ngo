@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class ScholarshipController extends Controller
 {
     public function scholarshiplist(){
-        $scholar=Scholarship::paginate(10);
+        $scholar=Scholarship::orderBy('id','desc')->paginate(8);
 
         return view('backend.pages.scholarships.scholarshiplist',compact('scholar'));
     
@@ -59,7 +59,7 @@ class ScholarshipController extends Controller
 
 
     public function scholarshipshow(){
-        $scholar=Scholarship::paginate(10);
+        $scholar=Scholarship::orderBy('id','desc')->paginate(8);
         return view('Frontend.pages.scholarship.slist',compact('scholar'));
     }
 }

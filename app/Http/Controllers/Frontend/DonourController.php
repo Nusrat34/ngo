@@ -21,13 +21,13 @@ class DonourController extends Controller
             //database column name => input field name
                 'name'=>$request->name ,
                 'email'=>$request->email,
-                'password'=>$request->password,
                 'phone_number'=>$request->phone_number,
                 'address'=>$request->address,
                 'occupation'=>$request->occupation,
                 'amount'=>$request->amount,
-                'from_account'=>$request->from_account,
-                'to_account'=>$request->to_account,
+                'account_number'=>$request->account_number,
+                
+                
         ]);
         notify()->success('thanks for your donation');
 

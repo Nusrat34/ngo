@@ -233,12 +233,12 @@
 
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Email address</label>
-                                <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                <input required name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                <small id="emailHelp" class="form-text text-muted"></small>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Password</label>
-                                <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                <input required name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                             </div>
 
                             <button type="submit" class="btn btn-primary">signup</button>
@@ -254,7 +254,7 @@
 
         <div style="z-index:10000000" class="modal fade" id="donatenow" tabindex="-1" role="dialog" aria-labelledby="donate" aria-hidden="true">
             <div class="modal-dialog" role="document">
-                <form action="{{route('user.store')}}" method='post'>
+                <form action="{{route('ssl.payment')}}" method='post'>
                     @csrf
                     <div class="modal-content">
                         <div class="modal-header">
@@ -267,17 +267,12 @@
                         <div class="modal-body">
                             <div class="form-group">
                                 <label for="name"> Name</label>
-                                <input name="name" type="text" class="form-control" id="name" placeholder="Name" value="{{auth()->user()->name}}">
+                                <input required name="name" type="text" class="form-control" id="name" placeholder="Name" value="{{auth()->user()->name}}">
                             </div>
                             <div class="form-group">
                                 <label for="name">Email</label>
-                                <input name="email" type="text" class="form-control" id="name" placeholder="Email Name" value="{{auth()->user()->email}}">
+                                <input required name="email" type="text" class="form-control" id="name" placeholder="Email Name" value="{{auth()->user()->email}}">
                             </div>
-                            <div class="form-group">
-                                <label for="name">Password</label>
-                                <input name="password" type="text" class="form-control" id="name" placeholder="password">
-                            </div>
-
                             <div class="form-group">
                                 <label for="name">Phone Number</label>
                                 <input required name="phone_number" type="number" class="form-control" id="name" placeholder="Phone Number">
@@ -293,28 +288,15 @@
                                 <input required name="address" type="text" class="form-control" id="name" placeholder="Address">
                             </div>
                             <div class="form-group">
+                                <label for="name">Account_number</label>
+                                <input required name="account_number" type="number" class="form-control" id="name" placeholder="account_number">
+                            </div>
+                            <div class="form-group">
                                 <label for="name">Amount</label>
                                 <input required name="amount" type="number" class="form-control" id="name" placeholder="amount">
                             </div>
+                            
 
-                            <div class="form-group">
-                                <label for="name">From__account</label>
-                                <input required name="from_account" type="number" class="form-control" id="from_account" placeholder="from_account">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="">To_account</label>
-                                <select name="to_account" id="to_account" class="form-control">
-                                    <option value="bkash">bkash(01898989898)</option>
-                                    <option value="rocket">rocket(0771665564)</option>
-                                    <option value="m_cash">m_cash</option>
-                                    <option value="sure_cash">sure_cash</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="name">Transaction_ID</label>
-                                <input required name="transaction" type="number" class="form-control" id="transaction" placeholder="transaction">
-                            </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
                         @endauth
@@ -339,13 +321,13 @@
                         @csrf
                         <div class="form-group">
                             <label for="exampleInputEmail1">Name</label>
-                            <input name="student_name" type="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your Name">
-                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                            <input required name="student_name" type="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your Name">
+                            <small id="emailHelp" class="form-text text-muted"> </small>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email address</label>
-                            <input name="student_email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                            <input required name="student_email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                            <small id="emailHelp" class="form-text text-muted"></small>
                         </div>
                         <div class="form-group">
                             <label for="">Role</label>

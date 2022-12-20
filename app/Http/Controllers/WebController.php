@@ -36,7 +36,7 @@ class WebController extends Controller
        ]);
 
       $credentials=$request->except('_token');
-      // dd($credentials);
+      //  dd($credentials);
       if(auth()->attempt($credentials))
       {
         notify()->success('Login success');

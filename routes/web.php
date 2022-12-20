@@ -19,6 +19,7 @@ use App\Http\Controllers\StudentDonationController;
 use App\Http\Controllers\TranscationController;
 use App\Http\Controllers\Frontend\BController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SslCommerzPaymentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,10 +52,10 @@ Route::post('book/bookform/store',[BookController::class,'store'])->name('book.b
 Route::get('/contact/list',[ContactController::class,'message'])->name('contact.message');
 Route::get('/contact/delete{contact_id}',[ContactController::class,'delete'])->name('contact.delete');
 //delete//
-Route::get('/book/delete/{book_id}',[BookController::class,'deletebook'])->name('admin.book.delete');
 Route::get('/book/view/{book_id}',[BookController::class,'viewbook'])->name('admin.book.view');
 Route::get('/book/edit/{book_id}',[BookController::class,'editbook'])->name('admin.book.edit');
 Route::put('/book/update/{book_id}',[BookController::class,'update'])->name('admin.book.update');
+Route::get('/book/delete/{book_id}',[BookController::class,'deletebook'])->name('admin.book.delete');
 
 // Applied Books
 Route::get('/book/sapply',[BookController::class,'bapply'])->name('b.apply');
@@ -63,6 +64,8 @@ Route::get('/book/approve/{id}',[BookController::class,'bookapprove'])->name('bo
 Route::get('/member',[MemberController::class,'member'])->name('member');
 Route::get('/member/memberform',[MemberController::class,'memberform'])->name('member.memberform');
 Route::post('/member/memberform',[MemberController::class,'store'])->name('member.memberform.store');
+Route::get('/member/edit/{member_id}',[MemberController::class,'edit'])->name('member.edit');
+Route::get('/member/update/{member_id}',[MemberController::class,'update'])->name('member.update');
 
 Route::get('/donor',[DonorController::class,'donor'])->name('donor');
 Route::get('/donor/donorform',[DonorController::class,'donorform'])->name('donor.donorform');
@@ -140,6 +143,12 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('/book/list',[BookController::class,'book_list'])->name('apply.booklist');
     Route::get('/book/download/{id}',[BookController::class,'bookDownloadFromServer'])->name('apply.booklist.bookDownloadFromServer');
     Route::get('/preview/book/{id}',[BookController::class,'bookPreview'])->name('book.preview.frontend');
-    
 });
+
+Route::post('/pay', [SslCommerzPaymentController::class, 'index'])->name('ssl.payment');
+Route::post('/success', [SslCommerzPaymentController::class, 'success']);
+Route::post('/fail', [SslCommerzPaymentController::class, 'fail']);
+Route::post('/cancel', [SslCommerzPaymentController::class, 'cancel']);
+
+
 

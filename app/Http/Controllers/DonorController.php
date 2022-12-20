@@ -24,7 +24,7 @@ class DonorController extends Controller
         Transcation::create([
             'trax_head'=>Str::random(12),
             'in'=>true,
-            'recievers_account_no'=>$donor->from_account
+            'recievers_account_no'=>$donor->account_number
         ]);
         $donor->update ([
             'status'=>'approved'
