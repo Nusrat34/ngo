@@ -1,38 +1,44 @@
 @extends('backend.master')
 @section('content')
 
-<form action="{{route('member.update')}}" method="post">
-       @csrf  
-        
-         
-        <div class="form-group">
-            <label for="name"> Name</label>
-            <input required name="member_name" type="text" class="form-control" id="name" placeholder="Member Name">
-        </div>
+<form action="{{route('member.update',$mem->id)}}" method="post">
+    @method('put')
+    @if($errors->any())
+    @foreach($errors->all() as $message)
+    <p class="alert alert-danger">{{$message}}</p>
+    @endforeach
+    @endif
+    @csrf
 
-        <div class="form-group">
-            <label for="name">Email</label>
-            <input required name="email_name"type="text" class="form-control" id="name"placeholder="Email Name">
-        </div>
 
-        <div class="form-group">
-            <label for="name">Password</label>
-            <input name="password" type="text" class="form-control" id="name" placeholder="Password">
+    <div class="form-group">
+        <label for="name"> Name</label>
+        <input value="{{$mem->member_name}}" name="member_name" type="text" class="form-control" id="name" placeholder="Member Name">
+    </div>
 
-            
-        </div>
+    <div class="form-group">
+        <label for="name">Email</label>
+        <input value="{{$mem->email_name}}" name="email_name" type="text" class="form-control" id="name" placeholder="Email Name">
+    </div>
 
-        <div class="form-group">
-            <label for="name">Phone Number</label>
-            <input name="phone_number" type="number" class="form-control" id="name"placeholder="Phone Number">
-        </div>
-        <div class="form-group">
-            <label for="name">Address</label>
-            <input required name="address" type="text" class="form-control" id="name"placeholder="Address">
-        </div>
+    <div class="form-group">
+        <label for="name">Password</label>
+        <input value="{{$mem->password}}" name="password" type="text" class="form-control" id="name" placeholder="Password">
 
-        <button type="submit" class="btn btn-primary">update</button>
-    </form>
+
+    </div>
+
+    <div class="form-group">
+        <label for="name">Phone Number</label>
+        <input value="{{$mem->phone_number}}"name="phone_number" type="number" class="form-control" id="name" placeholder="Phone Number">
+    </div>
+    <div class="form-group">
+        <label for="name">Address</label>
+        <input value="{{$mem->address}}" name="address" type="text" class="form-control" id="name" placeholder="Address">
+    </div>
+
+    <button type="submit" class="btn btn-primary">update</button>
+</form>
 
 
 

@@ -28,7 +28,7 @@
 
             <td>
                 <a href="{{route('member.edit',$data->id)}}" class="btn btn-primary">Update</a>
-                <a href="" class="btn btn-danger">Delete</a>
+                <a href="{{route('member.delete',$data->id)}}" class="btn btn-danger">Delete</a>
 
             </td>
 

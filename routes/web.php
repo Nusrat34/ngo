@@ -65,7 +65,8 @@ Route::get('/member',[MemberController::class,'member'])->name('member');
 Route::get('/member/memberform',[MemberController::class,'memberform'])->name('member.memberform');
 Route::post('/member/memberform',[MemberController::class,'store'])->name('member.memberform.store');
 Route::get('/member/edit/{member_id}',[MemberController::class,'edit'])->name('member.edit');
-Route::get('/member/update/{member_id}',[MemberController::class,'update'])->name('member.update');
+Route::put('/member/update/{member_id}',[MemberController::class,'update'])->name('member.update');
+Route::get('/member/delete/{member_id}',[MemberController::class,'delete'])->name('member.delete');
 
 Route::get('/donor',[DonorController::class,'donor'])->name('donor');
 Route::get('/donor/donorform',[DonorController::class,'donorform'])->name('donor.donorform');

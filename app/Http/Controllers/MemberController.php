@@ -53,6 +53,27 @@ class MemberController extends Controller
     public function edit($member_id)
     {
         $mem = member::find($member_id);
-        return view('backend.pages..edit', compact('mem'));
+        return view('backend.pages.members.edit', compact('mem'));
+    }
+    public function update(Request $request,$member_id){
+        $mem = member::find($member_id);
+        //        dd($request->all());
+        Member::create([
+            //database column name => input field name
+            'member_name' => $request->member_name,
+            'email_name' => $request->email_name,
+            'password' => $request->password,
+            'phone_number' => $request->phone_number,
+            'address' => $request->address,
+
+        ]);
+
+
+        return redirect()->route('member')->with('message','Update success.');
+
+    }
+    public function delete($member_id){
+        $mem=Member::findOrFail($member_id)->delete();
+        return redirect()-> back()->with('message',' deleted');
     }
 }
