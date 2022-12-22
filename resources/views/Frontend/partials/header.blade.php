@@ -15,14 +15,21 @@
                 </div>
             </div>
         </div>
-        <div id="sticky-header" class="main-header-area">
+        <div id="sticky-header" class="main-header-area" style="background:black; height:100px;">
             <div class="container-fluid">
                 <div class="row align-items-center">
                     <div class="col-xl-3 col-lg-3">
                         <div class="logo">
                             <a href="index.html">
-                                <img src="img/logo.png" alt="">
+                                <img src="Frontend/ngo logo.jpg" alt="">
+
                             </a>
+                            <style>
+                                .logo{
+                                    height:100px;
+                                    width:50px;
+                                }
+                                </style>
                         </div>
                     </div>
                     <div class="col-xl-9 col-lg-9">
@@ -42,9 +49,7 @@
                                     <li><a href="About.html" data-toggle="modal" data-target="#Registration">Registration</a></li>
                                     <li><a href="About.html" data-toggle="modal" data-target="#login">login</a>
                                         @endauth
-                                    <li><a href="{{route('member.list')}}">memberlist</a>
-
-                                    </li>
+                                    
 
                                     @auth
                                     @if(auth()->user()->role == 'donor')
@@ -53,26 +58,26 @@
                                     @endauth
 
                                     </li>
-                                    <li><a href="{{route('notice.list')}}">noticelist</a>
+                                    <li><a href="{{route('notice.list')}}"style=color:white>noticelist</a>
 
                                     </li>
                                     @auth
                                     @if(auth()->user()->role =='student')
-                                    <li><a href="{{route('scholarship.show')}}">scholarshiplist</a>
+                                    <li><a href="{{route('scholarship.show')}}"style=color:>scholarshiplist</a>
                                     </li>
                                     <li><a href="{{route('s.donation')}}">studentdonationlist</a>
                                     @endif
                                     @endauth
                                     </li>
 
-                                    <li><a href="{{route('contact.us')}}">Contact</a></li>
+                                    <li><a href="{{route('contact.us')}}" style="color:white">Contact</a></li>
                                     <li><a href="{{route('profile.us')}}">profile</a></li>
                                 </ul>
                             </nav>
                             <div class="Appointment">
-                                <div class="btn btn-primary">
-                                    <a data-scroll-nav='1' href="#">Donar</a>
-                                </div>
+                                <!-- <div class="btn btn-primary">
+                                    <a data-scroll-nav='1' href="#">Donar</a> 
+                                </div> -->
                             </div>
                         </div>
                     </div>

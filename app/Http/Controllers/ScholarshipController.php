@@ -24,6 +24,10 @@ class ScholarshipController extends Controller
 
     public function scholarship (Request $request){
         //    dd($request);
+        $request->validate([
+            
+
+        ]);
             Scholarship::create([
                 //database column name => input field name
                     'title'=>$request->title ,

@@ -46,6 +46,7 @@ class BookController extends Controller
                 'file'=>$fileName
 
         ]);
+        notify()->success('add book success');
            
         return redirect()->back();
 

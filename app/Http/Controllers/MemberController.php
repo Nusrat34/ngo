@@ -26,6 +26,15 @@ class MemberController extends Controller
     public function store(Request $request)
     {
 
+        $request->validate([
+            'member_name'=>'required',
+            'email_name'=>'required',
+            'password'=>'required',
+            'phone_number'=>'required',
+            'address'=>'required',
+
+        ]);
+
         //        dd($request->all());
         Member::create([
             //database column name => input field name
@@ -37,7 +46,7 @@ class MemberController extends Controller
 
         ]);
 
-
+        notify()->success('add success');
         return redirect()->back();
     }
 
@@ -67,9 +76,9 @@ class MemberController extends Controller
             'address' => $request->address,
 
         ]);
+        notify()->success('update success');
 
-
-        return redirect()->route('member')->with('message','Update success.');
+        return redirect()->route('member');
 
     }
     public function delete($member_id){

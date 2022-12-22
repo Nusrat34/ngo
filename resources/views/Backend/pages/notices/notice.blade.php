@@ -1,11 +1,13 @@
 @extends('backend.master')
 
 @section('content')
-<h1>Notice list</h1>
 <a href="{{route('notice.noticeform')}}" class="btn btn-success">
     create new notice
 
 </a>
+<br>
+<br>
+<h1>Notice list</h1>
 
 <table class="table">
     <thead class="thead-dark">
@@ -28,7 +30,7 @@
             <td>{{$data->notice_name}}</td>
             <td>{{$data->status}}</td>
             <td>{{$data->published_date}}</td>
-            <td>{{$data->Description}}</td>
+            <td>{{$data->description}}</td>
 
             <td>
 

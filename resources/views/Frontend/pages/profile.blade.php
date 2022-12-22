@@ -18,12 +18,12 @@
                         @csrf
                     <div class="row mt-2">
                         <div class="col-md-12"><label class="labels">Name</label>
-                            <input name="name" type="text" class="form-control" placeholder="Name" value="{{auth()->user()->name}}"></div>
+                            <input required name="name" type="text" class="form-control" placeholder="Name" value="{{auth()->user()->name}}"></div>
 
                     </div>
                     <div class="row mt-3">
                         
-                        <div class="col-md-12"><label class="labels">Email</label><input readonly type="text"name="email" class="form-control" placeholder="enter your email " value="{{auth()->user()->email}}"></div>
+                        <div class="col-md-12"><label class="labels">Email</label><input required type="text"name="email" class="form-control" placeholder="enter your email " value="{{auth()->user()->email}}"></div>
                        </div>
                     <div class="row mt-3">
 

@@ -6,7 +6,7 @@
 <div class="slider_area">
     <style>
         .slider_area {
-            background-image: url(Frontend/user.jpg);
+            background-image:url(Frontend/user.jpg);
             background-size: 1000px 1000px;
         }
     </style>
@@ -18,11 +18,11 @@
             <div class="row">
                 <div class="col-lg-9">
                     <div class="slider_text ">
-                        <span>Get Started Today.</span>
-                        <h3> Help the student
+                        <h3 style="color:white"> Help the student
                             When They Need</h3>
-                        <p>With so much to consume and such little time, coming up <br>
+                        <p style="color:white;">With so much to consume and such little time, coming up <br>
                             with relevant title ideas is essential</p>
+
                         @auth
                         @if(auth()->user()->role =='student')
                         <a href="{{route('apply.booklist')}}" class="btn btn-primary">applied book list</a>
@@ -84,23 +84,25 @@
 <!-- reson_area_end  -->
 
 <!-- latest_activites_area_start  -->
-<div class="latest_activites_area">
+<div class="latest_activites_area ">
     <div class="container">
-        <div class="row justify-content-end">
-            <div class="col-lg-7">
-                <div class="activites_info">
-                    <div class="section_title">
-                        <div class="d-flex justify-content-center">
+        <div class="row justify-content-center">
 
-                        </div>
+            <div class="activites_info" style="width: 800px;">
+                <div class="section_title">
+                    <div class="d-flex justify-content-center">
+                        <img src="https://media.istockphoto.com/id/1337880968/photo/volunteers-giving-out-free-packed-of-food-during-the-charity-drive-community-food-bank.jpg?b=1&s=170667a&w=0&k=20&c=lE0jdIjlbkRAx8frVy9R-8nKLgToafgC2t4Xj1wZvA0=" alt="">
+
                     </div>
-                    @auth
-                    @if(auth()->user()->role =='student')
-                    <a href="{{route('student.list')}}" class="btn btn-primary">student donation request</a>
-                    @endif
-                    @endauth
-
                 </div>
+                <br>
+                <div class="row justify-content-center">
+                @auth
+                @if(auth()->user()->role =='student')
+                <a href="{{route('student.list')}}" class="btn btn-primary">student donation request</a>
+                @endif
+                @endauth
+
             </div>
         </div>
     </div>
@@ -114,10 +116,11 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-6">
+                <img src="https://media.istockphoto.com/id/1406889700/photo/portrait-of-diverse-group-of-students-in-graduation-gowns-and-caps-with-their-arms-around.jpg?b=1&s=170667a&w=0&k=20&c=RTT7DZh9q3Gkf0IuTBuhTPG2uhLrHN42e50jShsGXuA=" alt="">
                 <div class="section_title text-center mb-55">
                     @auth
                     @if(auth()->user()->role =='student')
-                    <h3><span>Scholarship area</span></h3>
+                    <h3 style="color: black;">Scholarship area</h3>
                     <a href="{{route('s.apply')}}" class="btn btn-primary">applyscholarship</a>
                     @endif
                     @endauth
@@ -146,9 +149,10 @@
         <div class="row justify-content-center">
             <div class="col-lg-6">
                 <div class="section_title text-center mb-55">
+                    <img src="https://media.istockphoto.com/id/1085770318/photo/wooden-brown-books-shelves-with-a-lamp.jpg?b=1&s=170667a&w=0&k=20&c=DM5YYUqLMtuAYkyB7roMC90FSPIhHvELA6YeakG2uLk=" alt="">
                     @auth
                     @if(auth()->user()->role =='student')
-                    <h3><span>Apply for book</span></h3>
+                    <h3 style="color:black ;">Apply for book</h3>
                     <li><a href="{{route('books')}}" class="btn btn-primary">applybook</a></li>
                     @endif
                     @endauth
@@ -199,15 +203,15 @@
                     <div class="row justify-content-center">
                         <div class="col-lg-6">
                             <div class="section_title text-center mb-55">
+                                <img src="https://media.istockphoto.com/id/1271755758/photo/the-word-donate-on-wooden-blocks-with-heart-icon-against-blue-background-charity-and-donation.jpg?b=1&s=170667a&w=0&k=20&c=am3T8bxvpvuWWaOeh362tZce-MGstZoCgvRzrHt235k=" alt="">
                                 @auth
                                 @if(auth()->user()->role =='donor')
-                                <h3><span>Make a donation</span></h3>
+                                <h3>Make a donation</h3>
                                 <div class="d-flex justify-content-center">
-
                                     <button class="btn btn-primary" type="submit" data-toggle="modal" data-target="#donatenow">Donate Now</button>
                                 </div>
-                                 @endif
-                                 @endauth
+                                @endif
+                                @endauth
                             </div>
                         </div>
                     </div>
@@ -241,7 +245,7 @@
                                 <input required name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                             </div>
 
-                            <button type="submit" class="btn btn-primary">signup</button>
+                            <button type="submit" class="btn btn-primary">SIGNIN</button>
                         </form>
                     </div>
                 </div>
@@ -295,7 +299,7 @@
                                 <label for="name">Amount</label>
                                 <input required name="amount" type="number" class="form-control" id="name" placeholder="amount">
                             </div>
-                            
+
 
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
@@ -338,9 +342,9 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Password</label>
-                            <input name="student_password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                            <input required name="student_password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                         </div>
-                        <button type="submit" class="btn btn-primary">signup</button>
+                        <button type="submit" class="btn btn-primary">SIGNIN</button>
                     </form>
                 </div>
             </div>

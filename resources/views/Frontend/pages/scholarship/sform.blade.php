@@ -13,15 +13,15 @@
             <div class="from-group">
 
                 <label for="name">Title</label>
-                <input name="title" type="text" class="form-control" id="title" placeholder="title">
+                <input required name="title" type="text" class="form-control" id="title" placeholder="title">
             </div>
             <div class="form-group">
                 <label for="name">Name</label>
-                <input name="name" type="text" class="form-control" id="name" placeholder="name" value="{{auth()->user()->name}}">
+                <input required name="name" type="text" class="form-control" id="name" placeholder="name" value="{{auth()->user()->name}}">
             </div>
             <div class="form-group">
                 <label for="name">email</label>
-                <input name="email" type="text" class="form-control" id="email" placeholder="email" value="{{auth()->user()->email}}">
+                <input required name="email" type="text" class="form-control" id="email" placeholder="email" value="{{auth()->user()->email}}">
             </div>
             <div class="form-group">
                 <label for="name">Phone Number</label>

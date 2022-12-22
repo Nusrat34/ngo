@@ -1,6 +1,6 @@
 @extends('backend.master')
 @section('content')
-<h1>Donor list</h1>
+<div class="btn btn-primary">donor list</div>
 
 <table class="table">
     <thead class="thead-dark">

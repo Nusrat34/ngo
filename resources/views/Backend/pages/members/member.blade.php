@@ -1,10 +1,14 @@
 @extends('backend.master')
 @section('content')
 
-<h1>member list</h1>
 <a href="{{route('member.memberform')}}" class="btn btn-success">
+    <br>
     create new member
 </a>
+<br>
+<br>
+<h1>member list</h1>
+<br>
 <table class="table">
     <thead class="thead-dark">
 
@@ -28,7 +32,7 @@
 
             <td>
                 <a href="{{route('member.edit',$data->id)}}" class="btn btn-primary">Update</a>
-                <a href="{{route('member.delete',$data->id)}}" class="btn btn-danger">Delete</a>
+                <!-- <a href="{{route('member.delete',$data->id)}}" class="btn btn-danger">Delete</a> -->
 
             </td>
 

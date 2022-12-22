@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string(column:'status',length:100);
 
             $table->text(column:'published_date');
-            $table->text(column:'description');
+            $table->string(column:'description');
             $table->timestamps();
         });
     }

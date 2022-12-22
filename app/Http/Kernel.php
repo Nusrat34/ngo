@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\Admin;
 use App\Http\Middleware\CheckDonarMiddleware;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -55,6 +56,8 @@ class Kernel extends HttpKernel
      */
     protected $routeMiddleware = [
         'checkDonor'=>CheckDonarMiddleware::class,
+        'adminMiddleware'=>Admin::class,
+        'admin'=> \Illuminate\Auth\Middleware\Admin::class,
         'auth' => \App\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'auth.session' => \Illuminate\Session\Middleware\AuthenticateSession::class,

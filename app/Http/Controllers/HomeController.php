@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Donation;
 use App\Models\Donor;
+use App\Models\Scholarship;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -15,7 +16,8 @@ class HomeController extends Controller
 
     public function dashboard() {
         $donationTable = Donor::sum('amount');
+        $scholarship=Scholarship::sum('amount');
         // dd($donationTable);
-        return view('backend.pages.dashboard',compact('donationTable'));
+        return view('backend.pages.dashboard',compact('donationTable','scholarship'));
     }
 }

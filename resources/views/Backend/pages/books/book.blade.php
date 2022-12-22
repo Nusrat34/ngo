@@ -19,7 +19,6 @@
             <th scope="col">Book_name</th>
             <th scope="col">Writter_name</th>
             <th scope="col">Category</th>
-            <th scope="col">File</th>
             <th scope="col">action</th>
         </tr>
     </thead>
@@ -31,7 +30,6 @@
             <td>{{$data->book_name}}</td>
             <td>{{$data->writter_name}}</td>
             <td>{{$data->category}}</td>
-            <td><img width="50px" src="{{url('/uploads/',$data->file)}}" alt=""></td>
             <td>
                 <a href="{{route('admin.book.edit',$data->id)}}" class="btn btn-primary">Edit</a>
                 <a href="{{route('admin.book.delete',$data->id)}}" class="btn btn-danger">Delete</a>

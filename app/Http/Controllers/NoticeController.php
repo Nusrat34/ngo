@@ -24,6 +24,13 @@ class NoticeController extends Controller
 
 
     public function store(Request $request){
+        $request->validate([
+            'notice_name'=>'required',
+            'status'=>'required',
+            'published_date'=>'required',
+            'description'=>'required',
+
+        ]);
     
         //        dd($request->all());
                 Notice::create([
@@ -34,7 +41,7 @@ class NoticeController extends Controller
                         'description'=>$request->description,
         
                 ]);
-        
+                notify()->success('add notice success');
                    
                 return redirect()->back();
         
@@ -74,13 +81,15 @@ class NoticeController extends Controller
         
     
            ]);
-           return redirect()->route('notice')->with('message','Update success.');
+           notify()->success('update success');
+           return redirect()->route('notice');
           
     
         }
         public function notice_delete($notice_id){
             $not=Notice::findOrFail($notice_id)->delete();
-            return redirect()-> back()->with('message','notice deleted');
+            notify()->success('delete success');
+            return redirect()-> back();
         }
 }
 

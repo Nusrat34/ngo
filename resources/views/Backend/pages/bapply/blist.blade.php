@@ -1,6 +1,6 @@
 @extends('backend.master')
 @section('content')
-<h1>apply book list</h1>
+<div class="btn btn-primary">Applied book list</div>
 </a>
 <table class="table">
     <thead class="thead-dark">
