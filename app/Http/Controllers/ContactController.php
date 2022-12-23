@@ -19,6 +19,7 @@ class ContactController extends Controller
             'subject'=>$request->subject,
             'message'=>$request->message,
         ]);
+        notify()->success('message success');
         return redirect()-> route('webpage');
 
     }
@@ -30,7 +31,8 @@ class ContactController extends Controller
     public function delete($contact_id) 
     {
         contact::findOrFail($contact_id)->delete();
-        return redirect()->back()->with('message','contact deleted successfully');
+        notify()->success('deleted success');
+        return redirect()->back();
 
         
   

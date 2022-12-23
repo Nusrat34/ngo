@@ -36,7 +36,7 @@
                         <div class="main-menu">
                             <nav>
                                 <ul id="navigation">
-                                    <li><a href="{{route('home.page')}}">home</a></li>
+                                    <li><a class=""href="{{route('home.page')}}">home</a></li>
                                     @auth
 
                                     <li>
