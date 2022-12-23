@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class ScholarshipController extends Controller
 {
     public function scholarshiplist(){
-        $scholar=Scholarship::orderBy('id','desc')->paginate(8);
+        $scholar=Scholarship::orderBy('id','desc')->paginate(5);
 
         return view('backend.pages.scholarships.scholarshiplist',compact('scholar'));
     
@@ -25,6 +25,12 @@ class ScholarshipController extends Controller
     public function scholarship (Request $request){
         //    dd($request);
         $request->validate([
+            'title'=>'required',
+            'amount'=>'required',
+            'phone_number'=>'required',
+            'from_date'=>'required',
+            'to_date'=>'required',
+            'name'=>'required',
             
 
         ]);
@@ -63,7 +69,7 @@ class ScholarshipController extends Controller
 
 
     public function scholarshipshow(){
-        $scholar=Scholarship::orderBy('id','desc')->paginate(8);
+        $scholar=Scholarship::orderBy('id','desc')->paginate(5);
         return view('Frontend.pages.scholarship.slist',compact('scholar'));
     }
 }

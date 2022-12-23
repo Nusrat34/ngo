@@ -17,9 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string(column:'notice_name',length:100);
             $table->string(column:'status',length:100);
-
             $table->text(column:'published_date');
-            $table->string(column:'description');
+            $table->text(column:'description');
             $table->timestamps();
         });
     }

@@ -16,12 +16,16 @@ class Admin
      */
     public function handle(Request $request, Closure $next)
     {
-        if(auth()->user() && auth()->user()->role =='admin') 
-        {
-            
-            return $next($request);
-        }else{
-            return back();
-        }    
+
+        if(auth()->user()){
+            if (auth()->user()->role=='admin'){
+                return $next($request);
+            }else{
+                return redirect()->route('login');
+            }
+        }
+        else{
+            return redirect()->route('login');
+        }
     }
 }

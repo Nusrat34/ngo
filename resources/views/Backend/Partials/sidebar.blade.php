@@ -30,7 +30,7 @@
                 </a>
                 <a class="nav-link" href="{{route('b.apply')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                    apply_book_list
+                    applied book list
                 
                 
                 </a>

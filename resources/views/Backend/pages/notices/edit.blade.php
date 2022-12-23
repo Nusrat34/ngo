@@ -15,7 +15,7 @@
          
    <div class="form-group">
     <label for="name"> Notice Name</label>
-   <input required value="{{$not->notice_name}}" name="notice_name" type="text" class="form-control" id="name" placeholder="Enter Notice Name">
+   <input  value="{{$not->notice_name}}" name="notice_name" type="text" class="form-control" id="name" placeholder="Enter Notice Name">
 </div>
 
         <div class="form-group">
@@ -29,11 +29,12 @@
         
         <div class="form-group">
             <label for="name">published_Date</label>
-            <input  required value="{{$not->published_date}}" name="published_date" type="date" class="form-control" id="name" placeholder="published_date">
+            <input value="{{$not->published_date}}" name="published_date" type="date" class="form-control" id="name" placeholder="published_date">
         </div>
         <div class="form-group">
             <label for="name">Description</label>
-            <textarea class="form-control" value="{{$not->description}}" name="description" id=""></textarea>
+            <textarea class="form-control" name ="description" id="description">{{$not->description}}</textarea>
+            <!-- <textarea>{{$not->description}}</textarea> -->
         </div>
         <button type="submit" class="btn btn-primary">update</button>
     </form>

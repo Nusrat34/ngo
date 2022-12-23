@@ -10,8 +10,9 @@
                 <th scope="col">Book Name</th>
                 <th scope="col">Writter Name</th>
                 <th scope="col">Category</th>
-                <th scope="col">Download</th>
                 <th scope="col">Status</th>
+                <th scope="col">Download</th>
+                
             </tr>
         </thead>
         <tbody>
@@ -22,8 +23,6 @@
                 <td>{{ $applied_book->book->book_name }}</td>
                 <td>{{ $applied_book->book->writter_name }}</td>
                 <td>{{ $applied_book->book->category }}</td>
-                <td><a href="{{route('apply.booklist.bookDownloadFromServer',$applied_book->id)}}" class="btn btn-primary">Download Book</a></td>
-               
                 <td>
                     @if($applied_book->status == 1)
                         <span class="btn btn-sm btn-success">Approved</span>
@@ -31,6 +30,7 @@
                         <span class="btn btn-sm btn-danger">Pending</span>
                     @endif
                 </td>
+                <td><a href="{{route('apply.booklist.bookDownloadFromServer',$applied_book->id)}}" class="btn btn-primary">Download Book</a></td>
 
 
 

@@ -25,6 +25,12 @@ class BookController extends Controller
     }
 
     public function store(Request $request){
+      $request->validate([
+             'book_name'=>'required',
+                'writter_name'=>'required',
+                'category'=>'required',
+                'file'=>'required',
+    ]);
     
         //dd($request->all()); //
 
@@ -80,6 +86,12 @@ class BookController extends Controller
 
      public function update(Request $request,$book_id)
      {
+      $request->validate([
+        'book_name'=>'required',
+           'writter_name'=>'required',
+           'category_name'=>'required',
+           'file'=>'required',
+]);
 
         $book=book::find($book_id);
         $fileName=$book->file;
@@ -96,12 +108,13 @@ class BookController extends Controller
       
       
         }
+        
 
         $book->update ([
             //database column name => input field name
                 'book_name'=>$request->book_name,
                 'writter_name'=>$request->writter_name,
-                'catagory'=>$request->Catagory_name,
+                'category'=>$request->category_name,
                 'file'=>$fileName,
            ]);
            return redirect()->route('book')->with('message','Update success.');

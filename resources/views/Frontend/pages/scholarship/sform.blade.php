@@ -11,7 +11,6 @@
             @endif
             @csrf
             <div class="from-group">
-
                 <label for="name">Title</label>
                 <input required name="title" type="text" class="form-control" id="title" placeholder="title">
             </div>

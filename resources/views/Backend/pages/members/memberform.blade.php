@@ -13,7 +13,7 @@
 
         <div class="form-group">
             <label for="name">Email</label>
-            <input required name="email_name"type="text" class="form-control" id="name"placeholder="Email Name">
+            <input required name="email_name"type="text" class="form-control" id="mail"placeholder="Email Name">
         </div>
 
         <div class="form-group">

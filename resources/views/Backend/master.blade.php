@@ -12,7 +12,7 @@
         <link href="{{url('backend/css/styles.css')}}" rel="stylesheet" />
         @notifyCss
         
-        .notify{margin-top:50px; z-index:99999}
+        .notify{margin-top:50px; z-index:999999}
     </head>
     <body class="sb-nav-fixed">
     @include('notify::components.notify')

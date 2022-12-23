@@ -42,7 +42,7 @@ Route::get('/login', [UserController::class, 'login'])->name('login');
 Route::post('/do-login', [UserController::class, 'doLogin'])->name('do.login');
 
 
-Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
+Route::group(['middleware' => 'adminMiddleware', 'prefix' => 'admin'], function () {
     
     
 

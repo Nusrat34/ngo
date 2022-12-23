@@ -12,12 +12,14 @@ class WebController extends Controller
     }
 
   public function registration (Request $request){
+    // dd($request->all());
+
     $request->validate([
-      'name'=>'required',
-      'email'=>'required|email',
+      'student_name'=>'required',
+      'student_email'=>'required|email',
 
     ]);
-
+    
     User::create([
 
         'name'=>$request->student_name,
@@ -35,13 +37,11 @@ class WebController extends Controller
   }
   public function login(Request $request)
   {
-       $request->validate([
-           'email'=>'required|email',
-           'password'=>'required',
-       ]);
+    // dd($request->all());
+      
 
       $credentials=$request->except('_token');
-      //  dd($credentials);
+      // dd($credentials);
       if(auth()->attempt($credentials))
       {
         notify()->success('Login success');

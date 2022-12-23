@@ -10,7 +10,7 @@ class NoticeController extends Controller
     public function notice(){
         
 
-        $not=Notice::paginate(3);
+        $not=Notice::paginate(4);
         //$not=Notice::paginate(3);//
         //dd($not);
 
@@ -67,6 +67,15 @@ class NoticeController extends Controller
     
 
     public function notice_update(Request $request,$notice_id){
+        // dd($request->all());
+        $request->validate([
+            'notice_name'=>'required',
+            'status'=>'required',
+            'published_date'=>'required',
+            'description'=>'required',
+
+        ]);
+    
         $not=Notice::find($notice_id);
 
         $not->update ([

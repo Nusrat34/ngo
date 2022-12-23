@@ -275,11 +275,11 @@
                             </div>
                             <div class="form-group">
                                 <label for="name">Email</label>
-                                <input required name="email" type="text" class="form-control" id="name" placeholder="Email Name" value="{{auth()->user()->email}}">
+                                <input required name="email" type="text" class="form-control" id="email" placeholder="Email Name" value="{{auth()->user()->email}}">
                             </div>
                             <div class="form-group">
                                 <label for="name">Phone Number</label>
-                                <input required name="phone_number" type="number" class="form-control" id="name" placeholder="Phone Number">
+                                <input required name="phone_number" type="number" class="form-control" id="number" placeholder="Phone Number">
                             </div>
 
                             <div class="form-group">
@@ -293,11 +293,11 @@
                             </div>
                             <div class="form-group">
                                 <label for="name">Account_number</label>
-                                <input required name="account_number" type="number" class="form-control" id="name" placeholder="account_number">
+                                <input required name="account_number" type="number" class="form-control" id="number" placeholder="account_number">
                             </div>
                             <div class="form-group">
                                 <label for="name">Amount</label>
-                                <input required name="amount" type="number" class="form-control" id="name" placeholder="amount">
+                                <input required name="amount" type="number" class="form-control" id="number" placeholder="amount">
                             </div>
 
 

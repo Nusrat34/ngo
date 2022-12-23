@@ -25,7 +25,7 @@
                     <td>{{$data->notice_name}}</td>
                     <td>{{$data->status}}</td>
                     <td>{{$data->published_date}}</td>
-                    <td>{{$data->Description}}</td>
+                    <td>{{$data->description}}</td>
 
 
 
