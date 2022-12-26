@@ -63,8 +63,8 @@
                                     </li>
                                     @auth
                                     @if(auth()->user()->role =='student')
-                                    <li><a href="{{route('scholarship.show')}}"style=color:>scholarshiplist</a>
-                                    </li>
+                                    <!-- <li><a href="{{route('scholarship.show')}}"style=color:>scholarshiplist</a>
+                                    </li> -->
                                     <li><a href="{{route('s.donation')}}">studentdonationlist</a>
                                     @endif
                                     @endauth

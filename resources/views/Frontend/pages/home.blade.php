@@ -121,7 +121,8 @@
                     @auth
                     @if(auth()->user()->role =='student')
                     <h3 style="color: black;">Scholarship area</h3>
-                    <a href="{{route('s.apply')}}" class="btn btn-primary">applyscholarship</a>
+                    <li><a href="{{route('scholarship.show')}}" class="btn btn-primary"style=color:>Apply for scholarship</a>
+                    </li>             
                     @endif
                     @endauth
                 </div>

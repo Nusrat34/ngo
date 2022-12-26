@@ -67,7 +67,7 @@ class MemberController extends Controller
     public function update(Request $request,$member_id){
         $mem = member::find($member_id);
         //        dd($request->all());
-        Member::create([
+        $mem->update([
             //database column name => input field name
             'member_name' => $request->member_name,
             'email_name' => $request->email_name,

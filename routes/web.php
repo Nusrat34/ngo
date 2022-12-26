@@ -19,6 +19,7 @@ use App\Http\Controllers\StudentDonationController;
 use App\Http\Controllers\TranscationController;
 use App\Http\Controllers\Frontend\BController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ScholarshiptypeController;
 use App\Http\Controllers\SslCommerzPaymentController;
 
 /*
@@ -82,8 +83,15 @@ Route::group(['middleware' => 'adminMiddleware', 'prefix' => 'admin'], function 
     Route::get('/student_request', [StudentDonationController::class, 'requestlist'])->name('request.list');
     //student donation approve//
     Route::get('/student/approve/{student_id}', [StudentDonationController::class, 'studentdonation'])->name('approve.studentd');
+   
     //scholarship//
-    Route::get('/scholarship', [ScholarshipController::class, 'scholarshiplist'])->name('scholarship.list');
+    Route::get('/scholarship', [ScholarshipController::class, 'index'])->name('scholarships.index');
+    Route::get('/scholarship/create', [ScholarshipController::class, 'create'])->name('scholarship.create');
+    Route::post('/scholarship/store', [ScholarshipController::class, 'store'])->name('scholarship.store');
+
+    Route::get('/scholarship/appliations', [ScholarshipController::class, 'scholarship_applications'])->name('scholarship.appliations');
+    Route::get('/scholarship/appliation/approve/{id}', [ScholarshipController::class, 'approve_scholarship'])->name('approve.scholarship');
+    
     //scholarship aprove//
     Route::get('/scholarship/update/{id}', [ScholarshipController::class, 'scholarupdate'])->name('scholarship.update');
     //scholarship aprove//
@@ -149,6 +157,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/book/list', [BookController::class, 'book_list'])->name('apply.booklist');
     Route::get('/book/download/{id}', [BookController::class, 'bookDownloadFromServer'])->name('apply.booklist.bookDownloadFromServer');
     Route::get('/preview/book/{id}', [BookController::class, 'bookPreview'])->name('book.preview.frontend');
+
+    // apply for the sholarship
+    Route::get('/scholarship/apply/{id}', [ScholarshipController::class, 'apply_for_sholarship'])->name('apply_for_sholarship');
+    Route::post('/scholarship/apply/store', [ScholarshipController::class, 'scholarship_appliation_store'])->name('scholarship.appliation.store');
 });
 
 Route::post('/pay', [SslCommerzPaymentController::class, 'index'])->name('ssl.payment');
