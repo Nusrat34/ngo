@@ -36,8 +36,9 @@
         <tbody>
         @if(isset($applied_books))
         @foreach($applied_books as $key => $applied_book)
-        <tr>
-        <td>{{ $applied_book->user->name }}</td>
+          <tr>
+           <td>{{$key+1}}</td>
+          <td>{{ $applied_book->user->name }}</td>
             <td>{{ $applied_book->user->email }}</td>
             <td>{{ $applied_book->book->book_name }}</td>
             <td>{{ $applied_book->book->writter_name }}</td>
