@@ -1,35 +1,47 @@
 @extends('backend.master')
 @section('content')
 
-<div class="btn btn-success">transaction list</div>
+ 
+<h1>transaction list</h1>
 
-<!-- <a href="{{route('transaction.show')}}" class="btn btn-success">
-    create new transaction -->
-</a>
 <table class="table">
     <thead class="thead-dark">
-
         <tr>
             <th scope="col">Id</th>
-            <th scope="col">Transaction_id</th>
-            <th scope="col">CashIn</th>
-            <th scope="col">CashOut</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">phone_number</th>
+            <th scope="col">Address</th>
+            <th scope="col">occupation</th>
+            <th scope="col">Account_number</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Transaction Id</th>
+            
+             
         </tr>
     </thead>
     <tbody>
-        @foreach($tran as $key=>$data)
+        @foreach($dot as $key=> $data)
         <tr>
             <td>{{$key+1}}</td>
-            <td>{{$data->trax_head}}</td>
-            <td>{{$data->in}}</td>
-            <td>{{$data->out}}</td>
+            <td>{{$data->name}}</td>
+            <td>{{$data->email}}</td>
+            <td>{{$data->phone_number}}</td>
+            <td>{{$data->address}}</td>
+            <td>{{$data->occupation}}</td>
+            <td>{{$data->account_number}}</td>
+            <td>{{$data->amount}}</td>
+            <td>{{$data->transaction_id}}</td>
+            
 
 
-
+            <td>
+                
+            </td>
         </tr>
         @endforeach
 
     </tbody>
 </table>
-{{$tran->links()}}
+{{$dot->links()}}
 @endsection

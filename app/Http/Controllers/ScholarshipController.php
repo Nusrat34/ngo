@@ -130,6 +130,30 @@ class ScholarshipController extends Controller
         
         notify()->success('apply success');
         return redirect()->route('webpage');
-    }    
+   
+   
+    } 
+    
+    public function scholaredit($id){
+        $scholarship =scholarship::find($id);
+        return view('backend.pages.scholarships.edit', compact('scholarship'));
+    
+   
+   
+    }
+
+    public function scholareshoww(Request $request,$id){
+        $scholarship = scholarship::find($id);
+        $scholarship->update([
+            //database column name => input field name
+            'name'=> $request->name,
+            'amount'=> $request->amount,
+        
+    
+        ]);
+        notify()->success('update success');
+
+        return back();
+}
 }
 

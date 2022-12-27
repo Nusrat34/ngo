@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('scholarship_id');
             $table->string('user_id');
             $table->string('note');
-            $table->string('status')->default('pending');
+            $table->string('status')->default(0);
             $table->timestamps();
         });
     }

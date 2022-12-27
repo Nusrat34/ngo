@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AppliedBook;
+use App\Models\Book;
 use App\Models\Transcation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -11,10 +13,10 @@ class ReportController extends Controller
     public function report(){
         return view('backend.pages.report.reportform');
     }
-
     
 
     public function reportSearch(Request $request)
+    
     {
 //        $request->validate([
 //            'from_date'    => 'required|date',
@@ -41,8 +43,8 @@ class ReportController extends Controller
 
 //       $status=$request->status;
 
-        $tran=Transcation::whereBetween('created_at', [$from, $to])->get();
-        return view('backend.pages.report.reportform',compact('tran'));
+        $applied_books=AppliedBook::whereBetween('created_at', [$from, $to])->get();
+        return view('backend.pages.report.reportform',compact('applied_books'));
 
     }
 }

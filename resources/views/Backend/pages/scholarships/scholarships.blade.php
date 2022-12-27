@@ -22,7 +22,7 @@
                 <td>{{$scholarship->name}}</td>
                 <td>{{$scholarship->amount}}</td>
                 <td>
-                    
+                <a href="{{route('scholarship.edit',$scholarship->id)}}" class="btn btn-primary">Update</a>
                 </td>
             </tr>
             @endforeach

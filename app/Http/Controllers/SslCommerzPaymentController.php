@@ -78,6 +78,7 @@ class SslCommerzPaymentController extends Controller
                 'occupation'=>$request->occupation,
                 'amount'=>$request->amount,
                 'account_number'=>$request->account_number,
+                'transaction_id'=>$post_data['tran_id'],
                 
                 
         ]);

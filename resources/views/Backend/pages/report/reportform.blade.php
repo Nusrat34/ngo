@@ -19,33 +19,29 @@
 </div>
 
 </form>
-<div id="tranReport">
+<div id="bookReport">
 
-<h1>transaction Reports- {{date('Y-m-d')}}</h1>
+<h1>books Report- {{date('Y-m-d')}}</h1>
     <table class="table table-striped">
         <thead>
-        <tr>
-        <th scope="col">Id</th>
-        <th scope="col">trax_head</th>
-        <th scope="col">In</th>
-        <th scope="col">Out</th>
-        
+        <th scope="col">id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Book_name</th>
+        <th scope="col">Writter_name</th>
+        <th scope="col">category</th>
+    
     </tr>
         </thead>
         <tbody>
-        @if(isset($tran))
-        @foreach($tran as $key=>$data)
+        @if(isset($applied_books))
+        @foreach($applied_books as $key => $applied_book)
         <tr>
-        <td>{{$key+1}}</td>
-        <td>{{$data->trax_head}}</td>
-        <td>{{$data->in}}</td>
-        <td>{{$data->out}}</td>
-        
-    
-
- 
-        
-
+        <td>{{ $applied_book->user->name }}</td>
+            <td>{{ $applied_book->user->email }}</td>
+            <td>{{ $applied_book->book->book_name }}</td>
+            <td>{{ $applied_book->book->writter_name }}</td>
+            <td>{{ $applied_book->book->category }}</td>
         
     </tr>
         @endforeach
@@ -53,7 +49,7 @@
         </tbody>
     </table>
 </div>
-<button onclick="printDiv('tranReport')" class="btn btn-success">Print</button>
+<button onclick="printDiv('bookReport')" class="btn btn-success">Print</button>
 
 
 <script>

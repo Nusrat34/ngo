@@ -23,6 +23,7 @@ return new class extends Migration
             $table->text(column:'amount');
             $table->text(column:'account_number');
             $table->text(column:'status')->default('pending');
+            $table->text(column:'transaction_id');
             $table->timestamps();
         });
     }
