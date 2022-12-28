@@ -6,7 +6,7 @@
 <div class="slider_area">
     <style>
         .slider_area {
-            background-image:url(Frontend/user.jpg);
+            background-image: url(Frontend/user.jpg);
             background-size: 1000px 1000px;
         }
     </style>
@@ -97,44 +97,44 @@
                 </div>
                 <br>
                 <div class="row justify-content-center">
-                @auth
-                @if(auth()->user()->role =='student')
-                <a href="{{route('student.list')}}" class="btn btn-primary">student donation request</a>
-                @endif
-                @endauth
-
-            </div>
-        </div>
-    </div>
-</div>
-<!-- latest_activites_area_end  -->
-
-
-
-<!-- popular_causes_area_start  -->
-<div class="popular_causes_area section_padding">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-6">
-                <img src="https://media.istockphoto.com/id/1406889700/photo/portrait-of-diverse-group-of-students-in-graduation-gowns-and-caps-with-their-arms-around.jpg?b=1&s=170667a&w=0&k=20&c=RTT7DZh9q3Gkf0IuTBuhTPG2uhLrHN42e50jShsGXuA=" alt="">
-                <div class="section_title text-center mb-55">
                     @auth
                     @if(auth()->user()->role =='student')
-                    <h3 style="color: black;">Scholarship area</h3>
-                    <li><a href="{{route('scholarship.show')}}" class="btn btn-primary"style=color:>Apply for scholarship</a>
-                    </li>             
+                    <a href="{{route('student.list')}}" class="btn btn-primary">student donation request</a>
                     @endif
                     @endauth
+
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-12">
+    </div>
+    <!-- latest_activites_area_end  -->
 
+
+
+    <!-- popular_causes_area_start  -->
+    <div class="popular_causes_area section_padding">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <img src="https://media.istockphoto.com/id/1406889700/photo/portrait-of-diverse-group-of-students-in-graduation-gowns-and-caps-with-their-arms-around.jpg?b=1&s=170667a&w=0&k=20&c=RTT7DZh9q3Gkf0IuTBuhTPG2uhLrHN42e50jShsGXuA=" alt="">
+                    <div class="section_title text-center mb-55">
+                        @auth
+                        @if(auth()->user()->role =='student')
+                        <h3 style="color: black;">Scholarship area</h3>
+                        <li><a href="{{route('scholarship.show')}}" class="btn btn-primary" style=color:>Apply for scholarship</a>
+                        </li>
+                        @endif
+                        @endauth
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+
+                </div>
             </div>
         </div>
     </div>
-</div>
 </div>
 </div>
 
@@ -341,6 +341,40 @@
                                 <option value="student">student</option>
                             </select>
                         </div>
+
+                        <div class="form-group">
+                            <label for="">Gender</label>
+                            <select name="gender" id="gender" class="form-control">
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="others">Others</option>
+                            </select>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">HSC Result</label>
+                            <input  name="hscresult" type="number" min="1" max="5" step="any" class="form-control" id="exampleInputEmail1" placeholder="result">
+                            <small id="emailHelp" class="form-text text-muted"> </small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">SSC Result</label>
+                            <input  name="sscresult" type="number" min="1" max="5" step="any"class="form-control" id="exampleInputEmail1" placeholder="result">
+                            <small id="emailHelp" class="form-text text-muted"> </small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">CGPA </label>
+                            <input name="cgpa" type="number" min="1" max="5" step="any" class="form-control" id="exampleInputEmail1" placeholder="result">
+                            <small id="emailHelp" class="form-text text-muted"> </small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="file">Uplode Document</label>
+                            <input  type="file" class="form-control" name="file" id="file">
+                        </div>
+
                         <div class="form-group">
                             <label for="exampleInputPassword1">Password</label>
                             <input required name="student_password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">

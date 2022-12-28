@@ -122,13 +122,39 @@ class ScholarshipController extends Controller
 
     public function scholarship_appliation_store(Request $request)
     {
-        $scholarship_apply = new ScholarshipApplication;
-        $scholarship_apply->scholarship_id = $request->id;
-        $scholarship_apply->user_id = auth()->user()->id;
-        $scholarship_apply->note = $request->note;
-        $scholarship_apply->save();
+        // dd($request->all());
+        if(auth()->user()->hscresult != null && auth()->user()->sscresult != null){
+
+            $totalScore = auth()->user()->hscresult + auth()->user()->sscresult ;
+            // dd($totalScore);
+            $scholarship = Scholarship::find($request->id);
+            // dd($scholarship->amount);
+            $scholarship_apply = new ScholarshipApplication;
+            if($totalScore <=10 && $totalScore >8){
+                $scholarship_apply->applied_amount = $scholarship->amount;
+            }elseif($totalScore <=8 && $totalScore >6){
+                $scholarship_apply->applied_amount = ($scholarship->amount * 90 / 100);
+            }elseif($totalScore <=6 && $totalScore >4){
+                $scholarship_apply->applied_amount = ($scholarship->amount * 80 / 100);
+              
+            }elseif($totalScore >=4 && $totalScore <4){
+                $scholarship_apply->applied_amount = ($scholarship->amount * 70 / 100);
+            }else{
+                $scholarship_apply->applied_amount = 0;
+                notify()->error('Not enough cgpa to avail any scholarship');
+                return redirect()->route('webpage');
+            }
+
+            $scholarship_apply->scholarship_id = $request->id;
+            $scholarship_apply->user_id = auth()->user()->id;
+            $scholarship_apply->note = $request->note;
+            $scholarship_apply->save();
+            notify()->success('apply success');
+            return redirect()->route('webpage');
+        }
         
-        notify()->success('apply success');
+        
+        notify()->error('apply filled up please complete the profile');
         return redirect()->route('webpage');
    
    

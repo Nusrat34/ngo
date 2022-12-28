@@ -19,6 +19,15 @@ class WebController extends Controller
       'student_email'=>'required|email',
 
     ]);
+    // dd($request->all());
+    $fileName=null;
+    if($request->hasFile('file'))
+    {
+        // generate name
+         
+        $fileName=date('Ymdhmi').'.'.$request->file('file')->getClientOriginalExtension();
+        $request->file('file')->storeAs('/uploads',$fileName);
+    }
     
     User::create([
 
@@ -26,6 +35,11 @@ class WebController extends Controller
         'email'=>$request->student_email,
         'password'=>bcrypt($request->student_password),
         'role'=>$request->role,
+        'gender'=>$request->gender,
+        'hscresult'=>$request->hscresult,
+        'sscresult'=>$request->sscresult,
+        'cgpa'=>$request->cgpa,
+        'certificate'=>$fileName,
   
 
 

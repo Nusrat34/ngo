@@ -11,6 +11,7 @@
                 <th scope="col">Name</th>
                 <th scope="col">Email</th>
                 <th scope="col">Note</th>
+                <th scope="col">Applied for amount after Scholarship</th>
                 <th scope="col">Status</th>
                 <th scope="col">Action</th>
             </tr>
@@ -23,6 +24,7 @@
                 <td>{{$data->user->name}}</td>
                 <td>{{$data->user->email}}</td>
                 <td>{{$data->note}}</td>
+                <td>{{$data->applied_amount}}</td>
                 <td>
                     @if($data->status == 1)
                         <span class="btn btn-sm btn-success">Approved</span>
