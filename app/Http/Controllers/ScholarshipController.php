@@ -25,6 +25,7 @@ class ScholarshipController extends Controller
         $scholarship = new Scholarship;
         $scholarship->name = $request->name;
         $scholarship->amount = $request->amount;
+        $scholarship->description = $request->description;
         $scholarship->save();
 
         notify()->success('Scholarship Added Sucessfully');

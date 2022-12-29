@@ -59,6 +59,8 @@
 }
 
 </script>
+<br>
+<br>
 
 {{$scholarship_applications->links()}}
 

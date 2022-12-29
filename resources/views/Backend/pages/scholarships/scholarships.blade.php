@@ -13,6 +13,7 @@
                 <th scope="col">Name</th>
                 <th scope="col">Amount</th>
                 <th scope="col">Action</th>
+                <th scope="col">Description</th>
             </tr>
         </thead>
         <tbody>
@@ -21,6 +22,7 @@
                 <td>{{$key+1}}</td>
                 <td>{{$scholarship->name}}</td>
                 <td>{{$scholarship->amount}}</td>
+                <td>{{$scholarship->description}}</td>
                 <td>
                 <a href="{{route('scholarship.edit',$scholarship->id)}}" class="btn btn-primary">Update</a>
                 </td>

@@ -18,6 +18,7 @@
                                     <h4>{{$data->name}}</h4>
                                 </a>
                                 <p>{{$data->amount}}</p>
+                                <p>{{$data->description}}</p>
                                 @php
                                     $is_alreday_applied = \App\Models\ScholarshipApplication::where('user_id',auth()->user()->id)->where('scholarship_id',$data->id)->first();
                                 @endphp

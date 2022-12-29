@@ -13,6 +13,10 @@
         <label for="name">Amount</label>
         <input required name="amount" type="number" class="form-control" id="amount" placeholder="Amount">
     </div>
+    <div class="form-group">
+            <label for="name">Description</label>
+            <textarea class="form-control"required name="description" id="description"></textarea>
+        </div>
 
     <button type="submit" class="btn btn-primary">add</button>
 </form>

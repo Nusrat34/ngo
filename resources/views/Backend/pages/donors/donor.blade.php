@@ -11,7 +11,7 @@
             <th scope="col">phone_number</th>
             <th scope="col">Address</th>
             <th scope="col">occupation</th>
-            <th scope="col">Account_number</th>
+            <th scope="col">Sender_phone_number</th>
             <th scope="col">Amount</th>
             <th scope="col">Status</th>
             <th scope="col">Action</th>
