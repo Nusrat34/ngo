@@ -182,5 +182,10 @@ class ScholarshipController extends Controller
 
         return back();
 }
+
+    public function scholarship_applied(){
+        $scholarship_applications=ScholarshipApplication::orderBy('id','desc')->paginate(5);
+        return view('Frontend.pages.scholarship.scholarshiplist',compact('scholarship_applications'));
+    }
 }
 

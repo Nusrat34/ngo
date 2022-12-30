@@ -14,6 +14,11 @@
         <label for="name">Amount</label>
         <input required value="{{$scholarship->amount}}" name="amount" type="number" class="form-control" id="amount" placeholder="Amount">
     </div>
+    <div class="form-group">
+            <label for="name">Description</label>
+            <textarea class="form-control" name ="description" id="description">{{$scholarship->description}}</textarea>
+
+        </div>
 
     <button type="submit" class="btn btn-primary">update</button>
 </form>

@@ -65,7 +65,12 @@
                 </a>
                 <a class="nav-link" href="{{route('report.list')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                    report
+                   book report
+                
+                </a>
+                <a class="nav-link" href="{{route('scholarship.report')}}">
+                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                   scholarship report
                 
                 </a>
             </div>

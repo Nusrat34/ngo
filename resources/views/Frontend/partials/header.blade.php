@@ -69,7 +69,11 @@
                                     @endif
                                     @endauth
                                     </li>
-
+                                    @auth
+                                    @if(auth()->user()->role =='student')
+                                    <li><a href="{{route('scholarship.applied')}}" style="color:white">Applied scholarship list</a></li>
+                                    @endif
+                                    @endauth
                                     <li><a href="{{route('contact.us')}}" style="color:white">Contact</a></li>
                                     <li><a href="{{route('profile.us')}}">profile</a></li>
                                 </ul>

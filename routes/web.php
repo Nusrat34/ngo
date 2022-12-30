@@ -44,10 +44,10 @@ Route::post('/do-login', [UserController::class, 'doLogin'])->name('do.login');
 
 
 Route::group(['middleware' => 'adminMiddleware', 'prefix' => 'admin'], function () {
-    
-    
 
-    
+
+
+
     Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 
 
@@ -83,7 +83,7 @@ Route::group(['middleware' => 'adminMiddleware', 'prefix' => 'admin'], function 
     Route::get('/student_request', [StudentDonationController::class, 'requestlist'])->name('request.list');
     //student donation approve//
     Route::get('/student/approve/{student_id}', [StudentDonationController::class, 'studentdonation'])->name('approve.studentd');
-   
+
     //scholarship//
     Route::get('/scholarship', [ScholarshipController::class, 'index'])->name('scholarships.index');
     Route::get('/scholarship/create', [ScholarshipController::class, 'create'])->name('scholarship.create');
@@ -91,7 +91,7 @@ Route::group(['middleware' => 'adminMiddleware', 'prefix' => 'admin'], function 
 
     Route::get('/scholarship/appliations', [ScholarshipController::class, 'scholarship_applications'])->name('scholarship.appliations');
     Route::get('/scholarship/appliation/approve/{id}', [ScholarshipController::class, 'approve_scholarship'])->name('approve.scholarship');
-    
+
     //scholarship aprove//
     Route::get('/scholarship/update/{id}', [ScholarshipController::class, 'scholarupdate'])->name('scholarship.update');
     Route::get('/scholarship/edit/{id}', [ScholarshipController::class, 'scholaredit'])->name('scholarship.edit');
@@ -115,10 +115,10 @@ Route::group(['middleware' => 'adminMiddleware', 'prefix' => 'admin'], function 
     Route::get('/notice/delete/{notice_id}', [NoticeController::class, 'notice_delete'])->name('notice.delete');
     Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
     Route::get('/report', [ReportController::class, 'report'])->name('report.list');
+    Route::get('/scholarshipreport', [ReportController::class, 'scholarshipreport'])->name('scholarship.report');
     Route::get('/report/search', [ReportController::class, 'reportSearch'])->name('tran.report.search');
-
-
-    });
+    Route::get('/scholarship/search', [ReportController::class, 'scholarshipsearch'])->name('scholarship.search');
+});
 
 //frontend routes
 
@@ -146,6 +146,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/sapply/form', [ScholarshipController::class, 's_apply'])->name('s.apply');
     Route::post('/applyscholarship/form', [ScholarshipController::class, 'scholarship'])->name('scholarship.form');
     Route::get('/scholarship/show', [ScholarshipController::class, 'scholarshipshow'])->name('scholarship.show');
+    //applied scholarship list
+    Route::get('/scholarship/applied', [ScholarshipController::class, 'scholarship_applied'])->name('scholarship.applied');
     Route::get('/notice/show', [NoticeController::class, 'noticeshow'])->name('notice.list');
     Route::get('/books', [BController::class, 'book_list'])->name('books');
     Route::post('/book/show', [BController::class, 'bookshow'])->name('book.show');
