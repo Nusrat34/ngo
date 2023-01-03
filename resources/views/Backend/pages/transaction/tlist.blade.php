@@ -3,8 +3,28 @@
 
  
 <h1>transaction list</h1>
+<form action="{{route('transation.reportsearch')}}" method="get">
+
+<div class="row">
+        <div class="col-md-4">
+            <label for="">From date:</label>
+            <input name="from_date" type="date" class="form-control">
+
+        </div>
+        <div class="col-md-4">
+            <label for="">To date:</label>
+            <input name="to_date" type="date" class="form-control">
+        </div>
+        <div class="col-md-4">
+            <button type="submit" class="btn btn-success">Search</button>
+        </div>
+    </div>
+
+</form>
+<div id="transaction report">
 
 <table class="table">
+<h1>Scholarship report- {{date('Y-m-d')}}</h1>
     <thead class="thead-dark">
         <tr>
             <th scope="col">Id</th>
@@ -21,6 +41,7 @@
         </tr>
     </thead>
     <tbody>
+    @if(isset($dot))
         @foreach($dot as $key=> $data)
         <tr>
             <td>{{$key+1}}</td>
@@ -40,8 +61,21 @@
             </td>
         </tr>
         @endforeach
+        @endif
 
     </tbody>
 </table>
-{{$dot->links()}}
+
+<button onclick="printDiv('transaction report')" class="btn btn-success">Print</button>
+
+
+<script>
+    function printDiv(divId) {
+        var printContents = document.getElementById(divId).innerHTML;
+        var originalContents = document.body.innerHTML;
+        document.body.innerHTML = printContents;
+        window.print();
+        document.body.innerHTML = originalContents;
+    }
+</script>
 @endsection

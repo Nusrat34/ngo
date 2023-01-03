@@ -133,13 +133,17 @@ class ScholarshipController extends Controller
             $scholarship_apply = new ScholarshipApplication;
             if($totalScore <=10 && $totalScore >8){
                 $scholarship_apply->applied_amount = $scholarship->amount;
+                $scholarship_apply->percentage = '100%';
             }elseif($totalScore <=8 && $totalScore >6){
                 $scholarship_apply->applied_amount = ($scholarship->amount * 90 / 100);
+                $scholarship_apply->percentage = '90%';
             }elseif($totalScore <=6 && $totalScore >4){
                 $scholarship_apply->applied_amount = ($scholarship->amount * 80 / 100);
+                $scholarship_apply->percentage = '80%';
               
             }elseif($totalScore >=4 && $totalScore <4){
                 $scholarship_apply->applied_amount = ($scholarship->amount * 70 / 100);
+                $scholarship_apply->percentage = '70%';
             }else{
                 $scholarship_apply->applied_amount = 0;
                 notify()->error('Not enough cgpa to avail any scholarship');

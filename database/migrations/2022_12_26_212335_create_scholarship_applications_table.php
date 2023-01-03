@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('scholarship_id');
             $table->string('user_id');
             $table->string('note');
+            $table->string('percentage');
             $table->double('applied_amount');
             $table->string('status')->default(0);
             $table->timestamps();

@@ -116,6 +116,8 @@ Route::group(['middleware' => 'adminMiddleware', 'prefix' => 'admin'], function 
     Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
     Route::get('/report', [ReportController::class, 'report'])->name('report.list');
     Route::get('/scholarshipreport', [ReportController::class, 'scholarshipreport'])->name('scholarship.report');
+    Route::get('/transactionreport', [ReportController::class, 'transactionreport'])->name('transation.report');
+    Route::get('/transactionreport/search', [ReportController::class, 'transactionreport_search'])->name('transation.reportsearch');
     Route::get('/report/search', [ReportController::class, 'reportSearch'])->name('tran.report.search');
     Route::get('/scholarship/search', [ReportController::class, 'scholarshipsearch'])->name('scholarship.search');
 });
