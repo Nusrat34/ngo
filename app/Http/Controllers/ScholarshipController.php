@@ -179,6 +179,7 @@ class ScholarshipController extends Controller
             //database column name => input field name
             'name'=> $request->name,
             'amount'=> $request->amount,
+            'description'=> $request->description,
         
     
         ]);
