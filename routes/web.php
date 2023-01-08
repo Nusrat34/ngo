@@ -96,6 +96,8 @@ Route::group(['middleware' => 'adminMiddleware', 'prefix' => 'admin'], function 
     Route::get('/scholarship/update/{id}', [ScholarshipController::class, 'scholarupdate'])->name('scholarship.update');
     Route::get('/scholarship/edit/{id}', [ScholarshipController::class, 'scholaredit'])->name('scholarship.edit');
     Route::put('/scholarship/showw/{id}', [ScholarshipController::class, 'scholareshoww'])->name('scholarship.showw');
+    Route::get('/scholarship/update/{id}', [ScholarshipController::class, 'scholareupdate'])->name('scholarship.update');
+    Route::put('/scholarship/str/{id}', [ScholarshipController::class, 'scholarestr'])->name('scholarship.str');
     //scholarship aprove//
 
     //book apply approve//

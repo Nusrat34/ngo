@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('note');
             $table->string('percentage');
             $table->double('applied_amount');
+            $table->string('amount')->nullable();
             $table->string('status')->default(0);
             $table->timestamps();
         });

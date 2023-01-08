@@ -45,7 +45,7 @@ class ScholarshipController extends Controller
 
     }
 
-    public function approve_scholarship($id){
+    public function approve_scholarship($id,$perentage){
         $scholarship_applications=ScholarshipApplication::find($id);
         $scholarship_applications->status = 1;
         $scholarship_applications->save();
@@ -131,24 +131,28 @@ class ScholarshipController extends Controller
             $scholarship = Scholarship::find($request->id);
             // dd($scholarship->amount);
             $scholarship_apply = new ScholarshipApplication;
-            if($totalScore <=10 && $totalScore >8){
-                $scholarship_apply->applied_amount = $scholarship->amount;
-                $scholarship_apply->percentage = '100%';
-            }elseif($totalScore <=8 && $totalScore >6){
-                $scholarship_apply->applied_amount = ($scholarship->amount * 90 / 100);
-                $scholarship_apply->percentage = '90%';
-            }elseif($totalScore <=6 && $totalScore >4){
-                $scholarship_apply->applied_amount = ($scholarship->amount * 80 / 100);
-                $scholarship_apply->percentage = '80%';
+            // if($totalScore <=10 && $totalScore >8){
+            //     $scholarship_apply->applied_amount = $scholarship->amount;
+            //     $scholarship_apply->percentage = '100';
+            // }elseif($totalScore <=8 && $totalScore >6){
+            //     $scholarship_apply->applied_amount = ($scholarship->amount * 90 / 100);
+            //     $scholarship_apply->percentage = '90';
+            // }elseif($totalScore <=6 && $totalScore >4){
+            //     $scholarship_apply->applied_amount = ($scholarship->amount * 80 / 100);
+            //     $scholarship_apply->percentage = '80';
               
-            }elseif($totalScore >=4 && $totalScore <4){
-                $scholarship_apply->applied_amount = ($scholarship->amount * 70 / 100);
-                $scholarship_apply->percentage = '70%';
-            }else{
-                $scholarship_apply->applied_amount = 0;
-                notify()->error('Not enough cgpa to avail any scholarship');
-                return redirect()->route('webpage');
-            }
+            // }elseif($totalScore >=4 && $totalScore <4){
+            //     $scholarship_apply->applied_amount = ($scholarship->amount * 70 / 100);
+            //     $scholarship_apply->percentage = '70';
+            // }else{
+            //     $scholarship_apply->applied_amount = 0;
+            //     notify()->error('Not enough cgpa to avail any scholarship');
+            //     return redirect()->route('webpage');
+            // }
+
+            $scholarship_apply->applied_amount = $scholarship->amount;
+            $scholarship_apply->percentage = '00';
+            $scholarship_apply->amount = $scholarship->amount;
 
             $scholarship_apply->scholarship_id = $request->id;
             $scholarship_apply->user_id = auth()->user()->id;
@@ -192,5 +196,27 @@ class ScholarshipController extends Controller
         $scholarship_applications=ScholarshipApplication::orderBy('id','desc')->paginate(5);
         return view('Frontend.pages.scholarship.scholarshiplist',compact('scholarship_applications'));
     }
+
+
+public function scholareupdate($scholarship_id){
+
+    $scholarship=ScholarshipApplication::find($scholarship_id);
+    
+    return view('Backend.pages.Scholarships.update',compact('scholarship'));
+}
+
+public function scholarestr(Request $request,$scholarship_id){
+   
+    $scholarship=ScholarshipApplication::find($scholarship_id);
+    // dd($scholarship);
+   
+    $scholarship->update([
+        'percentage'=>$request->percentage,
+        'applied_amount'=>$scholarship->applied_amount * $request->percentage /100,
+        'status'=>1
+    ]);
+    return to_route('scholarship.appliations');
+}
+
 }
 

@@ -13,6 +13,7 @@
                 <th scope="col">Email</th>
                 <th scope="col">Note</th>
                 <th scope="col">Pecentage Applied</th>
+                <th scope="col">amount</th>
                 <th scope="col">Applied for amount after Scholarship</th>
                 <th scope="col">Status</th>
                 <th scope="col">Action</th>
@@ -26,7 +27,8 @@
                 <td>{{$data->user->name}}</td>
                 <td>{{$data->user->email}}</td>
                 <td>{{$data->note}}</td>
-                <td>{{$data->percentage}}</td>
+                <td>{{$data->percentage}}%</td>
+                <td>{{$data->amount}}</td>
                 <td>{{$data->applied_amount}}</td>
                 <td>
                     @if($data->status == 1)
@@ -37,7 +39,7 @@
                 </td>
                 <td>
                     @if($data->status == 0)
-                        <a href="{{route('approve.scholarship', $data->id)}}" class="btn btn-primary">approve</a>
+                        <a href="{{route('scholarship.update',$data->id)}}" class="btn btn-primary">approve</a>
                     @endif
 
                 </td>
@@ -62,9 +64,9 @@
 }
 
 </script>
+
 <br>
 <br>
 
 {{$scholarship_applications->links()}}
-
 @endsection
