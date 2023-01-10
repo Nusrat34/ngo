@@ -22,6 +22,10 @@ class ScholarshipController extends Controller
     }
 
     public function store (Request $request){
+
+        $request->validate([
+            'amount'=>'required|gt:0',
+        ]);
         $scholarship = new Scholarship;
         $scholarship->name = $request->name;
         $scholarship->amount = $request->amount;
@@ -206,6 +210,9 @@ public function scholareupdate($scholarship_id){
 }
 
 public function scholarestr(Request $request,$scholarship_id){
+    $request->validate([
+      'percentage'=>'required|numeric|between:0,100'
+    ]);
    
     $scholarship=ScholarshipApplication::find($scholarship_id);
     // dd($scholarship);

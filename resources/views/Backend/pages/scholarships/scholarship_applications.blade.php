@@ -12,8 +12,8 @@
                 <th scope="col">Name</th>
                 <th scope="col">Email</th>
                 <th scope="col">Note</th>
-                <th scope="col">Pecentage Applied</th>
-                <th scope="col">amount</th>
+                <th scope="col">Percentage</th>
+                <th scope="col">Amount</th>
                 <th scope="col">Applied for amount after Scholarship</th>
                 <th scope="col">Status</th>
                 <th scope="col">Action</th>

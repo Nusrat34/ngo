@@ -36,6 +36,7 @@
   @include('notify::components.notify')
 
 @include('Frontend.partials.header')
+
 @yield('content')
 
 

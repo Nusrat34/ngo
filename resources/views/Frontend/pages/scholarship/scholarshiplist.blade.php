@@ -15,6 +15,8 @@
                 <th scope="col">Name</th>
                 <th scope="col">Email</th>
                 <th scope="col">Note</th>
+                <th scope="col">percentage</th>
+                <th scope="col">Amount</th>
                 <th scope="col">Applied for amount after Scholarship</th>
                 <th scope="col">Status</th>
             </tr>
@@ -27,6 +29,8 @@
                 <td>{{$data->user->name}}</td>
                 <td>{{$data->user->email}}</td>
                 <td>{{$data->note}}</td>
+                <td>{{$data->percentage}}%</td>
+                <td>{{$data->amount}}</td>
                 <td>{{$data->applied_amount}}</td>
                 <td>
                     @if($data->status == 1)
@@ -41,6 +45,7 @@
     </table>    
 </div>
 </div>
-
-{{$scholarship_applications->links()}}
+<br>
+<br>
+<!-- {{$scholarship_applications->links()}} -->
 @endsection

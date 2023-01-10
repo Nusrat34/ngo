@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use App\Library\SslCommerz\SslCommerzNotification;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class SslCommerzPaymentController extends Controller
 {
@@ -66,8 +67,23 @@ class SslCommerzPaymentController extends Controller
         $post_data['value_b'] = "ref002";
         $post_data['value_c'] = "ref003";
         $post_data['value_d'] = "ref004";
+        $validation = Validator::make($request->all(),[
+            'amount'=>'required|gt:0',
+            'phone_number'=>'required|numeric|digits:11',
+            
+        ]);
+        // dd($validation->messages());
 
-
+          if ($validation->messages()->messages()) {
+            foreach ($validation->messages()->messages() as $key => $value) {
+                foreach ($value as $key => $data) {
+                    notify()->error("$data"); 
+                }
+                
+            }
+            return redirect()->back();
+            
+            }
 
         Donor::create([
             //database column name => input field name

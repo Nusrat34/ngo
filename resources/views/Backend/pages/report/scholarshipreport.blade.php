@@ -29,8 +29,10 @@
             <th scope="col">Name</th>
             <th scope="col">Email</th>
             <th scope="col">Note</th>
+            <th scope="col">percentage</th>
+            <th scope="col">Amount</th>
             <th scope="col">Applied for amount after Scholarship</th>
-            <th scope="col">Status</th>
+            <!-- <th scope="col">Status</th> -->
             </tr>
         </thead>
         <tbody>
@@ -42,14 +44,16 @@
                 <td>{{$data->user->name}}</td>
                 <td>{{$data->user->email}}</td>
                 <td>{{$data->note}}</td>
+                <td>{{$data->percentage}}%</td>
+                <td>{{$data->amount}}</td>
                 <td>{{$data->applied_amount}}</td>
-                <td>
+                <!-- <td>
                     @if($data->status == 1)
                     <span class="btn btn-sm btn-success">Approved</span>
                     @else
                     <span class="btn btn-sm btn-info">Pending</span>
                     @endif
-                </td>
+                </td> -->
             </tr>
             @endforeach
              @endif
