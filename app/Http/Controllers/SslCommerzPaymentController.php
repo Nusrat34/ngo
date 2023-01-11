@@ -70,6 +70,7 @@ class SslCommerzPaymentController extends Controller
         $validation = Validator::make($request->all(),[
             'amount'=>'required|gt:0',
             'phone_number'=>'required|numeric|digits:11',
+            'account_number'=>'required|numeric|digits:11',
             
         ]);
         // dd($validation->messages());

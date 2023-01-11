@@ -293,7 +293,7 @@
                                 <input required name="address" type="text" class="form-control" id="name" placeholder="Address">
                             </div>
                             <div class="form-group">
-                                <label for="name">Account_number</label>
+                                <label for="name">Sender_phone_number</label>
                                 <input required name="account_number" type="number" class="form-control" id="number" placeholder="account_number">
                             </div>
                             <div class="form-group">

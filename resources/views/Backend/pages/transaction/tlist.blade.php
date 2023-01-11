@@ -36,8 +36,7 @@
             <th scope="col">Sender_phone_number</th>
             <th scope="col">Amount</th>
             <th scope="col">Transaction Id</th>
-            
-             
+            <th scope="col">Date</th>
         </tr>
     </thead>
     <tbody>
@@ -53,11 +52,8 @@
             <td>{{$data->account_number}}</td>
             <td>{{$data->amount}}</td>
             <td>{{$data->transaction_id}}</td>
-            
-
-
             <td>
-                
+               {{ $data->created_at }} 
             </td>
         </tr>
         @endforeach

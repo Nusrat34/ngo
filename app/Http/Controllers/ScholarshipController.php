@@ -7,6 +7,7 @@ use App\Models\Transcation;
 use App\Models\ScholarshipApplication;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class ScholarshipController extends Controller
 {
@@ -22,10 +23,24 @@ class ScholarshipController extends Controller
     }
 
     public function store (Request $request){
-
-        $request->validate([
+           
+    
+        $validation = Validator::make($request->all(),[
             'amount'=>'required|gt:0',
+            
         ]);
+
+        if ($validation->messages()->messages()) {
+            foreach ($validation->messages()->messages() as $key => $value) {
+                foreach ($value as $key => $data) {
+                    notify()->error("$data"); 
+                }
+                
+            }
+            return redirect()->back();
+            
+            }
+
         $scholarship = new Scholarship;
         $scholarship->name = $request->name;
         $scholarship->amount = $request->amount;
@@ -210,9 +225,22 @@ public function scholareupdate($scholarship_id){
 }
 
 public function scholarestr(Request $request,$scholarship_id){
-    $request->validate([
-      'percentage'=>'required|numeric|between:0,100'
+    
+    $validation = Validator::make($request->all(),[
+       
+        'percentage'=>'required|numeric|between:0,100'
     ]);
+
+    if ($validation->messages()->messages()) {
+        foreach ($validation->messages()->messages() as $key => $value) {
+            foreach ($value as $key => $data) {
+                notify()->error("$data"); 
+            }
+            
+        }
+        return redirect()->back();
+        
+        }
    
     $scholarship=ScholarshipApplication::find($scholarship_id);
     // dd($scholarship);
