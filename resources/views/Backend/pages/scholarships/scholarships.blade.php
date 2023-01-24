@@ -4,7 +4,8 @@
 
 <br /> <br />
 <div class="container" id="printableArea">
-    <div class="btn btn-primary">Scholarship list</div>
+    <!-- <div class="btn btn-primary">Scholarship list</div> -->
+    <h2>Scholarship list</h2>
 
     <table class="table">
         <thead class="thead-dark">

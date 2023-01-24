@@ -2,8 +2,8 @@
 @section('content')
 
 <div class="container" id="printableArea">
-    <div class="btn btn-primary">Applied scholarship list</div>
-
+    <!-- <div class="btn btn-primary">Applied scholarship list</div> -->
+     <h1 style="color:blue"> Applied scholarship list</h1>
     <table class="table">
         <thead class="thead-dark">
             <tr>

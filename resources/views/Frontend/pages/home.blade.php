@@ -354,13 +354,13 @@
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">HSC Result</label>
-                            <input  name="hscresult" type="number" min="1" max="5" step="any" class="form-control" id="exampleInputEmail1" placeholder="result">
+                            <input name="hscresult" type="number" min="1" max="5" step="any" class="form-control" id="exampleInputEmail1" placeholder="result">
                             <small id="emailHelp" class="form-text text-muted"> </small>
                         </div>
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">SSC Result</label>
-                            <input  name="sscresult" type="number" min="1" max="5" step="any"class="form-control" id="exampleInputEmail1" placeholder="result">
+                            <input name="sscresult" type="number" min="1" max="5" step="any" class="form-control" id="exampleInputEmail1" placeholder="result">
                             <small id="emailHelp" class="form-text text-muted"> </small>
                         </div>
 
@@ -372,7 +372,7 @@
 
                         <div class="form-group">
                             <label for="file">Uplode Document</label>
-                            <input  type="file" class="form-control" name="file" id="file">
+                            <input type="file" class="form-control" name="file" id="file">
                         </div>
 
                         <div class="form-group">
